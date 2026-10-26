@@ -16,9 +16,15 @@ Push to `main` to deploy with the included GitHub Pages workflow. Set the reposi
 
 ## On your Mac
 
-Open the published site in Safari and choose File → Add to Dock. Ingredient checks last while the app is open, and are kept separately for each recipe. Use Reset checks to start again. Search matches names and ingredients; Command-K focuses search. Printing includes only the selected recipe.
+Open the published site in Safari and choose File → Add to Dock. Ingredient checks last until the cooking page is refreshed or left. Use Reset checks to start again. Search matches names and ingredients; Command-K focuses search. Printing includes only the selected recipe.
 
 No offline caching is included.
+
+## Collection and cooking pages
+
+The homepage is a searchable recipe collection. Each recipe opens a dedicated page at `recipes/<id>/` with a full-width photo, the recipe name over a dark gradient, and ingredients and steps beneath. Cooking pages have only an All recipes link and Print recipe button. Old `#<id>` links redirect to the matching page.
+
+The five static page shells share `app.js`, `recipes.js`, and `style.css` through a relative base URL. When adding a new recipe, copy an existing shell and change its `data-recipe` ID and document title. Keep shared asset version query strings consistent across the homepage and shells when changing scripts or styles.
 
 ## Photos and ingredient colors
 

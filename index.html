@@ -2,31 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f3eb">
+  <meta name="theme-color" content="#fbfaf6">
   <meta name="description" content="A personal collection of recipes. Just the ingredients and steps.">
   <meta name="apple-mobile-web-app-title" content="Recipe Book">
   <title>Recipe Book</title>
   <link rel="icon" type="image/svg+xml" href="icon.svg">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
   <script src="recipes.js?v=3" defer></script>
   <script src="ingredient-colors.js?v=2" defer></script>
-  <script src="app.js?v=4" defer></script>
+  <script src="app.js?v=5" defer></script>
 </head>
-<body>
-  <aside class="sidebar" aria-label="Recipe collection">
-    <a class="brand" href="#muhammara"><img src="icon.svg" width="39" height="39" alt=""><span>Recipe Book<span class="brand-note">THE PERSONAL COLLECTION</span></span></a>
-    <label class="search-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="search" type="search" placeholder="Find a recipe or ingredient" aria-label="Search recipes and ingredients"><kbd>⌘ K</kbd></label>
-    <div class="filters" aria-label="Filter recipes"><button aria-pressed="true" data-filter="All">All</button><button aria-pressed="false" data-filter="Salads">Salads</button><button aria-pressed="false" data-filter="Sides">Sides</button><button aria-pressed="false" data-filter="Dips">Dips</button></div>
-    <div class="collection-label"><span>YOUR RECIPES</span><span id="count">5</span></div>
-    <nav id="recipe-list" aria-label="Recipes"></nav>
-    <div class="sidebar-footer"><span class="little-leaf">✳</span> Good food. Kept close.</div>
-  </aside>
-  <main id="main" tabindex="-1">
-    <div class="topbar"><span>MY KITCHEN <span class="slash">/</span> <span id="breadcrumb">Dips</span></span><button id="print" class="quiet-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8V3h10v5M7 17H4V9h16v8h-3M7 14h10v7H7z"/></svg>Print recipe</button></div>
-    <article id="recipe"></article>
+<body >
+  <main>
+    <section id="collection" >
+      <header class="collection-masthead"><a class="brand" href="./"><img src="icon.svg" width="40" height="40" alt="">Recipe Book</a><span>THE PERSONAL COLLECTION</span></header>
+      <div class="collection-heading"><div><div class="eyebrow">MY KITCHEN</div><h1>Your recipes</h1></div><span id="count" aria-live="polite">5</span></div>
+      <div class="collection-controls"><label class="search-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="search" type="search" placeholder="Find a recipe or ingredient" aria-label="Search recipes and ingredients"><kbd>⌘ K</kbd></label>
+      <div class="filters" aria-label="Filter recipes"><button aria-pressed="true" data-filter="All">All</button><button aria-pressed="false" data-filter="Salads">Salads</button><button aria-pressed="false" data-filter="Sides">Sides</button><button aria-pressed="false" data-filter="Dips">Dips</button></div></div>
+      <nav id="recipe-list" aria-label="Recipes"></nav>
+    </section>
+    <article id="recipe" hidden></article>
+    <noscript>This recipe book needs JavaScript enabled to show the recipes.</noscript>
   </main>
-  <noscript>This recipe book needs JavaScript enabled to show the recipes.</noscript>
 </body>
 </html>
