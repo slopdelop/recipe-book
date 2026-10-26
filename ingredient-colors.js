@@ -1,0 +1,58 @@
+// Dark colors echo the food while remaining readable on the cream background.
+// Aliases are scoped to each recipe: "pepper" in muhammara is not black pepper.
+window.ingredientPalettes = {
+  muhammara: [
+    ['#803b2d', ['large fresh red bell pepper','chopped frozen red bell pepper','red bell pepper','fresh pepper','frozen pepper','pepper']],
+    ['#345d3e', ['chopped scallions','scallions']],
+    ['#64551e', ['freshly squeezed lemon juice','lemon juice']],
+    ['#6c4a2e', ['ground cumin','cumin']], ['#555148', ['kosher salt','salt']],
+    ['#713343', ['pomegranate molasses']], ['#803b2d', ['red pepper flakes']],
+    ['#535621', ['olive oil']], ['#68472f', ['walnuts']], ['#624d2a', ['fresh bread crumbs','bread crumbs']]
+  ],
+  mushrooms: [
+    ['#65503d', ['white or cremini mushrooms','mushrooms','mushroom']],
+    ['#535621', ['extra-virgin olive oil','olive oil']],
+    ['#555148', ['salt']], ['#38302c', ['freshly ground pepper','pepper']],
+    ['#66425a', ['shallots']], ['#5c5540', ['garlic cloves','garlic']],
+    ['#345d3e', ['chopped fresh thyme','thyme','rosemary','herbs']],
+    ['#64551e', ['dry white wine','white wine','wine']]
+  ],
+  tabouli: [
+    ['#624d2a', ['fine bulgur wheat','bulgur wheat','bulgur']],
+    ['#803b2d', ['firm Roma tomatoes','tomatoes']],
+    ['#345d3e', ['English cucumber','cucumber']], ['#345d3e', ['parsley','fresh mint leaves','mint','herbs']],
+    ['#345d3e', ['green onions']], ['#555148', ['salt']],
+    ['#535621', ['lime juice']], ['#64551e', ['lemon juice']], ['#535621', ['extra-virgin olive oil','olive oil']],
+    ['#345d3e', ['romaine lettuce leaves','romaine leaves']]
+  ],
+  onions: [
+    ['#6c4b2e', ['onions']], ['#64551e', ['unsalted butter','butter']],
+    ['#56363e', ['balsamic vinegar']], ['#555148', ['salt']]
+  ],
+  'greek-salad': [
+    ['#345d3e', ['hothouse cucumber','cucumber']], ['#803b2d', ['red bell pepper','peppers']],
+    ['#624b18', ['yellow bell pepper']], ['#803b2d', ['cherry or grape tomatoes','tomatoes']],
+    ['#66425a', ['red onion']], ['#5c5540', ['feta cheese','feta']],
+    ['#4c3443', ['Kalamata olives','olives']], ['#5c5540', ['garlic']],
+    ['#345d3e', ['dried oregano','oregano']], ['#624b18', ['Dijon mustard','mustard']],
+    ['#713343', ['red wine vinegar','vinegar']], ['#555148', ['kosher salt','salt']],
+    ['#38302c', ['freshly ground black pepper','black pepper','pepper']], ['#535621', ['olive oil']]
+  ]
+};
+
+window.colorIngredients = function(text, recipeId) {
+  const escapeHTML = value => value.replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  const entries = (window.ingredientPalettes[recipeId] || []).flatMap(([color, terms]) => terms.map(term => ({term,color})));
+  if (!entries.length) return escapeHTML(text);
+  entries.sort((a,b) => b.term.length-a.term.length);
+  const colors = new Map(entries.map(entry=>[entry.term.toLowerCase(),entry.color]));
+  const pattern = new RegExp('\\b(?:'+entries.map(({term})=>term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).join('|')+')\\b','gi');
+  let cursor = 0;
+  let html = '';
+  for (const match of text.matchAll(pattern)) {
+    html += escapeHTML(text.slice(cursor,match.index));
+    html += `<span class="ingredient-name" style="--ingredient-color:${colors.get(match[0].toLowerCase())}">${escapeHTML(match[0])}</span>`;
+    cursor = match.index+match[0].length;
+  }
+  return html+escapeHTML(text.slice(cursor));
+};

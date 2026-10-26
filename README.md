@@ -19,3 +19,7 @@ Push to `main` to deploy with the included GitHub Pages workflow. Set the reposi
 Open the published site in Safari and choose File → Add to Dock. Ingredient checks last while the app is open, and are kept separately for each recipe. Use Reset checks to start again. Search matches names and ingredients; Command-K focuses search. Printing includes only the selected recipe.
 
 No offline caching is included.
+
+## Photos and ingredient colors
+
+Every recipe uses `images/<recipe-id>.webp` for its header photo and thumbnail. Image sources and generation prompts are documented in [IMAGE-NOTES.md](IMAGE-NOTES.md). Ingredient names use the same dark food-inspired color in the ingredient list and method. Recipe-scoped aliases in `ingredient-colors.js` distinguish ingredients such as red pepper and black pepper. All ingredient colors have at least 7:1 contrast on the cream background.
