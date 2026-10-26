@@ -34,7 +34,7 @@ window.recipes = [
     ]
   },
   {
-    id: 'onions', name: 'Caramelized Onions', category: 'Sides', time: '12 hr', yield: 'Makes 4 cups', source: 'Jonathan Reynolds · The New York Times',
+    id: 'onions', image: 'onions-photo', photoCredit: 'National Onion Association', photoSource: 'https://www.onions-usa.org/recipes/22-caramelized_onions/', name: 'Caramelized Onions', category: 'Sides', time: '12 hr', yield: 'Makes 4 cups', source: 'Jonathan Reynolds · The New York Times',
     ingredients: [['3 lb', 'onions, thinly sliced'], ['4 tbsp', 'unsalted butter'], ['¼ cup', 'balsamic vinegar'], ['¼ tsp', 'salt']],
     steps: [['Fill the slow cooker', 'Combine the onions, butter, balsamic vinegar, and salt in a crockpot or other slow cooker.'], ['Cook low & slow', 'Cover and cook on low heat for 12 hours. Serve.']]
   },
