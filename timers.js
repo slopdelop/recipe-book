@@ -1,6 +1,7 @@
 (() => {
   const D=RecipeData,T=RecipeTimerState,key='recipe-book:timers:v1',units={seconds:1,minutes:60,hours:3600},safe=D.escape;
   const legacy={};for(const recipe of window.recipes)for(const step of recipe.steps)for(const timer of step[2]?.timers||[])legacy[timer.legacyId]=`${recipe.id}:${step[2].id}:${timer.id}`;
+  const durationLabel=(value,unit)=>`${value} ${value===1?unit.replace(/s$/, ''):unit}`;
   let timers=[],audio,audioEnabled=false,tickPending=false,queue=Promise.resolve();
   const tray=document.createElement('aside');tray.className='timer-tray';tray.setAttribute('aria-label','Kitchen timers');tray.hidden=true;
   tray.innerHTML='<details open><summary>Kitchen timers <span class="timer-count"></span></summary><div class="timer-items"></div></details><button class="timer-enable-audio" type="button">Enable sound & voice</button><p class="timer-storage-message" role="status"></p>';
@@ -92,7 +93,7 @@
         hasTimers=true;const definitionId=`${recipe.id}:${step[2].id}:${config.id}`,stepElement=[...document.querySelectorAll('.steps li')].find(e=>e.dataset.step===step[2].id),content=stepElement.lastElementChild;
         const group=document.createElement('div');group.className='step-timer';group.dataset.timerDefinition=definitionId;
         const statusId=`timer-status-${recipe.id}-${step[2].id}-${config.id}`;
-        group.innerHTML=`<div class="timer-compact-controls"><details class="timer-adjust"><summary>Adjust timer</summary><form><div class="timer-duration"><label><span class="sr-only">Timer duration for ${safe(config.label)}</span><input type="number" value="${config.value}" min="0.01" max="10080" step="any" required></label><label><span class="sr-only">Timer unit for ${safe(config.label)}</span><select>${Object.keys(units).map(unit=>`<option ${unit===config.unit?'selected':''}>${unit}</option>`).join('')}</select></label><button type="submit">Start adjusted timer</button></div></form></details><span class="timer-inline-status" id="${statusId}" role="status"></span></div>${config.range?`<small>Click the time to start ${config.value} ${config.unit}; adjust if needed.</small>`:''}${config.halfway?'<label class="halfway-option"><input type="checkbox" checked> Remind me to turn halfway</label>':''}`;
+        group.innerHTML=`<div class="timer-compact-controls"><details class="timer-adjust"><summary>Adjust timer</summary><form><div class="timer-duration"><label><span class="sr-only">Timer duration for ${safe(config.label)}</span><input type="number" value="${config.value}" min="0.01" max="10080" step="any" required></label><label><span class="sr-only">Timer unit for ${safe(config.label)}</span><select>${Object.keys(units).map(unit=>`<option ${unit===config.unit?'selected':''}>${unit}</option>`).join('')}</select></label><button type="submit">Start adjusted timer</button></div></form></details><span class="timer-inline-status" id="${statusId}" role="status"></span></div>${config.range?`<small>Click the time to start ${durationLabel(config.value,config.unit)}; adjust if needed.</small>`:''}${config.halfway?'<label class="halfway-option"><input type="checkbox" checked> Remind me to turn halfway</label>':''}`;
         content.append(group);
         async function start(value,unit){
           const ready=unlockAudio();try{
@@ -101,7 +102,7 @@
             window.dispatchEvent(new CustomEvent('recipe-timer-start',{detail:{recipeId:recipe.id,stepId:step[2].id}}));
           }catch(error){group.querySelector('.timer-inline-status').textContent=error.message;}
         }
-        const chip=document.createElement('button');chip.type='button';chip.className='duration-chip';chip.dataset.durationChip=definitionId;chip.textContent=config.phrase;chip.setAttribute('aria-label',`Start ${config.label} timer for ${config.value} ${config.unit}`);chip.title=`Start ${config.value} ${config.unit} timer`;
+        const chip=document.createElement('button');chip.type='button';chip.className='duration-chip';chip.dataset.durationChip=definitionId;chip.textContent=config.phrase;chip.setAttribute('aria-label',`Start ${config.label} timer for ${durationLabel(config.value,config.unit)}`);chip.title=`Start ${durationLabel(config.value,config.unit)} timer`;
         chip.addEventListener('click',()=>start(config.value,config.unit));
         if(!insertChip(content.querySelector('p'),config.phrase,chip))group.prepend(chip);
         group.querySelector('form').addEventListener('submit',event=>{event.preventDefault();if(event.target.reportValidity())start(Number(group.querySelector('input[type=number]').value),group.querySelector('select').value);});
