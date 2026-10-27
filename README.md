@@ -20,6 +20,12 @@ Open the published site in Safari and choose File → Add to Dock. Ingredient ch
 
 No offline caching is included.
 
+## Notes and cooking history
+
+Each recipe has a journal at the bottom. Notes are stamped with their creation date and time. Use I made this to log the cooking date/time, an optional 1–5 rating, and optional notes for that batch. Each session has its own rating, which can be changed later. Checking every ingredient offers a reminder to log a cook, but never logs one automatically.
+
+Journal data is stored in localStorage under `recipe-book:journal:v1:<recipe-id>`. It stays in the current browser/profile on this device and is never sent to GitHub. Clearing website data removes it; different browsers, devices, and the Safari Add to Dock app may have separate storage. Failed saves keep form text visible and show an error. Notes and history are omitted from recipe printouts.
+
 ## Collection and cooking pages
 
 The homepage is a searchable recipe collection. Each recipe opens a dedicated page at `recipes/<id>/` with a full-width photo, the recipe name over a dark gradient, and ingredients and steps beneath. Cooking pages have only an All recipes link and Print recipe button. Old `#<id>` links redirect to the matching page.

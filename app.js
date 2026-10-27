@@ -22,6 +22,7 @@ function selectRecipe() {
   document.querySelector('#reset').addEventListener('click', () => {checked.delete(active.id);document.querySelectorAll('.ingredients input').forEach(input=>input.checked=false);});
   document.querySelectorAll('.ingredients input').forEach(input=>input.addEventListener('change',()=>{const state=checked.get(active.id)||new Set();const i=Number(input.dataset.index);input.checked?state.add(i):state.delete(i);checked.set(active.id,state);}));
   document.querySelector('#print').addEventListener('click',()=>window.print());
+  window.mountRecipeJournal(active);
 }
 search.addEventListener('input',renderList);
 document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{filter=button.dataset.filter;document.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));renderList();}));
