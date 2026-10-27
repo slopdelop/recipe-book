@@ -6,7 +6,7 @@ window.mountRecipeBackup=function(){
   const status=host.querySelector('.backup-status'),dialog=host.querySelector('dialog');let pending;
   function validate(data){
     if(!data||data.format!=='recipe-book-backup'||data.version!==1||!data.journals||typeof data.journals!=='object'||Array.isArray(data.journals)||!Array.isArray(data.hidden)||data.hidden.some(id=>typeof id!=='string'||!/^[a-z0-9-]+$/.test(id)))throw Error('This is not a supported Recipe Book backup. Nothing was imported.');
-    const known=new Set(window.recipes.map(recipe=>recipe.id));
+    const known=new Set([...window.recipes.map(recipe=>recipe.id),...(window.retiredRecipeIds||[])]);
     if(data.hidden.some(id=>!known.has(id)))throw Error('This backup includes recipes not in this book. Nothing was imported.');
     for(const [id,journal] of Object.entries(data.journals)){if(!known.has(id))throw Error('This backup includes recipes not in this book. Nothing was imported.');J.validate(journal);}
     return data;
@@ -14,9 +14,10 @@ window.mountRecipeBackup=function(){
   host.querySelector('[data-export]').addEventListener('click',async event=>{
     event.target.disabled=true;
     try{
-      const keys=window.recipes.map(r=>prefix+r.id),defaults=Object.fromEntries(keys.map(key=>[key,{notes:[],cooks:[]}]));keys.push(hiddenKey);defaults[hiddenKey]=[];
+      const ids=[...window.recipes.map(r=>r.id),...(window.retiredRecipeIds||[])];
+      const keys=ids.map(id=>prefix+id),defaults=Object.fromEntries(keys.map(key=>[key,{notes:[],cooks:[]}]));keys.push(hiddenKey);defaults[hiddenKey]=[];
       const out=await D.transaction(keys,defaults,()=>{}),journals={};
-      for(const recipe of window.recipes)journals[recipe.id]=J.validate(out.values[prefix+recipe.id]);
+      for(const id of ids)journals[id]=J.validate(out.values[prefix+id]);
       const data=validate({format:'recipe-book-backup',version:1,exportedAt:new Date().toISOString(),journals,hidden:out.values[hiddenKey]});
       const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));const link=document.createElement('a');link.href=url;link.download=`recipe-book-backup-${new Date().toISOString().slice(0,10)}.json`;link.click();setTimeout(()=>URL.revokeObjectURL(url),60000);
       status.textContent='Backup downloaded. Store it somewhere you can find again.';

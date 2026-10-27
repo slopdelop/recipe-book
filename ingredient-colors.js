@@ -1,6 +1,12 @@
 // Dark colors echo the food while remaining readable on the cream background.
 // Aliases are scoped to each recipe: "pepper" in muhammara is not black pepper.
 window.ingredientPalettes = {
+  'pork-chops-red-onion-confit': [
+    ['#66425a', ['red onion confit','red onion','onion confit']],
+    ['#64551e', ['extra butter','butter']], ['#555148', ['salt','sugar']],
+    ['#38302c', ['pepper']], ['#56363e', ['balsamic or red wine vinegar','vinegar']],
+    ['#684b3c', ['pork chops','chops']], ['#535621', ['oil']]
+  ],
   'maple-roasted-squash': [
     ['#794321', ['butternut squash','squash cubes','squash']],
     ['#68472f', ['maple syrup','maple-butter glaze']],

@@ -20,7 +20,7 @@
     }finally{clearTimeout(timeout);requestController=null;}
   }
   function schedule(delay=1500){clearTimeout(timer);timer=setTimeout(()=>sync(),delay);}
-  const snapshotKeys=remote=>[...new Set([...window.recipes.map(r=>r.id),...Object.keys(remote.journals)])].map(id=>prefix+id);
+  const snapshotKeys=remote=>[...new Set([...window.recipes.map(r=>r.id),...(window.retiredRecipeIds||[]),...Object.keys(remote.journals)])].map(id=>prefix+id);
   async function integrate(remote,revision,token){
     S.validate(remote);const journalKeys=snapshotKeys(remote),keys=[...journalKeys,hiddenKey,metaKey,authKey];
     const defaults=Object.fromEntries(journalKeys.map(key=>[key,{notes:[],cooks:[]}]));Object.assign(defaults,{[hiddenKey]:[],[metaKey]:initialMeta(),[authKey]:null});

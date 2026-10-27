@@ -1,5 +1,9 @@
 # Recipe images
 
+## Pork chops with red onion confit
+
+AI-generated illustrative image for Laura Calder's Food Network recipe, added October 27, 2026. The source page exposed a generic Food Network image rather than a usable photograph of the dish. Built-in ImageGen prompt requested two naturally pan-browned pork chops with a good fat edge and modest softened purple-brown onion ribbons on an ordinary off-white plate, soft daylight, irregular home cooking presentation, subtle grain and no extra ingredients, grill stripes, garnish, plastic gloss, HDR or advertising styling. Saved as `images/pork-chops-red-onion-confit.webp` and identified as AI-generated in the recipe footer.
+
 ## Onions and mushrooms: AI-assisted upscales, October 27, 2026
 
 The displayed onions photograph was restored from `onions-photo.webp` (589 × 300) to `onions-photo-upscaled.webp` (1758 × 895). The original National Onion Association source credit remains. The mushrooms photograph from the supplied PDF was restored from `mushrooms.webp` (488 × 325) to `mushrooms-upscaled.webp` (1536 × 1024). Both original files are retained.

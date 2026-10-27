@@ -1,4 +1,5 @@
 // Stable step IDs keep progress and timers attached when steps are reordered.
+window.retiredRecipeIds = ["onions"];
 window.recipes = [
   {
     "id": "muhammara",
@@ -263,61 +264,6 @@ window.recipes = [
     ]
   },
   {
-    "id": "onions",
-    "image": "onions-photo-upscaled",
-    "photoCredit": "National Onion Association",
-    "photoSource": "https://www.onions-usa.org/recipes/22-caramelized_onions/",
-    "name": "Caramelized Onions",
-    "category": "Sides",
-    "time": "12 hr",
-    "yield": "Makes 4 cups",
-    "source": "Jonathan Reynolds · The New York Times",
-    "ingredients": [
-      [
-        "3 lb",
-        "onions, thinly sliced"
-      ],
-      [
-        "4 tbsp",
-        "unsalted butter"
-      ],
-      [
-        "¼ cup",
-        "balsamic vinegar"
-      ],
-      [
-        "¼ tsp",
-        "salt"
-      ]
-    ],
-    "steps": [
-      [
-        "Fill the slow cooker",
-        "Combine the onions, butter, balsamic vinegar, and salt in a crockpot or other slow cooker.",
-        {
-          "id": "fill-cooker"
-        }
-      ],
-      [
-        "Cook low & slow",
-        "Cover and cook on low heat for 12 hours. Serve.",
-        {
-          "id": "slow-cook",
-          "timers": [
-            {
-              "id": "slow-cook",
-              "label": "Slow-cooker onions",
-              "value": 12,
-              "unit": "hours",
-              "phrase": "12 hours",
-              "legacyId": "onions-1-0"
-            }
-          ]
-        }
-      ]
-    ]
-  },
-  {
     "id": "greek-salad",
     "name": "Greek Salad",
     "category": "Salads",
@@ -544,6 +490,130 @@ window.recipes = [
         "Squeeze the remaining lemon half over the squash. Garnish with fresh herbs if desired.",
         {
           "id": "finish"
+        }
+      ]
+    ]
+  },
+  {
+    "id": "pork-chops-red-onion-confit",
+    "name": "Pork Chops with Red Onion Confit",
+    "category": "Mains",
+    "time": "30 min",
+    "yield": "Serves 2",
+    "source": "Laura Calder · Food Network",
+    "sourceUrl": "https://www.foodnetwork.com/recipes/pork-chops-with-red-onion-confit-2119511",
+    "photoCredit": "AI-generated illustrative image",
+    "ingredients": [
+      [
+        "1",
+        "red onion, thinly sliced"
+      ],
+      [
+        "1–2 tbsp",
+        "butter"
+      ],
+      [
+        "To taste",
+        "salt and pepper"
+      ],
+      [
+        "A splash",
+        "balsamic or red wine vinegar"
+      ],
+      [
+        "2",
+        "pork chops, with a good layer of fat"
+      ],
+      [
+        "A pinch",
+        "sugar"
+      ],
+      [
+        "As needed",
+        "oil or extra butter, if the chops are lean"
+      ]
+    ],
+    "steps": [
+      [
+        "Soften the onion",
+        "Gently cook the red onion in melted butter, seasoning with salt and pepper. Stir now and then for about 15 minutes, until tender.",
+        {
+          "id": "soften-onion",
+          "timers": [
+            {
+              "id": "soften-onion",
+              "label": "Soften red onion",
+              "value": 15,
+              "unit": "minutes",
+              "phrase": "15 minutes",
+              "legacyId": "pork-chops-red-onion-confit-soften-onion"
+            }
+          ]
+        }
+      ],
+      [
+        "Reduce the vinegar",
+        "Pour in the vinegar. Cook for about 1 minute to evaporate the liquid, then take the onion confit off the heat.",
+        {
+          "id": "reduce-vinegar",
+          "timers": [
+            {
+              "id": "reduce-vinegar",
+              "label": "Reduce confit vinegar",
+              "value": 1,
+              "unit": "minutes",
+              "phrase": "1 minute",
+              "legacyId": "pork-chops-red-onion-confit-reduce-vinegar"
+            }
+          ]
+        }
+      ],
+      [
+        "Season the chops",
+        "Season both sides of the pork chops with salt, pepper and sugar. If there is little fat on the chops, add a little oil or butter to the frying pan.",
+        {
+          "id": "season-chops"
+        }
+      ],
+      [
+        "Fry the first side",
+        "Pan-fry the pork chops for about 5 minutes on the first side, until golden.",
+        {
+          "id": "fry-first-side",
+          "timers": [
+            {
+              "id": "first-side",
+              "label": "Pork chops: first side",
+              "value": 5,
+              "unit": "minutes",
+              "phrase": "5 minutes",
+              "legacyId": "pork-chops-red-onion-confit-first-side"
+            }
+          ]
+        }
+      ],
+      [
+        "Turn & finish",
+        "Turn the pork chops and fry for about 5 minutes on the second side, until browned and cooked through. Adjust the cooking time for their thickness.",
+        {
+          "id": "fry-second-side",
+          "timers": [
+            {
+              "id": "second-side",
+              "label": "Pork chops: second side",
+              "value": 5,
+              "unit": "minutes",
+              "phrase": "5 minutes",
+              "legacyId": "pork-chops-red-onion-confit-second-side"
+            }
+          ]
+        }
+      ],
+      [
+        "Serve",
+        "Spoon the red onion confit over the pork chops and serve.",
+        {
+          "id": "serve"
         }
       ]
     ]
