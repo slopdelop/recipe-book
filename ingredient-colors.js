@@ -1,6 +1,15 @@
 // Dark colors echo the food while remaining readable on the cream background.
 // Aliases are scoped to each recipe: "pepper" in muhammara is not black pepper.
 window.ingredientPalettes = {
+  'roast-carrot-avocado-salad': [
+    ['#81431f', ['medium mixed-color carrots','roasted carrots','carrots']],
+    ['#555148', ['sea salt','salt']], ['#38302c', ['freshly ground black pepper','black pepper','pepper']],
+    ['#6c4a2e', ['whole cumin seeds','cumin seeds']], ['#803b2d', ['small dried chiles','chiles']],
+    ['#5c5540', ['garlic','sour cream']], ['#345d3e', ['fresh thyme','thyme','mixed winter salad leaves','salad leaves','watercress']],
+    ['#535621', ['extra-virgin olive oil','olive oil']], ['#713343', ['red or white wine vinegar','red wine vinegar','wine vinegar']],
+    ['#7a481d', ['roasted orange','orange']], ['#64551e', ['lemon juice','lemon']],
+    ['#3c5c36', ['ripe avocados','avocados']], ['#624d2a', ['ciabatta','good bread']], ['#68472f', ['mixed seeds','toasted seeds']]
+  ],
   'pork-chops-red-onion-confit': [
     ['#66425a', ['red onion confit','red onion','onion confit']],
     ['#64551e', ['extra butter','butter']], ['#555148', ['salt','sugar']],

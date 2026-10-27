@@ -1,5 +1,13 @@
 # Recipe images
 
+## Roast carrot and avocado salad
+
+Original Food Network / Jamie at Home TV still from the [Jamie Oliver recipe](https://www.foodnetwork.com/recipes/jamie-oliver/roast-carrot-and-avocado-salad-with-orange-and-lemon-dressing-recipe-1938626), supplied at 826 × 620: `https://food.fnr.sndimg.com/content/dam/images/food/fullset/2008/3/13/0/JH0211_Carrot-and-Avocado-Winter-Salad.jpg.rend.hgtvcom.826.620.suffix/1371585646782.webp`.
+
+Built-in ImageGen conservatively restored the original still to 1448 × 1086, preserving its arrangement, warm background, mixed leaves, roasted carrots, avocado wedges, bread, sour cream and toasted seeds. Prompt prohibited restyling, additional garnish, plastic textures, HDR, artificial lighting and excessive sharpening. Encoded as quality-94 WebP in `images/roast-carrot-avocado-salad.webp`. Footer identifies the source and AI-assisted upscale.
+
+The Food52 page submitted by Sandy Hill was checked against Food Network on October 27, 2026. Ingredients, quantities and cooking directions match; Food Network remains the canonical recipe source.
+
 ## Pork chops with red onion confit
 
 AI-generated illustrative image for Laura Calder's Food Network recipe, added October 27, 2026. The source page exposed a generic Food Network image rather than a usable photograph of the dish. Built-in ImageGen prompt requested two naturally pan-browned pork chops with a good fat edge and modest softened purple-brown onion ribbons on an ordinary off-white plate, soft daylight, irregular home cooking presentation, subtle grain and no extra ingredients, grill stripes, garnish, plastic gloss, HDR or advertising styling. Saved as `images/pork-chops-red-onion-confit.webp` and identified as AI-generated in the recipe footer.

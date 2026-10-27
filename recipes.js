@@ -617,5 +617,159 @@ window.recipes = [
         }
       ]
     ]
+  },
+  {
+    "id": "roast-carrot-avocado-salad",
+    "name": "Roast Carrot and Avocado Salad",
+    "subtitle": "Orange & lemon dressing",
+    "category": "Salads",
+    "time": "50 min",
+    "yield": "Serves 4",
+    "source": "Jamie Oliver · Jamie at Home · Food Network",
+    "sourceUrl": "https://www.foodnetwork.com/recipes/jamie-oliver/roast-carrot-and-avocado-salad-with-orange-and-lemon-dressing-recipe-1938626",
+    "photoCredit": "Food Network / Jamie at Home · AI-upscaled",
+    "photoSource": "https://www.foodnetwork.com/recipes/jamie-oliver/roast-carrot-and-avocado-salad-with-orange-and-lemon-dressing-recipe-1938626",
+    "ingredients": [
+      [
+        "1 lb",
+        "medium mixed-color carrots, with leafy tops"
+      ],
+      [
+        "To taste",
+        "sea salt"
+      ],
+      [
+        "2 level tsp",
+        "whole cumin seeds"
+      ],
+      [
+        "1–2",
+        "small dried chiles, crumbled"
+      ],
+      [
+        "To taste",
+        "freshly ground black pepper"
+      ],
+      [
+        "2 cloves",
+        "garlic, peeled"
+      ],
+      [
+        "4 sprigs",
+        "fresh thyme, leaves picked"
+      ],
+      [
+        "As needed",
+        "extra-virgin olive oil, for the spice paste, dressing and finishing"
+      ],
+      [
+        "As needed",
+        "red or white wine vinegar (use red wine vinegar in the dressing)"
+      ],
+      [
+        "1",
+        "orange, halved"
+      ],
+      [
+        "1",
+        "lemon, halved"
+      ],
+      [
+        "3",
+        "ripe avocados"
+      ],
+      [
+        "4 slices, ½ inch thick",
+        "ciabatta or other good bread"
+      ],
+      [
+        "2 handfuls",
+        "mixed winter salad leaves, washed and dried (such as arugula, radicchio, Treviso or cavolo nero tops)"
+      ],
+      [
+        "2 bunches",
+        "watercress"
+      ],
+      [
+        "⅔ cup",
+        "sour cream"
+      ],
+      [
+        "4 tbsp",
+        "mixed seeds, toasted"
+      ]
+    ],
+    "steps": [
+      [
+        "Preheat",
+        "Heat the oven to 350°F.",
+        {
+          "id": "preheat"
+        }
+      ],
+      [
+        "Parboil the carrots",
+        "Boil the carrots in salted water for 10 minutes, until almost cooked. Drain into a roasting pan.",
+        {
+          "id": "parboil-carrots",
+          "timers": [
+            {
+              "id": "parboil",
+              "label": "Parboil carrots",
+              "value": 10,
+              "unit": "minutes",
+              "phrase": "10 minutes",
+              "legacyId": "roast-carrot-avocado-salad-parboil"
+            }
+          ]
+        }
+      ],
+      [
+        "Make the spice paste",
+        "While the carrots boil, crush the cumin seeds, chiles, salt and pepper in a mortar. Pound in the garlic and thyme. Stir in enough olive oil to cover the paste and a generous splash of wine vinegar.",
+        {
+          "id": "spice-paste"
+        }
+      ],
+      [
+        "Season & roast",
+        "Coat the hot carrots with the spice paste. Add the orange and lemon halves, cut sides down. Roast for 25–30 minutes, until golden.",
+        {
+          "id": "roast-carrots",
+          "timers": [
+            {
+              "id": "roast",
+              "label": "Roast carrots and citrus",
+              "value": 25,
+              "unit": "minutes",
+              "phrase": "25–30 minutes",
+              "range": true,
+              "legacyId": "roast-carrot-avocado-salad-roast"
+            }
+          ]
+        }
+      ],
+      [
+        "Prepare the avocados",
+        "During roasting, peel and pit the avocados. Cut into lengthwise wedges and place in a large bowl. Add the roasted carrots.",
+        {
+          "id": "prepare-avocados"
+        }
+      ],
+      [
+        "Mix the citrus dressing",
+        "Using tongs, squeeze the roasted orange and lemon juice into a bowl. Add an equal volume of olive oil, a splash of red wine vinegar, salt and pepper. Toss with the carrots and avocados; adjust seasoning.",
+        {
+          "id": "citrus-dressing"
+        }
+      ],
+      [
+        "Toast & assemble",
+        "Toast or broil the ciabatta, tear into pieces and fold into the salad. Toss in the salad leaves and watercress. Serve topped with sour cream, toasted seeds and a drizzle of olive oil.",
+        {
+          "id": "assemble"
+        }
+      ]
+    ]
   }
 ];
