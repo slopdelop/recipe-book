@@ -81,3 +81,6 @@
 .is-cooking .caption-panel::before{inset:auto;left:-34px;top:-40px;bottom:-36px;width:calc(var(--caption-ink-width,100%) + 68px);filter:blur(20px)}
 .meal-filters{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.filter-label{font-size:12px;color:var(--muted);margin-right:5px}.meal-filters button{padding:9px 12px;border:1px solid #d6d5c9;border-radius:6px;background:transparent;color:var(--ink);font:inherit;font-size:13px;cursor:pointer}.meal-filters button[aria-pressed="true"]{background:#3d5544;color:#fffdf6;border-color:#3d5544}.meal-filters button:hover{border-color:#536c4c}.filters{flex-basis:100%}.recipe-card .recipe-source{color:#435b49;font-size:13px;margin-top:10px}.recipe-meal{background:#f5efe4;color:#6b5135;border-color:#e5dac8}.search-wrap{max-width:100%}
 @media print{.meal-filters{display:none!important}}
+
+/* Frame the source photographs independently from the shared page layout. */
+.recipe-photo.photo-fruit-cake-christmas{object-position:60% 38%}.recipe-photo.photo-ginger-people{object-position:center 55%}.recipe-photo.photo-mochi-hawaiian{object-position:center 0%}

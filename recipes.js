@@ -1412,7 +1412,7 @@ window.recipes = [
       "Dessert",
       "Snack"
     ],
-    "photoCredit": "AI-generated illustration",
+    "photoCredit": "James Merrell / Nigella.com · AI-restored with Christmas restyling",
     "id": "chocolate-fruit-cake",
     "name": "Chocolate Fruit Cake",
     "subtitle": "Nigella Lawson",
@@ -1568,7 +1568,10 @@ window.recipes = [
           "id": "fruit-finish"
         }
       ]
-    ]
+    ],
+    "image": "chocolate-fruit-cake-christmas",
+    "photoClass": "photo-fruit-cake-christmas",
+    "photoSource": "https://www.nigella.com/recipes/chocolate-fruit-cake"
   },
   {
     "category": "Baking",
@@ -1579,7 +1582,7 @@ window.recipes = [
       "Dessert",
       "Snack"
     ],
-    "photoCredit": "AI-generated illustration",
+    "photoCredit": "The Ginger People · AI-assisted upscale",
     "id": "chewy-ginger-snaps",
     "name": "The Ultimate Chewy Ginger Snaps",
     "subtitle": "Crystallized ginger & molasses",
@@ -1711,7 +1714,10 @@ window.recipes = [
           ]
         }
       ]
-    ]
+    ],
+    "image": "ginger-people-snaps-restored",
+    "photoClass": "photo-ginger-people",
+    "photoSource": "https://gingerpeople.com/recipes/ultimate-chewy-ginger-snaps/"
   },
   {
     "category": "Baking",
@@ -1722,7 +1728,7 @@ window.recipes = [
       "Dessert",
       "Snack"
     ],
-    "photoCredit": "AI-generated illustration",
+    "photoCredit": "AI-generated illustration · Hawaiian presentation",
     "id": "chocolate-mochi",
     "name": "Chocolate Mochi",
     "subtitle": "A chewy chocolate tray bake",
@@ -1811,6 +1817,8 @@ window.recipes = [
           "id": "mochi-cool"
         }
       ]
-    ]
+    ],
+    "image": "chocolate-mochi-hawaiian",
+    "photoClass": "photo-mochi-hawaiian"
   }
 ];

@@ -54,3 +54,13 @@ The bistro pork-chop replacement and the cranberry cookies, ginger snaps, chocol
 
 Quick Chili uses the original WeightWatchers vegetarian-chili photograph. The page identifies it as the original vegetarian version; the saved recipe adds the user's ground turkey or beef.
 
+## Distinctive dessert images — October 27 replacement
+
+These supersede the first cake, ginger-snap and mochi illustrations above. The `recipe-food-images` skill records the user's preference for authentic sources, realistic restoration and dish-specific settings rather than a repeated neutral-plate template.
+
+- **Chocolate Fruit Cake:** James Merrell's real photograph on [Nigella.com](https://www.nigella.com/recipes/chocolate-fruit-cake). The page's Open Graph image exposes the larger 1179 × 1055 original: `https://www.nigella.com/assets/uploads/recipes/img_1342-657af2a24faaa.jpg`. ImageGen restored the cake photograph and widened/restyled the surroundings with burgundy linen, a candle and evergreen. The cake, glass pedestal and central red berries follow the source. This is a source-based AI edit, not an unaltered photograph or purely an upscale. Saved as `images/chocolate-fruit-cake-christmas.webp`. The recipe remains the Food Network variant; the image does not change the ingredients or method.
+- **Ginger snaps:** The Ginger People's [official recipe photograph](https://gingerpeople.com/recipes/ultimate-chewy-ginger-snaps/), `https://gingerpeople.com/wp-content/uploads/2021/03/Chewy-Ginger-Snaps-NWK-main.jpg` (548 × 693). ImageGen conservatively enlarged it to 1115 × 1411, retaining the overhead cookie arrangement, diagonal cooling rack and baking surface. Saved as `images/ginger-people-snaps-restored.webp`; footer credits the brand and AI-assisted upscale. The supplied package recipe remains unchanged.
+- **Chocolate Mochi:** The earlier generated food image was the reference for a new Hawaiian home-baking presentation: dark wooden board, indigo botanical cloth, tea and a restrained tropical leaf. This is a generated illustration, not a photograph of the user's actual batch. No new food garnish was added. Saved as `images/chocolate-mochi-hawaiian.webp`.
+
+The new landscape images are 1536 × 1024. All three are encoded as quality-93 WebP. Source JPEGs and generated PNG masters remain outside the published repository. Replaced image files remain available in Git history and are no longer referenced by these recipes.
+
