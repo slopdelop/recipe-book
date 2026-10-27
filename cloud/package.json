@@ -1,0 +1,1 @@
+{"name":"recipe-book-sync","private":true,"type":"module","scripts":{"test":"node --test worker.test.js"}}

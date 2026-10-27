@@ -1,0 +1,8 @@
+{
+  "name":"recipe-book-sync",
+  "main":"worker.js",
+  "compatibility_date":"2026-10-26",
+  "workers_dev":true,
+  "observability":{"enabled":false},
+  "d1_databases":[{"binding":"DB","database_name":"recipe-book-sync","database_id":"a90c9484-96bb-449c-a6db-4f250ccdd3ff"}]
+}

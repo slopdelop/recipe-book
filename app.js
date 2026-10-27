@@ -63,6 +63,7 @@ document.addEventListener('keydown',event=>{if(!document.body.dataset.recipe&&(e
   if(document.body.dataset.recipe){document.querySelector('#collection').hidden=true;document.querySelector('#recipe').hidden=false;await selectRecipe();}
   else{renderList();window.mountRecipeBackup();}
   await window.mountRecipeTimers(active||null);
+  await window.mountRecipeSync();
 })().catch(error=>{const status=document.createElement('p');status.className='app-error';status.setAttribute('role','alert');status.textContent=error.message||'This page could not finish loading. Please reload.';document.querySelector('main').append(status);});
 window.addEventListener('hashchange',()=>{
   const recipe = window.recipes.find(r=>r.id===location.hash.slice(1));

@@ -1,6 +1,8 @@
 # Recipe Book
 
-A small personal recipe collection designed for a MacBook. Plain HTML, CSS, and JavaScript; no build step or external services.
+A small personal recipe collection designed for a MacBook. Plain HTML, CSS, and JavaScript; no frontend build step.
+
+Optional private cloud sync uses a dedicated Cloudflare Worker and D1 database. Open Cloud sync and enter the same private recipe connection code on each computer. Existing local notes merge automatically. Notes, dated cooking sessions, ratings and hidden recipes synchronize; timers and cooking progress stay on their own computer. Unsent changes stay saved locally until sync succeeds. See [cloud/README.md](cloud/README.md) for architecture and tests.
 
 ## Preview
 
@@ -34,7 +36,7 @@ Hide a recipe with the discreet button at the bottom right of its cooking page. 
 
 Each recipe has a journal at the bottom. Notes are stamped with their creation date and time. Use I made this to log the cooking date/time, an optional 1–5 rating, and optional notes for that batch. Each session has its own rating, which can be changed later. Checking every ingredient offers a reminder to log a cook, but never logs one automatically.
 
-Journal data is stored in IndexedDB. Existing localStorage data is imported automatically and left intact as a recovery copy. Transactions preserve independent changes across tabs. Edit preserves the original creation date; Delete provides Undo. Stale edits are blocked with the draft intact. New-entry drafts survive reloads in the same tab. It stays in the current browser/profile on this device and is never sent to GitHub. Clearing website data removes it; different browsers, devices, and the Safari Add to Dock app may have separate storage. Failed saves keep form text visible and show an error. Notes and history are omitted from recipe printouts.
+Journal data is stored in IndexedDB. Existing localStorage data is imported automatically and left intact as a recovery copy. Transactions preserve independent changes across tabs. Edit preserves the original creation date; Delete provides Undo. Stale edits are blocked with the draft intact. New-entry drafts survive reloads in the same tab. It stays in the current browser/profile and is never sent to GitHub. When Cloud sync is connected, a private copy is synchronized through the separate Cloudflare recipe service. Clearing website data removes it; different browsers, devices, and the Safari Add to Dock app may have separate storage. Failed saves keep form text visible and show an error. Notes and history are omitted from recipe printouts.
 
 ## Collection and cooking pages
 
@@ -48,6 +50,6 @@ Every recipe uses `images/<recipe-id>.webp` for its header photo and thumbnail. 
 
 ## Backup and checks
 
-Backup & restore on the collection page exports notes, cooking history, ratings and hidden recipes as JSON. Import validates and previews the file before merging by stable entry ID and revision. Reimporting does not duplicate entries; deletion records prevent older backups from resurrecting deleted entries. Data stays local until you choose to save or move a backup. This does not provide cloud sync.
+Backup & restore on the collection page exports notes, cooking history, ratings and hidden recipes as JSON. Import validates and previews the file before merging by stable entry ID and revision. Reimporting does not duplicate entries; deletion records prevent older backups from resurrecting deleted entries. Data stays local until you choose to save or move a backup. Cloud sync is available separately through the Cloud sync panel.
 
 Run regression tests with `node --test tests/state.test.cjs`. Browser verification includes simultaneous notes and independent ratings in two tabs, stale-edit recovery, Delete/Undo, backup restore into a fresh origin, duplicate-safe reimport and synchronized step timers. Safari audio and wake-lock behavior still need a real Mac check.
