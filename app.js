@@ -27,9 +27,9 @@ function renderList() {
   const matches = window.recipes.filter(r => (filter === 'Hidden' ? hiddenRecipes.has(r.id) : !hiddenRecipes.has(r.id) && (filter === 'All' || r.category === filter)) && [r.name,r.subtitle || '',...r.ingredients.filter(Array.isArray).map(i=>i.join(' '))].join(' ').toLocaleLowerCase().includes(query));
   document.querySelector('#count').textContent = matches.length;
   document.querySelector('[data-filter="Hidden"]').textContent = `Hidden${hiddenRecipes.size ? ` (${hiddenRecipes.size})` : ''}`;
-  list.innerHTML = matches.map(r => `<article class="recipe-card"><a href="${recipeURL(r.id)}"><img class="recipe-thumb" src="images/${r.image || r.id}.webp" alt="" width="46" height="46"><span>${escape(r.name)}<small>${escape(r.category)} · ${escape(r.time)}</small></span></a><button class="hide-recipe" type="button" data-visibility="${r.id}" aria-label="${hiddenRecipes.has(r.id)?'Restore':'Hide'} ${escape(r.name)}">${hiddenRecipes.has(r.id)?'Restore recipe':'Hide recipe'}</button></article>`).join('') || `<p class="empty">${filter==='Hidden'?'No hidden recipes match.':'No recipes found. Try another ingredient or category.'}</p>`;
-  list.querySelectorAll('[data-visibility]').forEach(button=>button.addEventListener('click',()=>{
-    const id=button.dataset.visibility;const hide=!hiddenRecipes.has(id);const status=document.querySelector('.collection-status');
+  list.innerHTML = matches.map(r => `<article class="recipe-card"><a href="${recipeURL(r.id)}"><img class="recipe-thumb" src="images/${r.image || r.id}.webp" alt="" width="46" height="46"><span>${escape(r.name)}<small>${escape(r.category)} · ${escape(r.time)}</small></span></a>${hiddenRecipes.has(r.id)?`<button class="restore-recipe" type="button" data-restore="${r.id}" aria-label="Restore ${escape(r.name)}">Restore recipe</button>`:''}</article>`).join('') || `<p class="empty">${filter==='Hidden'?'No hidden recipes match.':'No recipes found. Try another ingredient or category.'}</p>`;
+  list.querySelectorAll('[data-restore]').forEach(button=>button.addEventListener('click',()=>{
+    const id=button.dataset.restore;const hide=false;const status=document.querySelector('.collection-status');
     if(setRecipeHidden(id,hide,status)){renderList();status.textContent=`${window.recipes.find(r=>r.id===id).name} ${hide?'hidden. You can restore it from Hidden.':'restored.'}`;}
   }));
   if(hiddenReadError)document.querySelector('.collection-status').textContent='Hidden recipes could not be read. Your recipe notes are unchanged.';
@@ -46,7 +46,7 @@ function selectRecipe() {
   window.mountRecipeJournal(active);
   const preference=document.createElement('div');preference.className='recipe-preference';
   preference.innerHTML='<button type="button" class="journal-secondary"></button><span role="status" aria-live="polite"></span>';
-  document.querySelector('.recipe-footer').before(preference);
+  document.querySelector('.recipe-footer').after(preference);
   const visibilityButton=preference.querySelector('button');
   const refreshVisibility=()=>visibilityButton.textContent=hiddenRecipes.has(active.id)?'Restore recipe':'Hide recipe';
   refreshVisibility();

@@ -22,7 +22,7 @@ No offline caching is included.
 
 ## Hidden recipes
 
-Hide a recipe from its collection card or from the bottom of its cooking page. Normal collection filters exclude it. The Hidden filter lists hidden recipes and provides Restore recipe. Direct recipe links still open; hiding leaves notes and cooking history untouched. Visibility preferences are saved in this browser/device under `recipe-book:hidden:v1`.
+Hide a recipe with the discreet button at the bottom right of its cooking page. Collection cards do not show Hide. Normal collection filters exclude it. The Hidden filter lists hidden recipes and provides Restore recipe. Direct recipe links still open; hiding leaves notes and cooking history untouched. Visibility preferences are saved in this browser/device under `recipe-book:hidden:v1`.
 
 ## Notes and cooking history
 
