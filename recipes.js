@@ -83,6 +83,7 @@ window.recipes = [
   },
   {
     "id": "mushrooms",
+    "image": "mushrooms-upscaled",
     "name": "Quick Pan-cooked Mushrooms",
     "category": "Sides",
     "time": "About 15 min",
@@ -263,7 +264,7 @@ window.recipes = [
   },
   {
     "id": "onions",
-    "image": "onions-photo",
+    "image": "onions-photo-upscaled",
     "photoCredit": "National Onion Association",
     "photoSource": "https://www.onions-usa.org/recipes/22-caramelized_onions/",
     "name": "Caramelized Onions",

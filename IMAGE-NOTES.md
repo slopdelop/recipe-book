@@ -1,5 +1,11 @@
 # Recipe images
 
+## Onions and mushrooms: AI-assisted upscales, October 27, 2026
+
+The displayed onions photograph was restored from `onions-photo.webp` (589 × 300) to `onions-photo-upscaled.webp` (1758 × 895). The original National Onion Association source credit remains. The mushrooms photograph from the supplied PDF was restored from `mushrooms.webp` (488 × 325) to `mushrooms-upscaled.webp` (1536 × 1024). Both original files are retained.
+
+Built-in ImageGen edited each original separately with instructions to preserve its crop, composition, food placement, color and lighting. Prompts requested conservative photographic detail, natural irregular textures, pan wear, soft focus and steam; they explicitly avoided artificial gloss, HDR, oversharpening, added garnish and rearrangement. These are AI-assisted restorations rather than newly recovered original camera detail. The generated outputs were encoded as quality-94 WebP without further resizing.
+
 ## Maple-roasted squash
 
 Original photograph credited to Linda Xiao for The New York Times; food styling by Monica Pierini. Retrieved from the public [Myers Group Wellness recipe page](https://www.myersgroupwellness.com/blog/maple-roasted-squash-with-charred-lemon). The bottom credit strip was moved into the recipe footer, and the photograph was compressed to `images/maple-roasted-squash.webp`. It shows the original mixed-squash version; the recipe text uses the supplied 2 lb pre-cut butternut adaptation.
