@@ -20,6 +20,12 @@ Open the published site in Safari and choose File → Add to Dock. Ingredient ch
 
 No offline caching is included.
 
+## Step timers
+
+Timed steps have editable timers in seconds, minutes, or hours, using the durations authored in `timers.js`. Ranges default to their lower bound; the recipe range stays visible. Squash roasting optionally announces a halfway reminder. Several named timers can run in the floating, collapsible Kitchen timers panel, with pause/resume, cancel, restart, and dismiss controls.
+
+Timers use absolute deadlines and localStorage (`recipe-book:timers:v1`) to recover after reloads and remain visible while moving between recipes. Completion plays a four-note Web Audio tune and speaks the timer name using the browser's speech synthesis voice. Use Test sound & voice, or Enable sound & voice after restoring a timer. Sound needs an open page, an awake device, and enabled audio. A sleeping/suspended browser can delay an alarm; on returning, the timer checks the real deadline and shows that it finished. This is a browser timer, not an OS background alarm. Web Locks coordinate completion between open tabs when supported.
+
 ## Hidden recipes
 
 Hide a recipe with the discreet button at the bottom right of its cooking page. Collection cards do not show Hide. Normal collection filters exclude it. The Hidden filter lists hidden recipes and provides Restore recipe. Direct recipe links still open; hiding leaves notes and cooking history untouched. Visibility preferences are saved in this browser/device under `recipe-book:hidden:v1`.

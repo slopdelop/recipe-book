@@ -73,3 +73,5 @@ window.addEventListener('hashchange',()=>{
   const recipe = window.recipes.find(r=>r.id===location.hash.slice(1));
   if (!document.body.dataset.recipe && recipe) location.replace(new URL(recipeURL(recipe.id),document.baseURI).href);
 });
+
+window.mountRecipeTimers(active || null);
