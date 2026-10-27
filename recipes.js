@@ -80,6 +80,9 @@ window.recipes = [
           "id": "finish"
         }
       ]
+    ],
+    "tags": [
+      "Dip"
     ]
   },
   {
@@ -153,6 +156,9 @@ window.recipes = [
           "id": "reduce-wine"
         }
       ]
+    ],
+    "tags": [
+      "Side dish"
     ]
   },
   {
@@ -261,6 +267,10 @@ window.recipes = [
           ]
         }
       ]
+    ],
+    "tags": [
+      "Salad",
+      "Side dish"
     ]
   },
   {
@@ -363,6 +373,10 @@ window.recipes = [
           ]
         }
       ]
+    ],
+    "tags": [
+      "Salad",
+      "Side dish"
     ]
   },
   {
@@ -492,6 +506,9 @@ window.recipes = [
           "id": "finish"
         }
       ]
+    ],
+    "tags": [
+      "Side dish"
     ]
   },
   {
@@ -616,6 +633,9 @@ window.recipes = [
           "id": "serve"
         }
       ]
+    ],
+    "tags": [
+      "Main dish"
     ]
   },
   {
@@ -768,6 +788,318 @@ window.recipes = [
         "Toast or broil the ciabatta, tear into pieces and fold into the salad. Toss in the salad leaves and watercress. Serve topped with sour cream, toasted seeds and a drizzle of olive oil.",
         {
           "id": "assemble"
+        }
+      ]
+    ],
+    "tags": [
+      "Salad",
+      "Side dish"
+    ]
+  },
+  {
+    "id": "corn-chipotle-lime",
+    "name": "Corn with Chipotle–Lime Butter",
+    "category": "Sides",
+    "tags": [
+      "Side dish",
+      "BBQ"
+    ],
+    "subtitle": "Grilled corn on the cob",
+    "time": "10 min prep · 12–15 min grilling",
+    "yield": "Serves 4",
+    "source": "Jamie Purviance · Weber",
+    "sourceUrl": "https://www.weber.com/IN/en/recipes/veggies/corn-on-the-cob-three-different-ways/weber-8091.html",
+    "image": "corn-three-ways",
+    "photoCredit": "Weber",
+    "photoSource": "https://www.weber.com/IN/en/recipes/veggies/corn-on-the-cob-three-different-ways/weber-8091.html",
+    "photoClass": "photo-corn-chipotle",
+    "ingredients": [
+      [
+        "85 g / 6 tbsp",
+        "unsalted butter, softened"
+      ],
+      [
+        "3 tbsp",
+        "finely chopped fresh cilantro leaves"
+      ],
+      [
+        "2 tsp",
+        "finely grated lime zest"
+      ],
+      [
+        "2 tsp",
+        "honey"
+      ],
+      [
+        "1 tsp",
+        "minced canned chipotle chiles in adobo sauce"
+      ],
+      [
+        "½ tsp",
+        "kosher salt"
+      ],
+      [
+        "⅛ tsp",
+        "freshly ground black pepper"
+      ],
+      [
+        "4 ears",
+        "fresh corn, husked"
+      ],
+      [
+        "4",
+        "lime wedges"
+      ]
+    ],
+    "steps": [
+      [
+        "Heat the grill",
+        "Prepare the grill for direct cooking over medium heat, 180–230°C (350–450°F). Clean the cooking grates.",
+        {
+          "id": "heat-grill"
+        }
+      ],
+      [
+        "Mix the butter",
+        "Mash the butter with cilantro, lime zest, honey, chipotle chiles, salt and pepper until evenly mixed. For more heat, add extra chipotle in ¼ tsp increments. The butter can be made 1 day ahead; refrigerate, then let it soften before use.",
+        {
+          "id": "mix-butter"
+        }
+      ],
+      [
+        "Butter the corn",
+        "Lightly spread each ear of corn with 1–2 tsp of the butter mixture. Reserve the rest for serving.",
+        {
+          "id": "butter-corn"
+        }
+      ],
+      [
+        "Grill",
+        "Grill the corn over direct medium heat for 12–15 minutes, turning occasionally. Keep the lid closed between turns. The kernels should be tender and browned in places.",
+        {
+          "id": "grill-corn",
+          "timers": [
+            {
+              "id": "grill",
+              "label": "Corn with Chipotle–Lime Butter",
+              "value": 12,
+              "unit": "minutes",
+              "phrase": "12–15 minutes",
+              "range": true,
+              "legacyId": "corn-chipotle-lime-grill"
+            }
+          ]
+        }
+      ],
+      [
+        "Serve",
+        "Serve the corn warm with the remaining chipotle–lime butter and lime wedges.",
+        {
+          "id": "serve"
+        }
+      ]
+    ]
+  },
+  {
+    "id": "corn-paprika-pimiento-chive",
+    "name": "Corn with Smoked Paprika, Pimiento and Chive Butter",
+    "category": "Sides",
+    "tags": [
+      "Side dish",
+      "BBQ"
+    ],
+    "subtitle": "Grilled corn on the cob",
+    "time": "10 min prep · 12–15 min grilling",
+    "yield": "Serves 4",
+    "source": "Jamie Purviance · Weber",
+    "sourceUrl": "https://www.weber.com/IN/en/recipes/veggies/corn-on-the-cob-three-different-ways/weber-8091.html",
+    "image": "corn-three-ways",
+    "photoCredit": "Weber",
+    "photoSource": "https://www.weber.com/IN/en/recipes/veggies/corn-on-the-cob-three-different-ways/weber-8091.html",
+    "photoClass": "photo-corn-paprika",
+    "ingredients": [
+      [
+        "85 g / 6 tbsp",
+        "unsalted butter, softened"
+      ],
+      [
+        "2 tbsp",
+        "chopped fresh chives"
+      ],
+      [
+        "2 tbsp",
+        "well-drained minced pimientos or jarred red bell pepper"
+      ],
+      [
+        "2 tsp",
+        "smoked paprika, preferably mild"
+      ],
+      [
+        "½ clove",
+        "garlic, minced or pressed"
+      ],
+      [
+        "½ tsp",
+        "kosher salt"
+      ],
+      [
+        "⅛ tsp",
+        "freshly ground black pepper"
+      ],
+      [
+        "4 ears",
+        "fresh corn, husked"
+      ]
+    ],
+    "steps": [
+      [
+        "Heat the grill",
+        "Prepare the grill for direct cooking over medium heat, 180–230°C (350–450°F). Clean the cooking grates.",
+        {
+          "id": "heat-grill"
+        }
+      ],
+      [
+        "Mix the butter",
+        "Mash the butter with chives, pimientos, smoked paprika, garlic, salt and pepper until evenly mixed. The butter can be made 1 day ahead; refrigerate, then let it soften before use.",
+        {
+          "id": "mix-butter"
+        }
+      ],
+      [
+        "Butter the corn",
+        "Lightly spread each ear of corn with 1–2 tsp of the butter mixture. Reserve the rest for serving.",
+        {
+          "id": "butter-corn"
+        }
+      ],
+      [
+        "Grill",
+        "Grill the corn over direct medium heat for 12–15 minutes, turning occasionally. Keep the lid closed between turns. The kernels should be tender and browned in places.",
+        {
+          "id": "grill-corn",
+          "timers": [
+            {
+              "id": "grill",
+              "label": "Corn with Smoked Paprika, Pimiento and Chive Butter",
+              "value": 12,
+              "unit": "minutes",
+              "phrase": "12–15 minutes",
+              "range": true,
+              "legacyId": "corn-paprika-pimiento-chive-grill"
+            }
+          ]
+        }
+      ],
+      [
+        "Serve",
+        "Serve the corn warm, spreading the remaining smoked paprika, pimiento and chive butter over it.",
+        {
+          "id": "serve"
+        }
+      ]
+    ]
+  },
+  {
+    "id": "corn-herb-parmesan-lemon",
+    "name": "Corn with Herb, Parmesan and Lemon Butter",
+    "category": "Sides",
+    "tags": [
+      "Side dish",
+      "BBQ"
+    ],
+    "subtitle": "Grilled corn on the cob",
+    "time": "10 min prep · 12–15 min grilling",
+    "yield": "Serves 4",
+    "source": "Jamie Purviance · Weber",
+    "sourceUrl": "https://www.weber.com/IN/en/recipes/veggies/corn-on-the-cob-three-different-ways/weber-8091.html",
+    "image": "corn-three-ways",
+    "photoCredit": "Weber",
+    "photoSource": "https://www.weber.com/IN/en/recipes/veggies/corn-on-the-cob-three-different-ways/weber-8091.html",
+    "photoClass": "photo-corn-herb",
+    "ingredients": [
+      [
+        "85 g / 6 tbsp",
+        "unsalted butter, softened"
+      ],
+      [
+        "3 tbsp",
+        "finely grated Parmigiano-Reggiano cheese"
+      ],
+      [
+        "1 tbsp",
+        "finely chopped fresh tarragon leaves"
+      ],
+      [
+        "1 tbsp",
+        "finely chopped fresh basil leaves"
+      ],
+      [
+        "1 tbsp",
+        "finely chopped fresh chives"
+      ],
+      [
+        "1 tsp",
+        "finely grated lemon zest"
+      ],
+      [
+        "½ tsp",
+        "kosher salt"
+      ],
+      [
+        "⅛ tsp",
+        "freshly ground black pepper"
+      ],
+      [
+        "4 ears",
+        "fresh corn, husked"
+      ]
+    ],
+    "steps": [
+      [
+        "Heat the grill",
+        "Prepare the grill for direct cooking over medium heat, 180–230°C (350–450°F). Clean the cooking grates.",
+        {
+          "id": "heat-grill"
+        }
+      ],
+      [
+        "Mix the butter",
+        "Mash the butter with Parmesan, tarragon, basil, chives, lemon zest, salt and pepper until evenly mixed. The butter can be made 1 day ahead; refrigerate, then let it soften before use.",
+        {
+          "id": "mix-butter"
+        }
+      ],
+      [
+        "Butter the corn",
+        "Lightly spread each ear of corn with 1–2 tsp of the butter mixture. Reserve the rest for serving.",
+        {
+          "id": "butter-corn"
+        }
+      ],
+      [
+        "Grill",
+        "Grill the corn over direct medium heat for 12–15 minutes, turning occasionally. Keep the lid closed between turns. The kernels should be tender and browned in places.",
+        {
+          "id": "grill-corn",
+          "timers": [
+            {
+              "id": "grill",
+              "label": "Corn with Herb, Parmesan and Lemon Butter",
+              "value": 12,
+              "unit": "minutes",
+              "phrase": "12–15 minutes",
+              "range": true,
+              "legacyId": "corn-herb-parmesan-lemon-grill"
+            }
+          ]
+        }
+      ],
+      [
+        "Serve",
+        "Serve the corn warm, spreading the remaining herb, Parmesan and lemon butter over it.",
+        {
+          "id": "serve"
         }
       ]
     ]

@@ -1,5 +1,11 @@
 # Recipe images
 
+## Corn, three ways
+
+The three separate Jamie Purviance / Weber corn recipes use Weber's original real photograph, saved as `images/corn-three-ways.webp` (2000 × 1500, quality-92 WebP). Source: [Corn on the Cob Three Different Ways](https://www.weber.com/IN/en/recipes/veggies/corn-on-the-cob-three-different-ways/weber-8091.html), image `https://ux2cms.imgix.net/images/20151023095346_row_sides_12.jpg?w=2000&auto=format&fit=max`.
+
+The image shows chipotle–lime corn on the left, smoked-paprika corn at upper right and herb-Parmesan corn at lower right. CSS crops each card and header toward its matching platter. No AI generation or bitmap retouching was used. All recipe footers link to Weber for attribution.
+
 ## Roast carrot and avocado salad
 
 Original Food Network / Jamie at Home TV still from the [Jamie Oliver recipe](https://www.foodnetwork.com/recipes/jamie-oliver/roast-carrot-and-avocado-salad-with-orange-and-lemon-dressing-recipe-1938626), supplied at 826 × 620: `https://food.fnr.sndimg.com/content/dam/images/food/fullset/2008/3/13/0/JH0211_Carrot-and-Avocado-Winter-Salad.jpg.rend.hgtvcom.826.620.suffix/1371585646782.webp`.

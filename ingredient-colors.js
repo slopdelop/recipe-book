@@ -1,6 +1,23 @@
 // Dark colors echo the food while remaining readable on the cream background.
 // Aliases are scoped to each recipe: "pepper" in muhammara is not black pepper.
 window.ingredientPalettes = {
+  'corn-chipotle-lime': [
+    ['#70501d',['fresh corn','corn']],['#64551e',['unsalted butter','butter']],
+    ['#345d3e',['finely chopped fresh cilantro leaves','cilantro']],['#535621',['finely grated lime zest','lime zest','lime wedges']],
+    ['#624d2a',['honey']],['#803b2d',['minced canned chipotle chiles in adobo sauce','chipotle chiles','chipotle']],
+    ['#555148',['kosher salt','salt']],['#38302c',['freshly ground black pepper','black pepper','pepper']]
+  ],
+  'corn-paprika-pimiento-chive': [
+    ['#70501d',['fresh corn','corn']],['#64551e',['unsalted butter','butter']],['#345d3e',['chopped fresh chives','chives']],
+    ['#803b2d',['smoked paprika','pimientos','jarred red bell pepper','pimiento']],['#5c5540',['garlic']],
+    ['#555148',['kosher salt','salt']],['#38302c',['freshly ground black pepper','black pepper','pepper']]
+  ],
+  'corn-herb-parmesan-lemon': [
+    ['#70501d',['fresh corn','corn']],['#64551e',['unsalted butter','butter','finely grated lemon zest','lemon zest']],
+    ['#5c5540',['finely grated Parmigiano-Reggiano cheese','Parmesan']],
+    ['#345d3e',['finely chopped fresh tarragon leaves','finely chopped fresh basil leaves','finely chopped fresh chives','tarragon','basil','chives','herb']],
+    ['#555148',['kosher salt','salt']],['#38302c',['freshly ground black pepper','black pepper','pepper']]
+  ],
   'roast-carrot-avocado-salad': [
     ['#81431f', ['medium mixed-color carrots','roasted carrots','carrots']],
     ['#555148', ['sea salt','salt']], ['#38302c', ['freshly ground black pepper','black pepper','pepper']],

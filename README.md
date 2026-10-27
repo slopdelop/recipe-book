@@ -10,7 +10,7 @@ Run `python -m http.server 4173` from this folder and visit http://localhost:417
 
 ## Recipe updates
 
-Edit `recipes.js`. Each recipe includes its stable ID, name, category, time, yield, ingredients, steps, and a short source credit. Ingredient rows use `[amount, ingredient]`; section dividers use `{group: 'Heading'}`. Recipe steps were lightly rewritten for clarity while preserving supplied quantities and cooking details.
+Edit `recipes.js`. Each recipe includes its stable ID, name, category, multiple `tags`, time, yield, ingredients, steps, and a short source credit. Ingredient rows use `[amount, ingredient]`; section dividers use `{group: 'Heading'}`. Recipe steps were lightly rewritten for clarity while preserving supplied quantities and cooking details. Tag filters are generated from the recipes; selecting several tags matches all of them. Search also matches tags, and All resets the selection. The legacy category remains a fallback for old recipe entries.
 
 ## Publishing
 
