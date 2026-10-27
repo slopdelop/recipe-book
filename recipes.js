@@ -545,7 +545,7 @@ window.recipes = [
     "yield": "Serves 2",
     "source": "Laura Calder · Food Network",
     "sourceUrl": "https://www.foodnetwork.com/recipes/pork-chops-with-red-onion-confit-2119511",
-    "photoCredit": "AI-generated illustration",
+    "photoCredit": "AI-generated illustration · French bistro with Château Picard",
     "ingredients": [
       [
         "1",
@@ -668,7 +668,8 @@ window.recipes = [
       "Lunch",
       "Dinner"
     ],
-    "image": "pork-chops-bistro"
+    "image": "pork-chop-bistro-chateau-picard",
+    "photoClass": "photo-pork-picard"
   },
   {
     "id": "roast-carrot-avocado-salad",
