@@ -1,6 +1,13 @@
 // Dark colors echo the food while remaining readable on the cream background.
 // Aliases are scoped to each recipe: "pepper" in muhammara is not black pepper.
 window.ingredientPalettes = {
+  'maple-roasted-squash': [
+    ['#794321', ['butternut squash','squash cubes','squash']],
+    ['#68472f', ['maple syrup','maple-butter glaze']],
+    ['#64551e', ['unsalted butter','butter','lemon slices','lemon half','lemon']],
+    ['#535621', ['olive oil']], ['#624d2a', ['ground cardamom','cardamom','coriander seeds','coriander']],
+    ['#555148', ['fine sea salt','salt']], ['#803b2d', ['chile powder']], ['#345d3e', ['fresh herbs','herbs']]
+  ],
   muhammara: [
     ['#803b2d', ['large fresh red bell pepper','chopped frozen red bell pepper','red bell pepper','fresh pepper','frozen pepper','pepper']],
     ['#345d3e', ['chopped scallions','scallions']],

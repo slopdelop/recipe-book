@@ -1,5 +1,9 @@
 # Recipe images
 
+## Maple-roasted squash
+
+Original photograph credited to Linda Xiao for The New York Times; food styling by Monica Pierini. Retrieved from the public [Myers Group Wellness recipe page](https://www.myersgroupwellness.com/blog/maple-roasted-squash-with-charred-lemon). The bottom credit strip was moved into the recipe footer, and the photograph was compressed to `images/maple-roasted-squash.webp`. It shows the original mixed-squash version; the recipe text uses the supplied 2 lb pre-cut butternut adaptation.
+
 Built-in ImageGen was used for the image edits and new images below. The mushrooms image is the original color photograph extracted from the supplied PDF. All web images are in `images/`.
 
 Muhammara and Greek salad were colorized from the supplied grayscale photographs. Tabouli was reconstructed from its tiny grayscale reference. The caramelized onions image was replaced with a real photograph from the National Onion Association: https://www.onions-usa.org/recipes/22-caramelized_onions/ . The current file is `images/onions-photo.webp`; the earlier generated image is no longer used.

@@ -7,11 +7,32 @@ let active;
 const recipeURL = id => `recipes/${id}/`;
 const checked = new Map();
 const escape = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+const hiddenKey = 'recipe-book:hidden:v1';
+let hiddenRecipes = new Set();
+let hiddenReadError = false;
+try {
+  const saved = JSON.parse(localStorage.getItem(hiddenKey) || '[]');
+  if (!Array.isArray(saved) || saved.some(id=>typeof id!=='string')) throw Error('Invalid hidden recipe list');
+  hiddenRecipes = new Set(saved);
+} catch {hiddenReadError=true;}
+function setRecipeHidden(id, hidden, status) {
+  if(hiddenReadError){status.textContent='Could not read hidden recipes. Please reload before changing visibility.';return false;}
+  const next = new Set(hiddenRecipes);
+  hidden ? next.add(id) : next.delete(id);
+  try {localStorage.setItem(hiddenKey,JSON.stringify([...next]));hiddenRecipes=next;return true;}
+  catch {status.textContent='Could not save this change in your browser. Please try again.';return false;}
+}
 function renderList() {
   const query = search.value.trim().toLocaleLowerCase();
-  const matches = window.recipes.filter(r => (filter === 'All' || r.category === filter) && [r.name,r.subtitle || '',...r.ingredients.filter(Array.isArray).map(i=>i.join(' '))].join(' ').toLocaleLowerCase().includes(query));
+  const matches = window.recipes.filter(r => (filter === 'Hidden' ? hiddenRecipes.has(r.id) : !hiddenRecipes.has(r.id) && (filter === 'All' || r.category === filter)) && [r.name,r.subtitle || '',...r.ingredients.filter(Array.isArray).map(i=>i.join(' '))].join(' ').toLocaleLowerCase().includes(query));
   document.querySelector('#count').textContent = matches.length;
-  list.innerHTML = matches.map(r => `<a href="${recipeURL(r.id)}" ${r.id === active?.id ? 'aria-current="page"' : ''}><img class="recipe-thumb" src="images/${r.image || r.id}.webp" alt="" width="46" height="46"><span>${escape(r.name)}<small>${escape(r.category)} · ${escape(r.time)}</small></span></a>`).join('') || '<p class="empty">No recipes found. Try another ingredient or category.</p>';
+  document.querySelector('[data-filter="Hidden"]').textContent = `Hidden${hiddenRecipes.size ? ` (${hiddenRecipes.size})` : ''}`;
+  list.innerHTML = matches.map(r => `<article class="recipe-card"><a href="${recipeURL(r.id)}"><img class="recipe-thumb" src="images/${r.image || r.id}.webp" alt="" width="46" height="46"><span>${escape(r.name)}<small>${escape(r.category)} · ${escape(r.time)}</small></span></a><button class="hide-recipe" type="button" data-visibility="${r.id}" aria-label="${hiddenRecipes.has(r.id)?'Restore':'Hide'} ${escape(r.name)}">${hiddenRecipes.has(r.id)?'Restore recipe':'Hide recipe'}</button></article>`).join('') || `<p class="empty">${filter==='Hidden'?'No hidden recipes match.':'No recipes found. Try another ingredient or category.'}</p>`;
+  list.querySelectorAll('[data-visibility]').forEach(button=>button.addEventListener('click',()=>{
+    const id=button.dataset.visibility;const hide=!hiddenRecipes.has(id);const status=document.querySelector('.collection-status');
+    if(setRecipeHidden(id,hide,status)){renderList();status.textContent=`${window.recipes.find(r=>r.id===id).name} ${hide?'hidden. You can restore it from Hidden.':'restored.'}`;}
+  }));
+  if(hiddenReadError)document.querySelector('.collection-status').textContent='Hidden recipes could not be read. Your recipe notes are unchanged.';
 }
 function selectRecipe() {
   active = window.recipes.find(r => r.id === document.body.dataset.recipe);
@@ -23,6 +44,16 @@ function selectRecipe() {
   document.querySelectorAll('.ingredients input').forEach(input=>input.addEventListener('change',()=>{const state=checked.get(active.id)||new Set();const i=Number(input.dataset.index);input.checked?state.add(i):state.delete(i);checked.set(active.id,state);}));
   document.querySelector('#print').addEventListener('click',()=>window.print());
   window.mountRecipeJournal(active);
+  const preference=document.createElement('div');preference.className='recipe-preference';
+  preference.innerHTML='<button type="button" class="journal-secondary"></button><span role="status" aria-live="polite"></span>';
+  document.querySelector('.recipe-footer').before(preference);
+  const visibilityButton=preference.querySelector('button');
+  const refreshVisibility=()=>visibilityButton.textContent=hiddenRecipes.has(active.id)?'Restore recipe':'Hide recipe';
+  refreshVisibility();
+  visibilityButton.addEventListener('click',()=>{
+    const hide=!hiddenRecipes.has(active.id);const status=preference.querySelector('[role="status"]');
+    if(setRecipeHidden(active.id,hide,status)){refreshVisibility();status.textContent=hide?'Hidden from your collection. Notes and cooking history are kept.':'Restored to your collection.';}
+  });
 }
 search.addEventListener('input',renderList);
 document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{filter=button.dataset.filter;document.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));renderList();}));

@@ -1,4 +1,4 @@
-// Recipe content transcribed from the five supplied PDFs. Keep quantities in source units.
+// Recipe content from supplied PDFs and personal adaptations. Keep quantities in source units.
 window.recipes = [
   {
     id: 'muhammara', name: 'Muhammara', category: 'Dips', subtitle: 'Red pepper & walnut spread', time: '5 min + pepper prep', yield: 'About 1½ cups', source: 'Ana Sortun · Adapted by The New York Times',
@@ -42,5 +42,84 @@ window.recipes = [
     id: 'greek-salad', name: 'Greek Salad', category: 'Salads', time: '50 min', yield: 'Serves 6', source: 'Ina Garten · Food Network',
     ingredients: [['1', 'hothouse cucumber, unpeeled, seeded, and sliced ¼ inch thick'], ['1', 'red bell pepper, large-diced'], ['1', 'yellow bell pepper, large-diced'], ['1 pint', 'cherry or grape tomatoes, halved'], ['½', 'red onion, sliced in half-rounds'], ['½ lb', 'feta cheese, cut into ½-inch dice (not crumbled)'], ['½ cup', 'Kalamata olives, pitted'], {group: 'Vinaigrette'}, ['2 cloves', 'garlic, minced'], ['1 tsp', 'dried oregano'], ['½ tsp', 'Dijon mustard'], ['¼ cup', 'red wine vinegar'], ['1 tsp', 'kosher salt'], ['½ tsp', 'freshly ground black pepper'], ['½ cup', 'olive oil']],
     steps: [['Combine the vegetables', 'Place the cucumber, peppers, tomatoes, and red onion in a large bowl.'], ['Make the vinaigrette', 'In a small bowl, whisk together the garlic, oregano, mustard, vinegar, salt, and pepper. While whisking, slowly add the olive oil to form an emulsion.'], ['Dress & rest', 'Pour the vinaigrette over the vegetables. Add the feta and olives and toss lightly. Set aside for 30 minutes to let the flavors blend. Serve at room temperature.']]
-  }
+  },
+{
+  "id": "maple-roasted-squash",
+  "name": "Maple-Roasted Squash With Charred Lemon",
+  "category": "Sides",
+  "subtitle": "Costco pre-cut squash · 2 lb batch",
+  "time": "25–35 min roasting",
+  "yield": "Serves 4",
+  "source": "Adapted from Melissa Clark · NYT Cooking",
+  "photoCredit": "Linda Xiao / The New York Times · Food stylist: Monica Pierini",
+  "photoSource": "https://www.myersgroupwellness.com/blog/maple-roasted-squash-with-charred-lemon",
+  "ingredients": [
+    [
+      "2 lb",
+      "butternut squash, pre-cut cubes"
+    ],
+    [
+      "3 tbsp",
+      "maple syrup (use 2 tbsp if serving with sweet miso-glazed cod)"
+    ],
+    [
+      "2 tbsp",
+      "unsalted butter"
+    ],
+    [
+      "1",
+      "lemon (½ for roasting, ½ for juice)"
+    ],
+    [
+      "2 tsp",
+      "olive oil"
+    ],
+    [
+      "½ tsp",
+      "ground cardamom"
+    ],
+    [
+      "½ tsp",
+      "coriander seeds, lightly crushed"
+    ],
+    [
+      "¼ tsp",
+      "fine sea salt, plus more to taste"
+    ],
+    [
+      "Pinch",
+      "chile powder"
+    ],
+    [
+      "",
+      "Fresh herbs, optional"
+    ]
+  ],
+  "steps": [
+    [
+      "Preheat",
+      "Preheat oven to 425°F. Line a large baking sheet with parchment paper."
+    ],
+    [
+      "Prepare the lemon",
+      "Thinly slice half the lemon. Simmer slices in salted water for 2 minutes, then drain."
+    ],
+    [
+      "Make the glaze",
+      "In a small saucepan, melt butter with maple syrup and chile powder. Simmer for 2 minutes."
+    ],
+    [
+      "Season the squash",
+      "Toss squash cubes with olive oil, cardamom, coriander and salt. Add the maple-butter glaze and lemon slices, tossing to coat."
+    ],
+    [
+      "Roast",
+      "Spread in a single layer on the baking sheet. Roast for 25–35 minutes, turning halfway, until golden and tender."
+    ],
+    [
+      "Finish",
+      "Squeeze the remaining lemon half over the squash. Garnish with fresh herbs if desired."
+    ]
+  ]
+}
 ];

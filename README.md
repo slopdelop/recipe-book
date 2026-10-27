@@ -20,6 +20,10 @@ Open the published site in Safari and choose File → Add to Dock. Ingredient ch
 
 No offline caching is included.
 
+## Hidden recipes
+
+Hide a recipe from its collection card or from the bottom of its cooking page. Normal collection filters exclude it. The Hidden filter lists hidden recipes and provides Restore recipe. Direct recipe links still open; hiding leaves notes and cooking history untouched. Visibility preferences are saved in this browser/device under `recipe-book:hidden:v1`.
+
 ## Notes and cooking history
 
 Each recipe has a journal at the bottom. Notes are stamped with their creation date and time. Use I made this to log the cooking date/time, an optional 1–5 rating, and optional notes for that batch. Each session has its own rating, which can be changed later. Checking every ingredient offers a reminder to log a cook, but never logs one automatically.
@@ -30,7 +34,7 @@ Journal data is stored in localStorage under `recipe-book:journal:v1:<recipe-id>
 
 The homepage is a searchable recipe collection. Each recipe opens a dedicated page at `recipes/<id>/` with a full-width photo, the recipe name over a dark gradient, and ingredients and steps beneath. Cooking pages have only an All recipes link and Print recipe button. Old `#<id>` links redirect to the matching page.
 
-The five static page shells share `app.js`, `recipes.js`, and `style.css` through a relative base URL. When adding a new recipe, copy an existing shell and change its `data-recipe` ID and document title. Keep shared asset version query strings consistent across the homepage and shells when changing scripts or styles.
+The static page shells share `app.js`, `recipes.js`, and `style.css` through a relative base URL. When adding a new recipe, copy an existing shell and change its `data-recipe` ID and document title. Keep shared asset version query strings consistent across the homepage and shells when changing scripts or styles.
 
 ## Photos and ingredient colors
 
