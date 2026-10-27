@@ -1,4 +1,4 @@
-// Stable step IDs keep progress and timers attached when steps are reordered.
+// Stable step IDs preserve cooking progress.
 window.retiredRecipeIds = ["onions"];
 window.recipes = [
   {
@@ -83,6 +83,12 @@ window.recipes = [
     ],
     "tags": [
       "Dip"
+    ],
+    "displaySource": "NYT Cooking",
+    "meals": [
+      "Lunch",
+      "Dinner",
+      "Snack"
     ]
   },
   {
@@ -159,6 +165,11 @@ window.recipes = [
     ],
     "tags": [
       "Side dish"
+    ],
+    "displaySource": "NYT Cooking",
+    "meals": [
+      "Lunch",
+      "Dinner"
     ]
   },
   {
@@ -271,6 +282,11 @@ window.recipes = [
     "tags": [
       "Salad",
       "Side dish"
+    ],
+    "displaySource": "The Mediterranean Dish",
+    "meals": [
+      "Lunch",
+      "Dinner"
     ]
   },
   {
@@ -377,6 +393,11 @@ window.recipes = [
     "tags": [
       "Salad",
       "Side dish"
+    ],
+    "displaySource": "Ina Garten",
+    "meals": [
+      "Lunch",
+      "Dinner"
     ]
   },
   {
@@ -509,6 +530,11 @@ window.recipes = [
     ],
     "tags": [
       "Side dish"
+    ],
+    "displaySource": "Melissa Clark",
+    "meals": [
+      "Lunch",
+      "Dinner"
     ]
   },
   {
@@ -519,7 +545,7 @@ window.recipes = [
     "yield": "Serves 2",
     "source": "Laura Calder · Food Network",
     "sourceUrl": "https://www.foodnetwork.com/recipes/pork-chops-with-red-onion-confit-2119511",
-    "photoCredit": "AI-generated illustrative image",
+    "photoCredit": "AI-generated illustration",
     "ingredients": [
       [
         "1",
@@ -636,7 +662,13 @@ window.recipes = [
     ],
     "tags": [
       "Main dish"
-    ]
+    ],
+    "displaySource": "Food Network",
+    "meals": [
+      "Lunch",
+      "Dinner"
+    ],
+    "image": "pork-chops-bistro"
   },
   {
     "id": "roast-carrot-avocado-salad",
@@ -794,6 +826,11 @@ window.recipes = [
     "tags": [
       "Salad",
       "Side dish"
+    ],
+    "displaySource": "Jamie Oliver",
+    "meals": [
+      "Lunch",
+      "Dinner"
     ]
   },
   {
@@ -898,6 +935,11 @@ window.recipes = [
           "id": "serve"
         }
       ]
+    ],
+    "displaySource": "Weber",
+    "meals": [
+      "Lunch",
+      "Dinner"
     ]
   },
   {
@@ -998,6 +1040,11 @@ window.recipes = [
           "id": "serve"
         }
       ]
+    ],
+    "displaySource": "Weber",
+    "meals": [
+      "Lunch",
+      "Dinner"
     ]
   },
   {
@@ -1100,6 +1147,668 @@ window.recipes = [
         "Serve the corn warm, spreading the remaining herb, Parmesan and lemon butter over it.",
         {
           "id": "serve"
+        }
+      ]
+    ],
+    "displaySource": "Weber",
+    "meals": [
+      "Lunch",
+      "Dinner"
+    ]
+  },
+  {
+    "id": "quick-chili",
+    "name": "Quick Chili",
+    "category": "Mains",
+    "tags": [
+      "Main dish"
+    ],
+    "meals": [
+      "Lunch",
+      "Dinner"
+    ],
+    "subtitle": "Double batch · turkey or beef",
+    "time": "About 35 min",
+    "yield": "Serves 8",
+    "displaySource": "WeightWatchers",
+    "source": "Adapted from WeightWatchers · doubled with your changes",
+    "sourceUrl": "https://www.weightwatchers.com/us/recipe/quick-vegetarian-chili/5626a608271fc584086c8377",
+    "photoCredit": "WeightWatchers · original vegetarian version",
+    "ingredients": [
+      [
+        "4 tsp",
+        "olive oil"
+      ],
+      [
+        "1 lb",
+        "ground turkey or ground beef"
+      ],
+      [
+        "2 cloves",
+        "garlic, minced"
+      ],
+      [
+        "2 × 14½ oz cans",
+        "stewed tomatoes"
+      ],
+      [
+        "2 × 15 oz cans",
+        "kidney beans, rinsed and drained"
+      ],
+      [
+        "2 × 15¼ oz cans",
+        "yellow corn, drained"
+      ],
+      [
+        "2 × 15 oz cans",
+        "tomato sauce"
+      ],
+      [
+        "2 tbsp",
+        "chili powder"
+      ],
+      [
+        "1 tsp",
+        "dried oregano"
+      ],
+      [
+        "1 tsp",
+        "crushed red pepper flakes"
+      ],
+      [
+        "¼ cup",
+        "dehydrated onion flakes"
+      ],
+      [
+        "½ tsp",
+        "kosher salt"
+      ],
+      [
+        "½ tsp",
+        "black pepper"
+      ],
+      [
+        "½ cup",
+        "reduced-fat sharp cheddar, shredded"
+      ]
+    ],
+    "steps": [
+      [
+        "Brown the meat",
+        "Heat the olive oil in a large pot over medium heat. Add the ground turkey or ground beef and cook, breaking it up, until cooked through. Drain excess fat if needed.",
+        {
+          "id": "chili-brown"
+        }
+      ],
+      [
+        "Add garlic",
+        "Stir in the garlic and cook for 2 minutes, stirring.",
+        {
+          "id": "chili-garlic",
+          "timers": [
+            {
+              "id": "chili-garlic-timer",
+              "legacyId": "chili-garlic-timer",
+              "label": "Chili garlic",
+              "value": 2,
+              "unit": "minutes",
+              "phrase": "2 minutes"
+            }
+          ]
+        }
+      ],
+      [
+        "Cook the chili",
+        "Add the tomatoes, kidney beans, corn, tomato sauce, chili powder, oregano, red pepper flakes, onion flakes, salt and black pepper. Bring to a boil, then cook for 5 minutes, stirring frequently, until thickened.",
+        {
+          "id": "chili-simmer",
+          "timers": [
+            {
+              "id": "chili-simmer-timer",
+              "legacyId": "chili-simmer-timer",
+              "label": "Chili",
+              "value": 5,
+              "unit": "minutes",
+              "phrase": "5 minutes"
+            }
+          ]
+        }
+      ],
+      [
+        "Serve",
+        "Ladle into bowls and sprinkle with cheddar.",
+        {
+          "id": "chili-serve"
+        }
+      ]
+    ]
+  },
+  {
+    "category": "Baking",
+    "tags": [
+      "Baking"
+    ],
+    "meals": [
+      "Dessert",
+      "Snack"
+    ],
+    "photoCredit": "AI-generated illustration",
+    "id": "cranberry-white-chocolate-cookies",
+    "name": "Rich and Chewy Cranberry White Chocolate Cookies",
+    "subtitle": "Mabel’s recipe",
+    "time": "12–15 min baking",
+    "yield": "1 batch",
+    "displaySource": "Mabel",
+    "source": "Mabel",
+    "ingredients": [
+      [
+        "⅔ cup",
+        "unsalted butter, melted and cooled until slightly warm"
+      ],
+      [
+        "1½ cups",
+        "light brown sugar"
+      ],
+      [
+        "2 tbsp",
+        "honey"
+      ],
+      [
+        "1",
+        "large egg"
+      ],
+      [
+        "1 tsp",
+        "vanilla extract"
+      ],
+      [
+        "2 cups",
+        "all-purpose flour"
+      ],
+      [
+        "½ cup",
+        "old-fashioned oats"
+      ],
+      [
+        "½ tsp",
+        "baking soda"
+      ],
+      [
+        "½ tsp",
+        "salt"
+      ],
+      [
+        "½ tsp",
+        "cinnamon"
+      ],
+      [
+        "1 cup",
+        "dried sweetened cranberries"
+      ],
+      [
+        "½ cup",
+        "chopped toasted hazelnuts or pecans"
+      ],
+      [
+        "¾ cup",
+        "white chocolate chips"
+      ]
+    ],
+    "steps": [
+      [
+        "Heat the oven",
+        "Preheat the oven to 350°F.",
+        {
+          "id": "cranberry-preheat"
+        }
+      ],
+      [
+        "Mix the wet ingredients",
+        "By hand or with a mixer, blend the butter, brown sugar and honey. Add the egg and vanilla and mix well.",
+        {
+          "id": "cranberry-wet"
+        }
+      ],
+      [
+        "Add the dry ingredients",
+        "In a large bowl, stir together the flour, oats, baking soda, salt and cinnamon. Add to the butter mixture and mix until well combined. Stir in the cranberries, nuts and white chocolate chips.",
+        {
+          "id": "cranberry-dry"
+        }
+      ],
+      [
+        "Scoop and flatten",
+        "Use a 1½-inch ice cream scoop. Place the dough 2 inches apart on an ungreased baking sheet, then flatten it on the tray.",
+        {
+          "id": "cranberry-shape"
+        }
+      ],
+      [
+        "Bake",
+        "Bake in the center of the oven for 12–15 minutes, until the edges are lightly browned and the centers are still soft. For Mabel’s preferred crispier cookies, aim for 14–15 minutes. Do not overbake.",
+        {
+          "id": "cranberry-bake",
+          "timers": [
+            {
+              "id": "cranberry-bake-timer",
+              "legacyId": "cranberry-bake-timer",
+              "label": "Mabel’s cookies",
+              "value": 14,
+              "unit": "minutes",
+              "phrase": "14–15 minutes",
+              "range": true
+            }
+          ]
+        }
+      ]
+    ]
+  },
+  {
+    "category": "Baking",
+    "tags": [
+      "Baking"
+    ],
+    "meals": [
+      "Dessert",
+      "Snack"
+    ],
+    "photoCredit": "AI-generated illustration",
+    "id": "chocolate-fruit-cake",
+    "name": "Chocolate Fruit Cake",
+    "subtitle": "Nigella Lawson",
+    "time": "1¾–2 hr baking + cooling",
+    "yield": "One 8-inch cake",
+    "displaySource": "Nigella Lawson",
+    "source": "Nigella Lawson · Food Network",
+    "sourceUrl": "https://www.foodnetwork.com/recipes/nigella-lawson/chocolate-fruit-cake-recipe-1950827",
+    "ingredients": [
+      [
+        "350 g",
+        "soft dried prunes, chopped"
+      ],
+      [
+        "250 g",
+        "raisins"
+      ],
+      [
+        "125 g",
+        "currants"
+      ],
+      [
+        "175 g",
+        "unsalted butter, softened"
+      ],
+      [
+        "175 g",
+        "dark muscovado sugar"
+      ],
+      [
+        "175 ml",
+        "honey"
+      ],
+      [
+        "125 ml",
+        "coffee liqueur"
+      ],
+      [
+        "2",
+        "oranges, zested and juiced"
+      ],
+      [
+        "1 tsp",
+        "mixed spice"
+      ],
+      [
+        "2 tbsp",
+        "cocoa powder"
+      ],
+      [
+        "3",
+        "eggs, beaten"
+      ],
+      [
+        "150 g",
+        "all-purpose flour"
+      ],
+      [
+        "75 g",
+        "ground almonds"
+      ],
+      [
+        "½ tsp",
+        "baking powder"
+      ],
+      [
+        "½ tsp",
+        "baking soda"
+      ],
+      {
+        "group": "Optional decoration"
+      },
+      [
+        "25 g",
+        "dark chocolate-covered coffee beans"
+      ],
+      [
+        "",
+        "Edible glitter, gold mini balls and about 10 edible gold stars"
+      ]
+    ],
+    "steps": [
+      [
+        "Prepare the pan",
+        "Preheat the oven to 300°F (150°C). Line the base and sides of an 8-inch round, 3½-inch-deep loose-bottomed cake pan with parchment. Extend the parchment up to twice the height of the pan to protect the cake.",
+        {
+          "id": "fruit-preheat"
+        }
+      ],
+      [
+        "Simmer the fruit",
+        "Put the prunes, raisins, currants, butter, sugar, honey, coffee liqueur, orange zest and juice, mixed spice and cocoa in a wide saucepan. Bring gently to a boil, stirring as the butter melts. Simmer for 10 minutes.",
+        {
+          "id": "fruit-simmer",
+          "timers": [
+            {
+              "id": "fruit-simmer-timer",
+              "legacyId": "fruit-simmer-timer",
+              "label": "Fruit cake mixture",
+              "value": 10,
+              "unit": "minutes",
+              "phrase": "10 minutes"
+            }
+          ]
+        }
+      ],
+      [
+        "Cool the mixture",
+        "Remove from the heat and let stand for 30 minutes before adding the eggs.",
+        {
+          "id": "fruit-cool",
+          "timers": [
+            {
+              "id": "fruit-cool-timer",
+              "legacyId": "fruit-cool-timer",
+              "label": "Fruit cake cooling",
+              "value": 30,
+              "unit": "minutes",
+              "phrase": "30 minutes"
+            }
+          ]
+        }
+      ],
+      [
+        "Finish the batter",
+        "Add the beaten eggs, flour, ground almonds, baking powder and baking soda to the cooled mixture. Stir well and pour into the prepared pan.",
+        {
+          "id": "fruit-mix"
+        }
+      ],
+      [
+        "Bake",
+        "Bake for 105–120 minutes (1¾–2 hours). The top should be firm but sticky and shiny; a tester may still be slightly gooey in the center.",
+        {
+          "id": "fruit-bake",
+          "timers": [
+            {
+              "id": "fruit-bake-timer",
+              "legacyId": "fruit-bake-timer",
+              "label": "Chocolate fruit cake",
+              "value": 105,
+              "unit": "minutes",
+              "phrase": "105–120 minutes",
+              "range": true
+            }
+          ]
+        }
+      ],
+      [
+        "Cool and decorate",
+        "Cool completely in the pan on a rack before unmoulding. If desired, arrange the chocolate-covered coffee beans in the center, add gold stars around the edge, and scatter with gold mini balls and edible glitter.",
+        {
+          "id": "fruit-finish"
+        }
+      ]
+    ]
+  },
+  {
+    "category": "Baking",
+    "tags": [
+      "Baking"
+    ],
+    "meals": [
+      "Dessert",
+      "Snack"
+    ],
+    "photoCredit": "AI-generated illustration",
+    "id": "chewy-ginger-snaps",
+    "name": "The Ultimate Chewy Ginger Snaps",
+    "subtitle": "Crystallized ginger & molasses",
+    "time": "1 hr chilling · 8–10 min baking",
+    "yield": "Makes 2 dozen",
+    "displaySource": "The Ginger People",
+    "source": "The Ginger People · package recipe",
+    "ingredients": [
+      [
+        "2¼ cups + 2 tbsp",
+        "all-purpose flour"
+      ],
+      [
+        "½ tsp",
+        "ground cloves"
+      ],
+      [
+        "1 tsp",
+        "ground ginger"
+      ],
+      [
+        "1 tsp",
+        "cinnamon"
+      ],
+      [
+        "2 tsp",
+        "baking soda"
+      ],
+      [
+        "½ tsp",
+        "salt"
+      ],
+      [
+        "¾ cup (1½ sticks)",
+        "unsalted butter, softened"
+      ],
+      [
+        "1 cup",
+        "sugar"
+      ],
+      [
+        "¼ cup",
+        "blackstrap molasses"
+      ],
+      [
+        "1",
+        "large egg"
+      ],
+      [
+        "3½ oz (½ bag)",
+        "The Ginger People Crystallized Ginger Chips"
+      ],
+      [
+        "½ cup",
+        "coarse or raw sugar, for rolling"
+      ]
+    ],
+    "steps": [
+      [
+        "Heat the oven",
+        "Preheat the oven to 375°F. Line baking sheets with parchment.",
+        {
+          "id": "ginger-preheat"
+        }
+      ],
+      [
+        "Mix the dough",
+        "Sift together the flour, cloves, ground ginger, cinnamon, baking soda and salt. In a large bowl, beat the butter and sugar until light and creamy. Stir in the molasses and egg. Add the dry ingredients to the wet mixture and mix well. Stir in the crystallized ginger chips.",
+        {
+          "id": "ginger-mix"
+        }
+      ],
+      [
+        "Chill",
+        "For best results, chill the dough for 1 hour.",
+        {
+          "id": "ginger-chill",
+          "timers": [
+            {
+              "id": "ginger-chill-timer",
+              "legacyId": "ginger-chill-timer",
+              "label": "Ginger snap dough",
+              "value": 60,
+              "unit": "minutes",
+              "phrase": "1 hour"
+            }
+          ]
+        }
+      ],
+      [
+        "Shape",
+        "Form 1½-inch balls, roll in coarse sugar and place 2 inches apart on the parchment-lined baking sheets.",
+        {
+          "id": "ginger-shape"
+        }
+      ],
+      [
+        "Bake",
+        "Bake for 8–10 minutes, until the edges just start to set.",
+        {
+          "id": "ginger-bake",
+          "timers": [
+            {
+              "id": "ginger-bake-timer",
+              "legacyId": "ginger-bake-timer",
+              "label": "Ginger snaps",
+              "value": 8,
+              "unit": "minutes",
+              "phrase": "8–10 minutes",
+              "range": true
+            }
+          ]
+        }
+      ],
+      [
+        "Cool",
+        "Cool on the baking sheets for 2 minutes, then transfer to wire racks to cool completely.",
+        {
+          "id": "ginger-cool",
+          "timers": [
+            {
+              "id": "ginger-cool-timer",
+              "legacyId": "ginger-cool-timer",
+              "label": "Ginger snap cooling",
+              "value": 2,
+              "unit": "minutes",
+              "phrase": "2 minutes"
+            }
+          ]
+        }
+      ]
+    ]
+  },
+  {
+    "category": "Baking",
+    "tags": [
+      "Baking"
+    ],
+    "meals": [
+      "Dessert",
+      "Snack"
+    ],
+    "photoCredit": "AI-generated illustration",
+    "id": "chocolate-mochi",
+    "name": "Chocolate Mochi",
+    "subtitle": "A chewy chocolate tray bake",
+    "time": "45–55 min baking",
+    "yield": "Makes 48 pieces",
+    "displaySource": "Family recipe",
+    "source": "Family recipe · provided by you",
+    "ingredients": [
+      [
+        "2 cups",
+        "mochiko (sweet rice flour)"
+      ],
+      [
+        "2 cups",
+        "sugar"
+      ],
+      [
+        "1 tbsp",
+        "baking soda"
+      ],
+      [
+        "½ cup",
+        "butter"
+      ],
+      [
+        "1 cup",
+        "semi-sweet chocolate chips"
+      ],
+      [
+        "2 × 12 oz cans",
+        "evaporated milk"
+      ],
+      [
+        "2 tsp",
+        "vanilla extract"
+      ],
+      [
+        "2",
+        "eggs, beaten"
+      ]
+    ],
+    "steps": [
+      [
+        "Prepare the pan",
+        "Preheat the oven to 350°F, or 325°F for a Pyrex baking dish. Grease a 9 × 13-inch pan.",
+        {
+          "id": "mochi-preheat"
+        }
+      ],
+      [
+        "Sift the dry ingredients",
+        "Sift the mochiko, sugar and baking soda into a large bowl.",
+        {
+          "id": "mochi-dry"
+        }
+      ],
+      [
+        "Melt and combine",
+        "Melt the butter and chocolate chips together. Combine with the evaporated milk, vanilla and beaten eggs. Mix well, then stir into the dry ingredients.",
+        {
+          "id": "mochi-wet"
+        }
+      ],
+      [
+        "Bake",
+        "Pour into the prepared pan and bake for 45–55 minutes.",
+        {
+          "id": "mochi-bake",
+          "timers": [
+            {
+              "id": "mochi-bake-timer",
+              "legacyId": "mochi-bake-timer",
+              "label": "Chocolate mochi",
+              "value": 45,
+              "unit": "minutes",
+              "phrase": "45–55 minutes",
+              "range": true
+            }
+          ]
+        }
+      ],
+      [
+        "Cool and cut",
+        "Let cool, then cut with a plastic knife into 48 pieces.",
+        {
+          "id": "mochi-cool"
         }
       ]
     ]

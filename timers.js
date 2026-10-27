@@ -2,7 +2,8 @@
   const D=RecipeData,T=RecipeTimerState,key='recipe-book:timers:v1',units={seconds:1,minutes:60,hours:3600},safe=D.escape;
   const legacy={};for(const recipe of window.recipes)for(const step of recipe.steps)for(const timer of step[2]?.timers||[])legacy[timer.legacyId]=`${recipe.id}:${step[2].id}:${timer.id}`;
   const durationLabel=(value,unit)=>`${value} ${value===1?unit.replace(/s$/, ''):unit}`;
-  let timers=[],audio,audioEnabled=false,tickPending=false,queue=Promise.resolve();
+  const extensionLabel=timer=>{const ms=T.suggestedExtension(timer);return ms<60000?durationLabel(ms/1000,'seconds'):durationLabel(ms/60000,'minutes');};
+  let timers=[],audio,audioEnabled=false,tickPending=false,queue=Promise.resolve(),activePlayback;
   const tray=document.createElement('aside');tray.className='timer-tray';tray.setAttribute('aria-label','Kitchen timers');tray.hidden=true;
   tray.innerHTML='<details open><summary>Kitchen timers <span class="timer-count"></span></summary><div class="timer-items"></div></details><button class="timer-enable-audio" type="button">Enable sound & voice</button><p class="timer-storage-message" role="status"></p>';
   document.body.append(tray);
@@ -16,34 +17,49 @@
     catch{audioEnabled=false;message.textContent='Sound could not be enabled. Finished timers will still appear here.';}
     tray.querySelector('.timer-enable-audio').hidden=audioEnabled;
   }
-  const delay=ms=>new Promise(resolve=>setTimeout(resolve,ms));
-  function tune(){
-    if(audio?.state!=='running')return 0;
-    const start=audio.currentTime;
-    [523.25,659.25,783.99,1046.5].forEach((frequency,i)=>{
-      const oscillator=audio.createOscillator(),gain=audio.createGain(),at=start+i*.19;
-      oscillator.type='sine';oscillator.frequency.value=frequency;gain.gain.setValueAtTime(0,at);gain.gain.linearRampToValueAtTime(.16,at+.015);gain.gain.exponentialRampToValueAtTime(.001,at+.32);oscillator.connect(gain);gain.connect(audio.destination);oscillator.start(at);oscillator.stop(at+.34);oscillator.onended=()=>{oscillator.disconnect();gain.disconnect();};
-    });return 1100;
+  function stopPlayback(){
+    const playing=activePlayback;if(!playing)return;playing.cancelled=true;
+    for(const oscillator of playing.tones)try{oscillator.stop();}catch{}
+    playing.finishTune?.();
+    if(playing.speech){speechSynthesis.cancel();playing.finishSpeech?.();}
   }
-  const validSignal=async event=>{if(!event)return true;const latest=(await read()).find(t=>t.runId===event.runId);return latest&&(event.type==='complete'?latest.phase==='finished':latest.phase==='running'&&!latest.events.complete);};
-  function say(text,event){
-    queue=queue.catch(()=>{}).then(async()=>{
-      if(!audioEnabled||!await validSignal(event))return;
-      await delay(tune());if(!await validSignal(event))return;
-      if(!('speechSynthesis' in window)){message.textContent='Voice is unavailable in this browser. The tune and on-screen timer still work.';return;}
-      await new Promise(resolve=>{
-        const speech=new SpeechSynthesisUtterance(text);speech.rate=.95;
-        const voices=speechSynthesis.getVoices(),voice=voices.find(v=>/^en\b/i.test(v.lang)&&/Samantha|natural/i.test(v.name))||voices.find(v=>/^en\b/i.test(v.lang));
-        if(voice){speech.voice=voice;speech.lang=voice.lang;}
-        const timeout=setTimeout(resolve,30000);speech.onend=()=>{clearTimeout(timeout);resolve();};speech.onerror=()=>{clearTimeout(timeout);message.textContent='Voice could not play. Check your sound settings; completion is shown above.';resolve();};speechSynthesis.speak(speech);
+  function reconcileSound(){if(activePlayback?.event&&!T.isSignalValid(timers,activePlayback.event))stopPlayback();}
+  function tune(playing){
+    if(audio?.state!=='running')return Promise.resolve();
+    return new Promise(resolve=>{
+      const timeout=setTimeout(()=>playing.finishTune?.(),1100);
+      playing.finishTune=()=>{clearTimeout(timeout);playing.finishTune=null;resolve();};
+      const start=audio.currentTime;
+      [523.25,659.25,783.99,1046.5].forEach((frequency,i)=>{
+        const oscillator=audio.createOscillator(),gain=audio.createGain(),at=start+i*.19;playing.tones.add(oscillator);
+        oscillator.type='sine';oscillator.frequency.value=frequency;gain.gain.setValueAtTime(0,at);gain.gain.linearRampToValueAtTime(.16,at+.015);gain.gain.exponentialRampToValueAtTime(.001,at+.32);oscillator.connect(gain);gain.connect(audio.destination);oscillator.start(at);oscillator.stop(at+.34);oscillator.onended=()=>{playing.tones.delete(oscillator);oscillator.disconnect();gain.disconnect();};
       });
     });
   }
+  const validSignal=async event=>!event||T.isSignalValid(await read(),event);
+  function say(text,event){
+    queue=queue.catch(()=>{}).then(async()=>{
+      if(!audioEnabled||!await validSignal(event))return;
+      const playing={event,tones:new Set(),cancelled:false};activePlayback=playing;
+      try{
+      await tune(playing);if(playing.cancelled||!await validSignal(event)||event?.type==='repeat')return;
+      if(!('speechSynthesis' in window)){message.textContent='Voice is unavailable in this browser. The tune and on-screen timer still work.';return;}
+      await new Promise(resolve=>{
+        const speech=new SpeechSynthesisUtterance(text);speech.rate=.95;playing.speech=speech;
+        const voices=speechSynthesis.getVoices(),voice=voices.find(v=>/^en\b/i.test(v.lang)&&/Samantha|natural/i.test(v.name))||voices.find(v=>/^en\b/i.test(v.lang));
+        if(voice){speech.voice=voice;speech.lang=voice.lang;}
+        const finish=()=>{clearTimeout(timeout);playing.speech=null;playing.finishSpeech=null;resolve();};
+        const timeout=setTimeout(()=>{speechSynthesis.cancel();finish();},30000);playing.finishSpeech=finish;
+        speech.onend=finish;speech.onerror=()=>{if(!playing.cancelled)message.textContent='Voice could not play. Check your sound settings; completion is shown above.';finish();};speechSynthesis.speak(speech);
+      });
+      }finally{if(activePlayback===playing)activePlayback=null;}
+    });
+  }
   tray.querySelector('.timer-enable-audio').addEventListener('click',async()=>{await unlockAudio();say('Kitchen timer sound is ready.');});
-  async function change(action){
+  async function change(action,focusHint){
     const out=await D.update(key,[],raw=>T.transition(T.normalize(raw,legacy),{...action,announce:audioEnabled},Date.now(),()=>crypto.randomUUID()));
-    timers=out.value;render();
-    for(const event of out.result?.events||[]){alert.textContent=event.text;say(event.text,event);}
+    timers=out.value;reconcileSound();render(focusHint);if(out.result?.applied&&action.type!=='tick')message.textContent='';
+    for(const event of out.result?.events||[]){if(event.type!=='repeat')alert.textContent=event.text;say(event.text,event);}
     return out;
   }
   function sync(){
@@ -56,19 +72,33 @@
       if(busy&&units[timer.unit]){group.querySelector('select').value=timer.unit;group.querySelector('input[type=number]').value=timer.duration/1000/units[timer.unit];}
     });
   }
-  function render(){
+  function render(focusHint){
+    const focused=tray.querySelector('[data-action]:focus'),focus=focusHint||(focused?{run:focused.dataset.run,definition:focused.closest('.timer-card').dataset.definition,action:focused.dataset.action}:null);
     const list=visible();tray.hidden=!list.length;tray.querySelector('.timer-count').textContent=list.length;tray.querySelector('.timer-enable-audio').hidden=audioEnabled;
     const oldOpen=tray.querySelector('details').open;
-    tray.querySelector('.timer-items').innerHTML=list.map(t=>`<div class="timer-card ${t.phase==='finished'?'timer-finished':''}"><div class="timer-card-heading"><strong>${safe(t.label)}</strong><output class="timer-countdown" data-run="${safe(t.runId)}" aria-live="off">${t.phase==='finished'?'Done':format(T.remaining(t,Date.now()))}</output></div><small>${safe(t.recipe)}${t.phase==='paused'?' · Paused':''}</small><div class="timer-actions">${t.phase==='finished'?`<button type="button" data-action="restart" data-run="${safe(t.runId)}">Restart</button><button type="button" data-action="dismiss" data-run="${safe(t.runId)}">Dismiss</button>`:`<button type="button" data-action="${t.phase==='running'?'pause':'resume'}" data-run="${safe(t.runId)}">${t.phase==='running'?'Pause':'Resume'}</button><button type="button" data-action="cancel" data-run="${safe(t.runId)}">Cancel</button>`}</div></div>`).join('');
+    tray.querySelector('.timer-items').innerHTML=list.map(t=>{
+      const add=`<button type="button" class="timer-extend" data-action="extend" data-run="${safe(t.runId)}" title="Suggested from the original timer duration" aria-label="Add ${safe(extensionLabel(t))} to ${safe(t.label)}">Add ${safe(extensionLabel(t))}</button>`;
+      const actions=t.phase==='finished'?`<button type="button" class="timer-dismiss" data-action="dismiss" data-run="${safe(t.runId)}">Dismiss</button>${add}`:`${add}<button type="button" data-action="${t.phase==='running'?'pause':'resume'}" data-run="${safe(t.runId)}">${t.phase==='running'?'Pause':'Resume'}</button><button type="button" class="timer-cancel" data-action="cancel" data-run="${safe(t.runId)}">Cancel</button>`;
+      return `<div class="timer-card ${t.phase==='finished'?'timer-finished':''}" data-definition="${safe(t.definitionId)}"><div class="timer-card-heading"><strong>${safe(t.label)}</strong><output class="timer-countdown" data-run="${safe(t.runId)}" aria-live="off">${t.phase==='finished'?'Done':format(T.remaining(t,Date.now()))}</output></div><small>${safe(t.recipe)}${t.phase==='paused'?' · Paused':''}</small><div class="timer-actions">${actions}</div>${t.phase==='finished'?`<p class="timer-repeat-note">${audioEnabled?'Chimes every 10 seconds until dismissed or more time is added.':'Enable sound for repeating alerts every 10 seconds.'}</p>`:''}</div>`;
+    }).join('');
     tray.querySelector('details').open=oldOpen;
     tray.querySelectorAll('[data-action]').forEach(button=>button.addEventListener('click',async()=>{
-      const ready=unlockAudio();try{await change({type:button.dataset.action,runId:button.dataset.run});await ready;}catch(error){D.error(message,error);}
+      const type=button.dataset.action,runId=button.dataset.run,timer=timers.find(t=>t.runId===runId),label=timer&&extensionLabel(timer);
+      const focusHint={run:runId,definition:button.closest('.timer-card').dataset.definition,action:type};button.disabled=true;
+      const ready=['extend','resume'].includes(type)?unlockAudio():Promise.resolve();
+      try{const out=await change({type,runId},focusHint);await ready;if(type==='extend'&&out.result?.applied)alert.textContent=`Added ${label} to ${timer.label}.`;}
+      catch(error){D.error(message,error);button.disabled=false;}
     }));sync();
+    if(focus){
+      const buttons=[...tray.querySelectorAll('[data-action]')],action=focus.action==='pause'?'resume':focus.action==='resume'?'pause':focus.action;
+      const target=buttons.find(b=>b.dataset.run===focus.run&&b.dataset.action===focus.action)||buttons.find(b=>b.dataset.run===focus.run&&b.dataset.action===action)||buttons.find(b=>b.closest('.timer-card').dataset.definition===focus.definition&&b.dataset.action===focus.action)||(!tray.hidden?tray.querySelector('summary'):null);
+      target?.focus({preventScroll:true});
+    }
   }
   async function tick(){
     const now=Date.now();let needsChange=false;
     for(const timer of timers){
-      if(audioEnabled&&timer.phase==='finished'&&!timer.events.complete)needsChange=true;
+      if(audioEnabled&&timer.phase==='finished'&&(!timer.events.complete||!Number.isFinite(timer.lastAlertAt)||now-timer.lastAlertAt>=T.repeatInterval))needsChange=true;
       if(timer.phase!=='running')continue;const left=T.remaining(timer,now);
       if(!left||(audioEnabled&&timer.halfway&&!timer.events.halfway&&left<=timer.duration/2))needsChange=true;
       const output=[...tray.querySelectorAll('[data-run].timer-countdown')].find(e=>e.dataset.run===timer.runId);if(output&&output.textContent!==format(left))output.textContent=format(left);
@@ -114,7 +144,7 @@
     }
     try{timers=await read();render();await tick();}catch(error){D.error(message,error);tray.hidden=false;}
   };
-  D.subscribe(key,async()=>{try{timers=await read();render();}catch(error){D.error(message,error);}});
+  D.subscribe(key,async()=>{try{timers=await read();reconcileSound();render();}catch(error){D.error(message,error);}});
   window.addEventListener('pageshow',async()=>{try{timers=await read();render();await tick();}catch(error){D.error(message,error);}});
   document.addEventListener('visibilitychange',tick);setInterval(tick,250);
 })();

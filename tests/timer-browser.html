@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><base href="../"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Timer controls browser test</title><link rel="stylesheet" href="style.css?v=22">
+<script>
+// Isolated manual browser harness. Pages publishing excludes tests/.
+// Count audio effects visibly without playing sound during regression checks.
+const effect=(name)=>{const el=document.querySelector('[data-effect="'+name+'"]');el.textContent=Number(el.textContent)+1;};
+class TestAudio {
+  constructor(){this.state='running';this.destination={};}
+  get currentTime(){return Date.now()/1000;}
+  async resume(){this.state='running';}
+  createGain(){return {gain:{setValueAtTime(){},linearRampToValueAtTime(){},exponentialRampToValueAtTime(){}},connect(){},disconnect(){}};}
+  createOscillator(){const context=this;return {frequency:{value:0},connect(){},disconnect(){},start(){if(this.frequency.value===523.25){effect('chimes');document.querySelector('#chime-times').textContent+=Date.now()+' ';}},stop(at){if(at===undefined){effect('stops');this.onended?.();}else setTimeout(()=>this.onended?.(),Math.max(0,(at-context.currentTime)*1000));}};}
+}
+window.AudioContext=TestAudio;window.SpeechSynthesisUtterance=class {constructor(text){this.text=text;}};
+let testSpeech;Object.defineProperty(window,'speechSynthesis',{configurable:true,value:{getVoices:()=>[],speak(speech){testSpeech=speech;effect('voices');setTimeout(()=>{if(testSpeech===speech){testSpeech=null;speech.onend?.();}},document.querySelector('#hold-speech').checked?60000:50);},cancel(){effect('voice-cancels');testSpeech?.onend?.();testSpeech=null;}}});
+window.recipes=[{id:'timer-test',name:'Timer test recipe',steps:[['Parboil test carrots','Simmer for 2 seconds.',{id:'simmer',timers:[{id:'simmer',label:'Parboil test carrots',value:2,unit:'seconds',phrase:'2 seconds',legacyId:'qa-simmer'}]}]]}];
+document.addEventListener('DOMContentLoaded',()=>{
+  mountRecipeTimers(window.recipes[0]);
+  document.querySelector('#overdue').addEventListener('click',async()=>{
+    await RecipeData.update('recipe-book:timers:v1',[],raw=>RecipeTimerState.transition(RecipeTimerState.normalize(raw),{type:'start',spec:{definitionId:'qa:ten-minute',label:'Parboil carrots',recipe:'Roast Carrot and Avocado Salad',duration:600000,unit:'minutes',halfway:false}},Date.now()-600001,()=>crypto.randomUUID()));
+  });
+});
+</script>
+<script src="data.js?v=13" defer></script><script src="timer-state.js?v=22" defer></script><script src="timers.js?v=22" defer></script></head>
+<body><main style="max-width:900px;padding:32px;margin:auto"><h1 style="font-size:32px">Timer controls test</h1><p>Synthetic timers only. Audio is counted instead of played.</p><p>Chimes: <output data-effect="chimes">0</output> · Voices: <output data-effect="voices">0</output> · Tone stops: <output data-effect="stops">0</output> · Voice cancels: <output data-effect="voice-cancels">0</output></p><label><input type="checkbox" id="hold-speech"> Hold test speech for cancellation check</label><pre id="chime-times"></pre><button id="overdue" type="button">Create finished ten-minute test</button><section><ol class="steps"><li data-step="simmer"><span>1</span><div><h3>Parboil test carrots</h3><p>Simmer for 2 seconds.</p></div></li></ol></section></main></body></html>

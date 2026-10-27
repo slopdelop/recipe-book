@@ -48,3 +48,9 @@ Use case: photorealistic-natural. Asset: one food photograph for a personal reci
 
 Use case: photorealistic-natural. Asset: one food photograph for a personal recipe book. Realism is paramount: natural window light, restrained true-to-life colors, tactile irregular food, subtle grain, ordinary home cooking, realistic moisture. No CGI, plastic shine, hyper-saturation, elaborate styling, text, collage, borders, or invented garnish. Landscape 3:2 framing. New photograph of caramelized onions cooked for twelve hours in a slow cooker with butter and balsamic vinegar. A modest heap of very soft collapsed thin onion ribbons, deep chestnut brown with subtle reddish brown balsamic undertones, moist and translucent, uneven tangled strands. Plain shallow off-white ceramic bowl on warm neutral table, three-quarter overhead view. No grill marks, no crisp fried onion rings, no herb garnish, no overly glossy syrup, no decorative props.
 
+## October 27 additions
+
+The bistro pork-chop replacement and the cranberry cookies, ginger snaps, chocolate fruit cake and chocolate mochi are AI-generated photographic illustrations. They use natural light, restrained styling and neutral plates to match the collection. The pork image shows one chop on a smaller plate in a softly blurred French bistro. Generated PNG masters remain outside the published repository; the site uses quality-93 WebP copies.
+
+Quick Chili uses the original WeightWatchers vegetarian-chili photograph. The page identifies it as the original vegetarian version; the saved recipe adds the user's ground turkey or beef.
+
