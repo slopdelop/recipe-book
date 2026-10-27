@@ -64,3 +64,7 @@ These supersede the first cake, ginger-snap and mochi illustrations above. The `
 
 The new landscape images are 1536 × 1024. All three are encoded as quality-93 WebP. Source JPEGs and generated PNG masters remain outside the published repository. Replaced image files remain available in Git history and are no longer referenced by these recipes.
 
+## Mabel's cookies — San Francisco setting
+
+Following `recipe-food-images`, the original generated cookie illustration was edited into a San Francisco bay-window scene. The food remains flattened cranberry, white chocolate, oat and pecan cookies. The generic neutral plate was replaced by a vintage dark teal platter on a walnut window ledge, with cool coastal light and a softly fogged Golden Gate Bridge behind it. This is an imagined setting requested by the user, not a photograph of Mabel's home or cookies. No new garnish was added. The 1536 × 1024 generated master is saved outside the repository; `images/mabel-cranberry-cookies-san-francisco.webp` is a quality-93 WebP. The footer credits AI generation and the San Francisco presentation; Mabel's attribution and recipe are unchanged.
+

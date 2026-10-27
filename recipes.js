@@ -1292,7 +1292,7 @@ window.recipes = [
       "Dessert",
       "Snack"
     ],
-    "photoCredit": "AI-generated illustration",
+    "photoCredit": "AI-generated illustration · San Francisco presentation",
     "id": "cranberry-white-chocolate-cookies",
     "name": "Rich and Chewy Cranberry White Chocolate Cookies",
     "subtitle": "Mabel’s recipe",
@@ -1401,7 +1401,9 @@ window.recipes = [
           ]
         }
       ]
-    ]
+    ],
+    "image": "mabel-cranberry-cookies-san-francisco",
+    "photoClass": "photo-mabel-sf"
   },
   {
     "category": "Baking",
