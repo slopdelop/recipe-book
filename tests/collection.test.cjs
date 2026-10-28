@@ -9,5 +9,9 @@ test('personal recipe quantities and baking details survive transcription',()=>{
  const chili=recipes.find(r=>r.id==='quick-chili');assert.equal(chili.yield,'Serves 8');assert.ok(chili.ingredients.some(([amount,item])=>amount==='¼ cup'&&item==='dehydrated onion flakes'));assert.ok(chili.ingredients.some(([amount,item])=>amount==='1 lb'&&item==='ground turkey or ground beef'));
  const mochi=recipes.find(r=>r.id==='chocolate-mochi');assert.equal(mochi.yield,'Makes 48 pieces');assert.ok(mochi.ingredients.some(([amount,item])=>amount==='1 tbsp'&&item==='baking soda'));assert.match(mochi.steps[0][1],/325°F for a Pyrex/);
  const cookies=recipes.find(r=>r.id==='cranberry-white-chocolate-cookies');assert.equal(cookies.displaySource,'Mabel');assert.match(cookies.steps.map(s=>s[1]).join(' '),/1½-inch ice cream scoop/);assert.match(cookies.steps.map(s=>s[1]).join(' '),/14–15 minutes/);
- const cake=recipes.find(r=>r.id==='chocolate-fruit-cake');assert.ok(cake.ingredients.some(([amount,item])=>amount==='2 tbsp'&&item==='cocoa powder'));
+ const cake=recipes.find(r=>r.id==='chocolate-fruit-cake');assert.ok(cake.ingredients.filter(Array.isArray).some(([amount,item])=>amount==='2 tbsp'&&item.endsWith('cocoa powder')));
+});
+test('Greek salad preserves the supplied PDF mustard quantity',()=>{
+ const salad=recipes.find(r=>r.id==='greek-salad');
+ assert.equal(salad.ingredients.find(row=>Array.isArray(row)&&row[1]==='Dijon mustard')[0],'½ tsp');
 });
