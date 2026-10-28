@@ -405,9 +405,9 @@ window.recipes = [
     "name": "Maple-Roasted Squash With Charred Lemon",
     "category": "Sides",
     "subtitle": "Costco pre-cut squash · 2 lb batch",
-    "time": "25–35 min roasting",
+    "time": "25–40 min roasting",
     "yield": "Serves 4",
-    "source": "Adapted from Melissa Clark · NYT Cooking",
+    "source": "Adapted from Melissa Clark · NYT Cooking · method checked against Myers Group Wellness",
     "photoCredit": "Linda Xiao / The New York Times · Food stylist: Monica Pierini",
     "photoSource": "https://www.myersgroupwellness.com/blog/maple-roasted-squash-with-charred-lemon",
     "ingredients": [
@@ -429,7 +429,7 @@ window.recipes = [
       ],
       [
         "2 tsp",
-        "olive oil"
+        "olive oil, plus a little extra for finishing (optional)"
       ],
       [
         "½ tsp",
@@ -455,14 +455,14 @@ window.recipes = [
     "steps": [
       [
         "Preheat",
-        "Preheat oven to 425°F. Line a large baking sheet with parchment paper.",
+        "Heat the oven to 425°F. Line a large rimmed baking sheet with parchment.",
         {
           "id": "preheat"
         }
       ],
       [
         "Prepare the lemon",
-        "Thinly slice half the lemon. Simmer slices in salted water for 2 minutes, then drain.",
+        "Cut half the lemon into very thin half-moons; discard seeds. Reserve the other half. Bring a small pot of salted water to a boil over high heat. Add the slices, reduce to a gentle simmer and cook for 2 minutes. Drain well.",
         {
           "id": "prepare-lemon",
           "timers": [
@@ -479,7 +479,7 @@ window.recipes = [
       ],
       [
         "Make the glaze",
-        "In a small saucepan, melt butter with maple syrup and chile powder. Simmer for 2 minutes.",
+        "In the emptied saucepan over medium heat, combine the butter, maple syrup and chile powder. Once melted, gently simmer for 2 minutes to thicken slightly. Lower the heat if bubbling vigorously.",
         {
           "id": "make-glaze",
           "timers": [
@@ -496,14 +496,14 @@ window.recipes = [
       ],
       [
         "Season the squash",
-        "Toss squash cubes with olive oil, cardamom, coriander and salt. Add the maple-butter glaze and lemon slices, tossing to coat.",
+        "Toss the squash with olive oil, cardamom, coriander seeds and salt. Add the glaze and drained lemon slices; toss to coat.",
         {
           "id": "season-squash"
         }
       ],
       [
         "Roast",
-        "Spread in a single layer on the baking sheet. Roast for 25–35 minutes, turning halfway, until golden and tender.",
+        "Spread in one uncrowded layer. Roast for 25–35 minutes, turning halfway. Larger cubes may need up to 40 minutes. The squash should be browned and fork-tender, with caramelized lemon slices.",
         {
           "id": "roast",
           "timers": [
@@ -522,7 +522,7 @@ window.recipes = [
       ],
       [
         "Finish",
-        "Squeeze the remaining lemon half over the squash. Garnish with fresh herbs if desired.",
+        "Transfer to a platter. Squeeze over a little juice from the reserved lemon half, to taste. Add a small drizzle of olive oil if desired. Finish with herbs and extra chile powder, if liked.",
         {
           "id": "finish"
         }
@@ -535,7 +535,8 @@ window.recipes = [
     "meals": [
       "Lunch",
       "Dinner"
-    ]
+    ],
+    "sourceUrl": "https://www.myersgroupwellness.com/blog/maple-roasted-squash-with-charred-lemon"
   },
   {
     "id": "pork-chops-red-onion-confit",
