@@ -10,11 +10,11 @@
   <title>Recipe Book</title>
   <link rel="icon" type="image/svg+xml" href="icon.svg">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="style.css?v=25">
+  <link rel="stylesheet" href="style.css?v=28">
   <script src="data.js?v=13" defer></script>
-  <script src="recipes.js?v=27" defer></script>
+  <script src="recipes.js?v=28" defer></script>
   <script src="recipe-tags.js?v=22" defer></script>
-  <script src="ingredient-colors.js?v=22" defer></script>
+  <script src="ingredient-colors.js?v=28" defer></script>
   <script src="journal-state.js?v=13" defer></script>
   <script src="journal.js?v=15" defer></script>
   <script src="backup.js?v=17" defer></script>
@@ -24,13 +24,17 @@
   <script src="sync-state.js?v=15" defer></script>
   <script src="cloud-config.js?v=15" defer></script>
   <script src="cloud-sync.js?v=17" defer></script>
-  <script src="app.js?v=22" defer></script>
+  <script src="app.js?v=28" defer></script>
 </head>
 <body >
   <main>
     <section id="collection" >
       <header class="collection-masthead"><a class="brand" href="./"><img src="icon.svg" width="40" height="40" alt="">Recipe Book</a><span>THE PERSONAL COLLECTION</span></header>
       <div class="collection-heading"><div><div class="eyebrow">MY KITCHEN</div><h1>Your recipes</h1></div><span id="count" aria-live="polite">15</span></div>
+      <nav class="collection-switch" aria-label="Recipe collections">
+        <a href="./" data-collection="tried" aria-current="page">Tried &amp; good</a>
+        <a href="./?collection=to-try" data-collection="to-try">Recipes to Try</a>
+      </nav>
       <div class="collection-controls"><label class="search-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="search" type="search" placeholder="Find a recipe, ingredient, meal or source" aria-label="Search recipes, ingredients, meals and sources"><kbd>⌘ K</kbd></label>
       <div class="filters" aria-label="Filter recipes by tags"></div></div>
       <p class="collection-status" role="status" aria-live="polite"></p>

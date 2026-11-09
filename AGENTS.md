@@ -6,4 +6,6 @@ Favor authentic recipe or brand photographs, and vary each dish's setting and co
 
 # Recipe methods
 
+Set `toTry: true` in the recipe data for recipes identified as untried or unvetted. This places them in Recipes to Try. The main collection contains recipes without that flag.
+
 The user wants the full ingredients and method, with only the introductory story removed. Do not shorten, summarize or simplify recipes. Preserve every preparation instruction, burner setting, oven temperature, timing, doneness cue, equipment detail, finishing instruction, serving suggestion, storage note and make-ahead note. Reformatting and step headings are fine; shortening the instructions is not. Omit ads, navigation, nutrition panels and unrelated prose. Preserve user-requested adaptations and label them explicitly; do not silently change quantities, timing or ingredients. If the original source cannot be checked, record that limitation instead of claiming verification or inventing missing directions. Preserve existing recipe, step and timer IDs when correcting instructions so saved data remains attached.

@@ -86,3 +86,33 @@
 .recipe-photo.photo-fruit-cake-christmas{object-position:60% 38%}.recipe-photo.photo-ginger-people{object-position:center 55%}.recipe-photo.photo-mochi-hawaiian{object-position:center 0%}
 .recipe-photo.photo-mabel-sf{object-position:center 20%}
 .recipe-photo.photo-pork-picard{object-position:center 100%}.recipe-thumb.photo-pork-picard{object-position:63% center}
+
+.collection-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.collection-switch a {
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: var(--green);
+  font-size: 14px;
+  text-decoration: none;
+}
+.collection-switch a:hover { background: #f0f3e9; }
+.collection-switch a[aria-current="page"] {
+  border-color: var(--green);
+  background: var(--green);
+  color: white;
+}
+.recipe-tips {
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
+}
+.recipe-tips ul { padding-left: 22px; }
+.recipe-tips li { margin-bottom: 8px; line-height: 1.65; }
+@media print {
+  .recipe-tips li { font-size: 12px; break-inside: avoid; }
+}

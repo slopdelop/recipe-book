@@ -1833,5 +1833,179 @@ window.recipes = [
     ],
     "image": "chocolate-mochi-hawaiian",
     "photoClass": "photo-mochi-hawaiian"
+  },
+  {
+    "id": "creamy-mushroom-sauce-for-steak",
+    "name": "Creamy Mushroom Sauce for Steak (Without Cream)",
+    "category": "Sauces",
+    "tags": [
+      "Sauce"
+    ],
+    "meals": [
+      "Dinner"
+    ],
+    "toTry": true,
+    "time": "Prep 5 min · Cook 15–20 min",
+    "yield": "Serves 2",
+    "source": "Recipe supplied by you",
+    "displaySource": "Shared recipe",
+    "photoCredit": "Food Rhythms · pan-sauce illustration",
+    "photoSource": "https://www.ourfoodrhythms.com/blog/creating-pan-sauces-deglazing-and-reduction",
+    "ingredients": [
+      [
+        "8 oz (225 g)",
+        "mushrooms, sliced (cremini or white)"
+      ],
+      [
+        "1 tbsp",
+        "olive oil"
+      ],
+      [
+        "1 tbsp",
+        "butter"
+      ],
+      [
+        "1 small",
+        "shallot, finely chopped (or ¼ onion)"
+      ],
+      [
+        "2 cloves",
+        "garlic, minced"
+      ],
+      [
+        "1 tbsp",
+        "all-purpose flour"
+      ],
+      [
+        "½ cup (120 ml)",
+        "beef stock"
+      ],
+      [
+        "½ cup (120 ml)",
+        "whole milk"
+      ],
+      [
+        "1 tsp",
+        "Dijon mustard"
+      ],
+      [
+        "1 tsp",
+        "Worcestershire sauce (optional)"
+      ],
+      [
+        "",
+        "Salt and freshly ground black pepper"
+      ],
+      [
+        "",
+        "Fresh thyme or parsley (optional)"
+      ],
+      [
+        "1 small knob",
+        "extra butter to finish (optional)"
+      ]
+    ],
+    "tips": [
+      "Best flavour: Cook the mushrooms in the same pan as your steak to incorporate the browned meat juices.",
+      "Too thick? Add a splash of milk or beef stock.",
+      "Too thin? Simmer gently for another minute or two.",
+      "Extra savoury: Add a little more Worcestershire sauce.",
+      "More mushroom flavour: Let the mushrooms develop a deep golden-brown colour before adding the other ingredients.",
+      "If you're cooking the steak separately, pour any juices from the resting steak into the sauce just before serving. It makes a noticeable difference."
+    ],
+    "steps": [
+      [
+        "Brown the mushrooms",
+        "Heat olive oil in a frying pan over medium-high heat. Add sliced mushrooms and cook for 7–9 minutes, stirring occasionally, until their moisture evaporates and they turn golden brown.",
+        {
+          "id": "brown-mushrooms",
+          "timers": [
+            {
+              "id": "brown",
+              "label": "Brown mushrooms",
+              "value": 7,
+              "unit": "minutes",
+              "phrase": "7–9 minutes",
+              "range": true,
+              "legacyId": "creamy-mushroom-sauce-for-steak-brown"
+            }
+          ]
+        }
+      ],
+      [
+        "Add shallot and garlic (2–3 minutes)",
+        "Reduce to medium heat. Add butter and shallot. Cook for 2 minutes until softened. Add garlic and cook for another 30 seconds.",
+        {
+          "id": "add-aromatics",
+          "timers": [
+            {
+              "id": "shallot",
+              "label": "Soften shallot",
+              "value": 2,
+              "unit": "minutes",
+              "phrase": "2 minutes",
+              "legacyId": "creamy-mushroom-sauce-for-steak-shallot"
+            },
+            {
+              "id": "garlic",
+              "label": "Cook garlic",
+              "value": 30,
+              "unit": "seconds",
+              "phrase": "30 seconds",
+              "legacyId": "creamy-mushroom-sauce-for-steak-garlic"
+            }
+          ]
+        }
+      ],
+      [
+        "Add flour",
+        "Sprinkle 1 tablespoon of flour over the mushrooms. Stir continuously for 1 minute to cook out the raw flour taste.",
+        {
+          "id": "add-flour",
+          "timers": [
+            {
+              "id": "flour",
+              "label": "Cook flour",
+              "value": 1,
+              "unit": "minutes",
+              "phrase": "1 minute",
+              "legacyId": "creamy-mushroom-sauce-for-steak-flour"
+            }
+          ]
+        }
+      ],
+      [
+        "Add beef stock and milk (2 minutes)",
+        "Gradually pour in the beef stock while stirring, scraping up any browned bits from the pan. Slowly add the whole milk, stirring until smooth.",
+        {
+          "id": "add-liquids"
+        }
+      ],
+      [
+        "Add flavourings and simmer",
+        "Stir in Dijon mustard and Worcestershire sauce. Reduce heat to medium-low and gently simmer for 3–5 minutes, stirring frequently, until the sauce thickens enough to coat the back of a spoon. Avoid boiling vigorously, as the milk can separate.",
+        {
+          "id": "simmer-sauce",
+          "timers": [
+            {
+              "id": "simmer",
+              "label": "Simmer mushroom sauce",
+              "value": 3,
+              "unit": "minutes",
+              "phrase": "3–5 minutes",
+              "range": true,
+              "legacyId": "creamy-mushroom-sauce-for-steak-simmer"
+            }
+          ]
+        }
+      ],
+      [
+        "Finish and serve",
+        "Season with salt and plenty of black pepper. Stir in fresh thyme or parsley if using. For extra richness, stir in a small knob of butter just before serving. Spoon generously over your steak.",
+        {
+          "id": "finish"
+        }
+      ]
+    ]
   }
 ];

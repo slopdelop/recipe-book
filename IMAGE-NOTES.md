@@ -72,3 +72,7 @@ Following `recipe-food-images`, the original generated cookie illustration was e
 
 The previous single-chop illustration was edited into a wider 1983 × 793 bistro scene: full small ivory plate, naturally browned chop with red onion confit, worn wooden table, checked linen, bentwood seating and burgundy banquette. The user requested a Château Picard bottle beside the meal. Its cream vineyard label follows the [official Star Trek Wines reference](https://startrekwines.com/blogs/captains-blog/chateau-picard-the-backstory-behind-this-legendary-star-trek-wine), image `https://cdn.shopify.com/s/files/1/0705/0769/2309/files/Chateau-Picard-creat-400x291_1024x1024.jpg?v=1683172293` (400 × 291). The bottle and one glass are part of an AI-generated setting, not a real restaurant photograph or a change to the recipe ingredients. Saved as quality-93 WebP in `images/pork-chop-bistro-chateau-picard.webp`, with separate hero and thumbnail framing to retain the plate and label. Source reference and PNG master remain outside the published repository.
 
+## Creamy Mushroom Sauce for Steak
+
+The supplied image shows mushroom pan sauce being poured over a steak. It illustrates the serving suggestion and comes from [Food Rhythms' pan-sauce guide](https://www.ourfoodrhythms.com/blog/creating-pan-sauces-deglazing-and-reduction). The sauce recipe text was supplied separately. The 1200 × 798 image is saved as `images/creamy-mushroom-sauce-for-steak.webp`.
+

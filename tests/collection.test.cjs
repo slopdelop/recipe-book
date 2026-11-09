@@ -2,7 +2,8 @@ const test=require('node:test'),assert=require('node:assert/strict'),fs=require(
 const root=path.join(__dirname,'..'),context={window:{}};vm.runInNewContext(fs.readFileSync(path.join(root,'recipes.js'),'utf8'),context);const recipes=context.window.recipes;
 test('every published recipe has a page, local photo, source and valid meals',()=>{
  const ids=new Set(),meals=new Set(['Breakfast','Lunch','Dinner','Dessert','Snack']);
- for(const r of recipes){assert.ok(!ids.has(r.id));ids.add(r.id);assert.ok(r.displaySource);assert.ok(r.meals.length);assert.ok(r.meals.every(m=>meals.has(m)));assert.ok(fs.existsSync(path.join(root,'images',(r.image||r.id)+'.webp')));const html=fs.readFileSync(path.join(root,'recipes',r.id,'index.html'),'utf8');assert.ok(html.includes('data-recipe="'+r.id+'"'));assert.ok(html.includes('app.js?v=22'));}
+ const appScript=fs.readFileSync(path.join(root,'index.html'),'utf8').match(/src="app\.js\?v=\d+"/)[0];
+ for(const r of recipes){assert.ok(!ids.has(r.id));ids.add(r.id);assert.ok(r.displaySource);assert.ok(r.meals.length);assert.ok(r.meals.every(m=>meals.has(m)));assert.ok(fs.existsSync(path.join(root,'images',(r.image||r.id)+'.webp')));const html=fs.readFileSync(path.join(root,'recipes',r.id,'index.html'),'utf8');assert.ok(html.includes('data-recipe="'+r.id+'"'));assert.ok(html.includes(appScript));}
  assert.equal(ids.has('onions'),false);
 });
 test('personal recipe quantities and baking details survive transcription',()=>{
