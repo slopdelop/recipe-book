@@ -2007,5 +2007,157 @@ window.recipes = [
         }
       ]
     ]
+  },
+  {
+    "id": "green-beans-elephant-garlic",
+    "name": "Green Beans with Sliced Elephant Garlic",
+    "category": "Sides",
+    "tags": [
+      "Side dish"
+    ],
+    "meals": [
+      "Lunch",
+      "Dinner"
+    ],
+    "toTry": true,
+    "time": "Prep 5 min · Cook 10–12 min",
+    "yield": "Serves 2–3",
+    "source": "Recipe supplied by you · Steam-then-sear method inspired by America’s Test Kitchen",
+    "displaySource": "Shared recipe",
+    "photoCredit": "The Mediterranean Dish via Punchfork · related green bean dish",
+    "photoSource": "https://www.punchfork.com/recipe/Italian-Green-Beans-Fagiolini-Alla-Genovese-The-Mediterranean-Dish",
+    "ingredients": [
+      [
+        "1 lb (450 g)",
+        "fresh green beans, trimmed"
+      ],
+      [
+        "2–3 cloves",
+        "elephant garlic, peeled and sliced about ¼-inch thick"
+      ],
+      [
+        "1½ tbsp",
+        "olive oil"
+      ],
+      [
+        "1 tbsp",
+        "butter"
+      ],
+      [
+        "3 tbsp",
+        "water"
+      ],
+      [
+        "",
+        "Salt and freshly ground black pepper"
+      ],
+      [
+        "1 tsp",
+        "fresh lemon juice (optional)"
+      ]
+    ],
+    "tips": [
+      "Garlic thickness: Slicing elephant garlic ¼ inch thick helps it soften without burning.",
+      "For softer garlic: Add a tablespoon of water and cover the skillet for an extra 1–2 minutes during step 5.",
+      "Don't overcrowd: Use a large skillet so the green beans develop browned spots instead of steaming again.",
+      "For extra richness: Add another small knob of butter right before serving.",
+      "My suggestion: Since you're serving these alongside steak with mushroom sauce, I'd skip the lemon juice and let the buttery elephant garlic complement the rich mushroom flavours."
+    ],
+    "steps": [
+      [
+        "Prepare the vegetables",
+        "Trim the ends of the green beans. Peel the elephant garlic cloves and slice them into pieces approximately ¼ inch thick.",
+        {
+          "id": "prepare"
+        }
+      ],
+      [
+        "Steam the green beans",
+        "Place the green beans in a large skillet with 3 tablespoons of water and a pinch of salt. Cover with a lid and cook over medium-high heat for 4–5 minutes, until the beans are bright green and nearly tender.",
+        {
+          "id": "steam",
+          "timers": [
+            {
+              "id": "steam",
+              "label": "Steam green beans",
+              "value": 4,
+              "unit": "minutes",
+              "phrase": "4–5 minutes",
+              "range": true,
+              "legacyId": "green-beans-elephant-garlic-steam"
+            }
+          ]
+        }
+      ],
+      [
+        "Evaporate the water",
+        "Remove the lid and allow any remaining water to evaporate completely, about 1 minute.",
+        {
+          "id": "evaporate",
+          "timers": [
+            {
+              "id": "evaporate",
+              "label": "Evaporate water",
+              "value": 1,
+              "unit": "minutes",
+              "phrase": "1 minute",
+              "legacyId": "green-beans-elephant-garlic-evaporate"
+            }
+          ]
+        }
+      ],
+      [
+        "Brown the green beans (3–4 minutes)",
+        "Add the olive oil and keep the heat at medium-high. Spread the beans into an even layer and let them cook undisturbed for 1–2 minutes to develop browned spots. Toss and cook for another 1–2 minutes.",
+        {
+          "id": "brown",
+          "timers": [
+            {
+              "id": "first-side",
+              "label": "Brown green beans",
+              "value": 1,
+              "unit": "minutes",
+              "phrase": "1–2 minutes",
+              "range": true,
+              "legacyId": "green-beans-elephant-garlic-first-side"
+            },
+            {
+              "id": "after-toss",
+              "label": "Brown after tossing",
+              "value": 1,
+              "unit": "minutes",
+              "phrase": "another 1–2 minutes",
+              "range": true,
+              "legacyId": "green-beans-elephant-garlic-after-toss"
+            }
+          ]
+        }
+      ],
+      [
+        "Add elephant garlic and butter",
+        "Reduce heat to medium-low. Add the sliced elephant garlic and butter. Stir frequently for 2–4 minutes, until the garlic is golden and tender. If the garlic begins browning too quickly, lower the heat. You want it soft and sweet, not crispy or burnt.",
+        {
+          "id": "garlic-butter",
+          "timers": [
+            {
+              "id": "garlic",
+              "label": "Soften elephant garlic",
+              "value": 2,
+              "unit": "minutes",
+              "phrase": "2–4 minutes",
+              "range": true,
+              "legacyId": "green-beans-elephant-garlic-garlic"
+            }
+          ]
+        }
+      ],
+      [
+        "Finish and serve",
+        "Season with salt and freshly ground black pepper. Add a squeeze of lemon juice if desired. Toss everything together and serve immediately.",
+        {
+          "id": "finish"
+        }
+      ]
+    ]
   }
 ];

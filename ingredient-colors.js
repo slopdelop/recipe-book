@@ -1,6 +1,12 @@
 // Dark colors echo the food while remaining readable on the cream background.
 // Aliases are scoped to each recipe: "pepper" in muhammara is not black pepper.
 window.ingredientPalettes = {
+  'green-beans-elephant-garlic': [
+    ['#37533b', ['fresh green beans', 'green beans', 'beans']],
+    ['#785025', ['elephant garlic', 'garlic', 'butter']],
+    ['#535621', ['olive oil', 'fresh lemon juice', 'lemon juice']],
+    ['#555148', ['water', 'salt', 'black pepper']]
+  ],
   'creamy-mushroom-sauce-for-steak': [
     ['#624d2a', ['mushrooms', 'beef stock', 'steak juices', 'steak']],
     ['#64551e', ['olive oil', 'butter', 'Dijon mustard']],

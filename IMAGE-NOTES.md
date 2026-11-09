@@ -76,3 +76,7 @@ The previous single-chop illustration was edited into a wider 1983 × 793 bistro
 
 The supplied image shows mushroom pan sauce being poured over a steak. It illustrates the serving suggestion and comes from [Food Rhythms' pan-sauce guide](https://www.ourfoodrhythms.com/blog/creating-pan-sauces-deglazing-and-reduction). The sauce recipe text was supplied separately. The 1200 × 798 image is saved as `images/creamy-mushroom-sauce-for-steak.webp`.
 
+## Green Beans with Sliced Elephant Garlic
+
+The supplied 1000 × 526 image depicts [The Mediterranean Dish's Italian Green Beans on Punchfork](https://www.punchfork.com/recipe/Italian-Green-Beans-Fagiolini-Alla-Genovese-The-Mediterranean-Dish). It illustrates a related green bean dish and is credited separately from the user's steam-then-sear recipe. The image is saved as `images/green-beans-elephant-garlic.webp`.
+
