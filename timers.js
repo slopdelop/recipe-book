@@ -5,7 +5,7 @@
   const extensionLabel=timer=>{const ms=T.suggestedExtension(timer);return ms<60000?durationLabel(ms/1000,'seconds'):durationLabel(ms/60000,'minutes');};
   let timers=[],audio,audioEnabled=false,tickPending=false,queue=Promise.resolve(),activePlayback;
   const tray=document.createElement('aside');tray.className='timer-tray';tray.setAttribute('aria-label','Kitchen timers');tray.hidden=true;
-  tray.innerHTML='<details open><summary>Kitchen timers <span class="timer-count"></span></summary><div class="timer-items"></div></details><button class="timer-enable-audio" type="button">Enable sound & voice</button><p class="timer-storage-message" role="status"></p>';
+  tray.innerHTML='<details open><summary>Kitchen timers <span class="timer-count"></span></summary><div class="timer-items"></div></details><ul class="timer-minimized" aria-label="Timer overview"></ul><button class="timer-enable-audio" type="button">Enable sound & voice</button><p class="timer-storage-message" role="status"></p>';
   document.body.append(tray);
   const message=tray.querySelector('.timer-storage-message');
   const alert=document.createElement('div');alert.className='timer-announcement';alert.setAttribute('role','status');alert.setAttribute('aria-live','polite');document.body.append(alert);
@@ -76,6 +76,7 @@
     const focused=tray.querySelector('[data-action]:focus'),focus=focusHint||(focused?{run:focused.dataset.run,definition:focused.closest('.timer-card').dataset.definition,action:focused.dataset.action}:null);
     const list=visible();tray.hidden=!list.length;tray.querySelector('.timer-count').textContent=list.length;tray.querySelector('.timer-enable-audio').hidden=audioEnabled;
     const oldOpen=tray.querySelector('details').open;
+    tray.querySelector('.timer-minimized').innerHTML=list.map(t=>`<li class="timer-mini-row ${t.phase==='finished'?'is-finished':''}"><span class="timer-mini-label">${safe(t.label)}</span><span class="timer-mini-value">${t.phase==='paused'?'<span>Paused · </span>':''}<output class="timer-countdown" data-run="${safe(t.runId)}" aria-live="off">${t.phase==='finished'?'Done':format(T.remaining(t,Date.now()))}</output></span></li>`).join('');
     tray.querySelector('.timer-items').innerHTML=list.map(t=>{
       const add=`<button type="button" class="timer-extend" data-action="extend" data-run="${safe(t.runId)}" title="Suggested from the original timer duration" aria-label="Add ${safe(extensionLabel(t))} to ${safe(t.label)}">Add ${safe(extensionLabel(t))}</button>`;
       const actions=t.phase==='finished'?`<button type="button" class="timer-dismiss" data-action="dismiss" data-run="${safe(t.runId)}">Dismiss</button>${add}`:`${add}<button type="button" data-action="${t.phase==='running'?'pause':'resume'}" data-run="${safe(t.runId)}">${t.phase==='running'?'Pause':'Resume'}</button><button type="button" class="timer-cancel" data-action="cancel" data-run="${safe(t.runId)}">Cancel</button>`;
@@ -101,7 +102,7 @@
       if(audioEnabled&&timer.phase==='finished'&&(!timer.events.complete||!Number.isFinite(timer.lastAlertAt)||now-timer.lastAlertAt>=T.repeatInterval))needsChange=true;
       if(timer.phase!=='running')continue;const left=T.remaining(timer,now);
       if(!left||(audioEnabled&&timer.halfway&&!timer.events.halfway&&left<=timer.duration/2))needsChange=true;
-      const output=[...tray.querySelectorAll('[data-run].timer-countdown')].find(e=>e.dataset.run===timer.runId);if(output&&output.textContent!==format(left))output.textContent=format(left);
+      for(const output of tray.querySelectorAll('[data-run].timer-countdown'))if(output.dataset.run===timer.runId&&output.textContent!==format(left))output.textContent=format(left);
     }
     if(!needsChange||tickPending)return;tickPending=true;
     try{await change({type:'tick'});}catch(error){D.error(message,error);}finally{tickPending=false;}
