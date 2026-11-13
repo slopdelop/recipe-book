@@ -1,6 +1,17 @@
 // Dark colors echo the food while remaining readable on the cream background.
 // Aliases are scoped to each recipe: "pepper" in muhammara is not black pepper.
 window.ingredientPalettes = {
+  'christmas-chutney': [
+    ['#535621', ['Granny Smith', 'apples']],
+    ['#5c5540', ['onion']],
+    ['#713343', ['cranberries']],
+    ['#624d2a', ['soft pitted dates', 'dates', 'sugar']],
+    ['#7a481d', ['clementines', 'satsumas', 'citrus']],
+    ['#59382c', ['ground cloves', 'cloves', 'ground cinnamon', 'cinnamon']],
+    ['#68472f', ['ground ginger', 'ginger']],
+    ['#803b2d', ['cayenne pepper']],
+    ['#555148', ['white wine vinegar', 'vinegar', 'sea salt flakes', 'Maldon salt', 'table salt', 'salt']]
+  ],
   'chinese-five-spice-pork-chops': [
     ['#694731', ['pork chops', 'pork', 'Chinese five-spice powder', 'five-spice powder', 'ginger']],
     ['#535621', ['olive oil', 'sesame oil']],

@@ -2299,5 +2299,136 @@ window.recipes = [
         }
       ]
     ]
+  },
+  {
+    "id": "christmas-chutney",
+    "name": "Christmas Chutney",
+    "category": "Condiments",
+    "tags": [
+      "Condiment",
+      "Christmas"
+    ],
+    "meals": [
+      "Lunch",
+      "Dinner",
+      "Snack"
+    ],
+    "toTry": false,
+    "time": "About 1 hour simmering + prep",
+    "yield": "9 × 250ml / 1-cup jars",
+    "displaySource": "Nigella Lawson",
+    "source": "Nigella Lawson · Nigella Christmas",
+    "sourceUrl": "https://www.nigella.com/recipes/christmas-chutney",
+    "photoCredit": "Lis Parsons · Nigella.com",
+    "photoSource": "https://www.nigella.com/recipes/christmas-chutney",
+    "photoClass": "chutney-photo",
+    "ingredients": [
+      [
+        "5 cups (750 g)",
+        "apples, peeled, cored and chopped small (Granny Smith for the U.S. version)"
+      ],
+      [
+        "1 medium",
+        "onion, peeled and roughly chopped"
+      ],
+      [
+        "4½ cups (500 g)",
+        "fresh or frozen cranberries, thawed if frozen"
+      ],
+      [
+        "2 cups (250 g)",
+        "soft pitted dates, each cut into 3"
+      ],
+      [
+        "2",
+        "clementines or satsumas"
+      ],
+      [
+        "2 cups (400 g)",
+        "granulated sugar (caster sugar in the metric version)"
+      ],
+      [
+        "½ tsp",
+        "ground cloves"
+      ],
+      [
+        "1 tsp",
+        "ground ginger"
+      ],
+      [
+        "1½ tsp",
+        "ground cinnamon"
+      ],
+      [
+        "¼ tsp",
+        "cayenne pepper"
+      ],
+      [
+        "2 cups (500 ml)",
+        "white wine vinegar"
+      ],
+      [
+        "2 tsp",
+        "sea salt flakes / Maldon salt, or 1 tsp table salt"
+      ]
+    ],
+    "steps": [
+      [
+        "Prepare the jars",
+        "Use nine 250ml / 1-cup sealable jars with vinegar-proof lids, such as Kilner jars or reusable pickle jars. Wash in soapy water and rinse, then dry in a 140°C / 275°F / gas mark 1 oven. Keep the jars warm for filling with warm chutney. Alternatively, use clean jars straight from the dishwasher.",
+        {
+          "id": "prepare-jars"
+        }
+      ],
+      [
+        "Combine the fruit and onion",
+        "Place the prepared apples, onion, cranberries and dates in a large pan.",
+        {
+          "id": "combine-fruit"
+        }
+      ],
+      [
+        "Add the citrus",
+        "Grate the zest of the clementines or satsumas into the pan. Squeeze in their juice and scrape in the pulp.",
+        {
+          "id": "add-citrus"
+        }
+      ],
+      [
+        "Add the spices and vinegar",
+        "Add the sugar, ground cloves, ginger, cinnamon and cayenne pepper, followed by the white wine vinegar and salt.",
+        {
+          "id": "add-seasonings"
+        }
+      ],
+      [
+        "Simmer until pulpy",
+        "Stir thoroughly and bring the mixture to a boil. Reduce the heat and simmer uncovered for about 1 hour, or until the mixture has become pulpy.",
+        {
+          "id": "simmer",
+          "timers": [
+            {
+              "id": "simmer",
+              "label": "Christmas chutney",
+              "value": 1,
+              "unit": "hours",
+              "phrase": "1 hour",
+              "legacyId": "christmas-chutney-simmer"
+            }
+          ]
+        }
+      ],
+      [
+        "Fill and seal",
+        "Spoon the chutney into the warm, prepared jars and seal them.",
+        {
+          "id": "fill-jars"
+        }
+      ]
+    ],
+    "tips": [
+      "Nigella’s make-ahead and storage guidance: Prepare up to 2 months ahead; the flavour improves as it matures. She specifies a cool, dark place for sealed jars for up to 1 year, then refrigeration after opening and use within 1 month.",
+      "Added storage note: This method does not include a canning process. Refrigerate this hot-filled version. For pantry storage, use a research-tested canning recipe and its processing instructions, as recommended by the National Center for Home Food Preservation."
+    ]
   }
 ];
