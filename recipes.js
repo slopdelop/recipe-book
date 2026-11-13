@@ -2140,5 +2140,164 @@ window.recipes = [
       ]
     ],
     "sourceUrl": "https://www.americastestkitchen.com/recipes/13616-skillet-roasted-green-beans-with-garlic-and-pecorino-romano"
+  },
+  {
+    "id": "chinese-five-spice-pork-chops",
+    "name": "Chinese Five-Spice Skillet Pork Chops",
+    "category": "Mains",
+    "tags": [
+      "Main dish"
+    ],
+    "meals": [
+      "Lunch",
+      "Dinner"
+    ],
+    "toTry": false,
+    "time": "Skillet cooking · 3–5 min rest",
+    "yield": "Serves 4",
+    "displaySource": "Worthy Pause",
+    "source": "Annie D’Souza · Worthy Pause",
+    "sourceUrl": "https://www.worthypause.com/blog/2017/2/chinese-five-spice-skillet-pork-chops-recipe",
+    "photoCredit": "Worthy Pause",
+    "photoSource": "https://www.worthypause.com/blog/2017/2/chinese-five-spice-skillet-pork-chops-recipe",
+    "ingredients": [
+      [
+        "About 3 tbsp",
+        "olive oil, divided"
+      ],
+      [
+        "1 large",
+        "onion, sliced"
+      ],
+      [
+        "4 cloves",
+        "garlic, minced"
+      ],
+      [
+        "4",
+        "thick-cut boneless pork chops"
+      ],
+      [
+        "½ tsp",
+        "ginger"
+      ],
+      [
+        "2 tsp",
+        "Chinese five-spice powder"
+      ],
+      [
+        "1 tsp",
+        "salt"
+      ],
+      [
+        "A splash",
+        "rice vinegar or water"
+      ],
+      [
+        "",
+        "Sliced green onions or chopped cilantro, for garnish (optional)"
+      ]
+    ],
+    "tips": [
+      "Serve with baked sweet potatoes, cauliflower rice or stir-fried vegetables.",
+      "Use a thermometer to check that the pork reaches at least 145°F before removing it from the heat, then rest for at least 3 minutes.",
+      "For chops without pink, the author suggests 4 minutes on the first side and 6 minutes on the second. Check their temperature as well.",
+      "For thinner chops, shorten the cooking by a minute or two.",
+      "For another layer of flavour, add a small splash of sesame oil while deglazing."
+    ],
+    "steps": [
+      [
+        "Caramelize the onion",
+        "Heat 1 tablespoon olive oil in a large skillet over medium to medium-high heat. Add the sliced onion and caramelize, stirring frequently. Prepare the chops while the onion cooks.",
+        {
+          "id": "caramelize-onion"
+        }
+      ],
+      [
+        "Season the pork",
+        "Pat the pork chops dry with paper towels. Sprinkle them with the ginger, Chinese five-spice powder and salt.",
+        {
+          "id": "season-chops"
+        }
+      ],
+      [
+        "Add garlic and set aside",
+        "When the onion is almost ready, add the minced garlic. Cook for 1–2 minutes until soft, then transfer the onion and garlic out of the skillet and set aside.",
+        {
+          "id": "cook-garlic",
+          "timers": [
+            {
+              "id": "garlic",
+              "label": "Soften garlic",
+              "value": 1,
+              "unit": "minutes",
+              "phrase": "1–2 minutes",
+              "range": true,
+              "legacyId": "chinese-five-spice-pork-chops-garlic"
+            }
+          ]
+        }
+      ],
+      [
+        "Sear the first side",
+        "Add the remaining olive oil to the skillet. Cook the pork chops over medium-high heat for 3–4 minutes on the first side.",
+        {
+          "id": "sear-first-side",
+          "timers": [
+            {
+              "id": "first-side",
+              "label": "Pork chops, first side",
+              "value": 3,
+              "unit": "minutes",
+              "phrase": "3–4 minutes",
+              "range": true,
+              "legacyId": "chinese-five-spice-pork-chops-first-side"
+            }
+          ]
+        }
+      ],
+      [
+        "Turn and finish",
+        "Flip the chops, lower the heat to medium and cook for about 5 minutes on the second side. Check the internal temperature, aiming for at least 145°F before taking them off the heat.",
+        {
+          "id": "finish-second-side",
+          "timers": [
+            {
+              "id": "second-side",
+              "label": "Pork chops, second side",
+              "value": 5,
+              "unit": "minutes",
+              "phrase": "5 minutes",
+              "legacyId": "chinese-five-spice-pork-chops-second-side"
+            }
+          ]
+        }
+      ],
+      [
+        "Make the pan sauce",
+        "Turn off the heat. Return the onion and garlic to the skillet. Add a splash of rice vinegar or water to deglaze and form a small amount of pan sauce.",
+        {
+          "id": "deglaze"
+        }
+      ],
+      [
+        "Rest and serve",
+        "Rest the pork for 3–5 minutes before eating. Garnish with sliced green onions or chopped cilantro, if desired.",
+        {
+          "id": "rest-serve",
+          "timers": [
+            {
+              "id": "rest",
+              "label": "Rest pork chops",
+              "value": 3,
+              "unit": "minutes",
+              "phrase": "3–5 minutes",
+              "range": true,
+              "legacyId": "chinese-five-spice-pork-chops-rest"
+            }
+          ]
+        }
+      ]
+    ]
   }
 ];

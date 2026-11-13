@@ -80,3 +80,7 @@ The supplied image shows mushroom pan sauce being poured over a steak. It illust
 
 The supplied 1000 × 526 image depicts [The Mediterranean Dish's Italian Green Beans on Punchfork](https://www.punchfork.com/recipe/Italian-Green-Beans-Fagiolini-Alla-Genovese-The-Mediterranean-Dish). It illustrates a related green bean dish and is credited separately from the user's steam-then-sear recipe. The image is saved as `images/green-beans-elephant-garlic.webp`.
 
+## Chinese Five-Spice Skillet Pork Chops
+
+Worthy Pause's original 2250 × 1500 skillet photograph is used for the [recipe](https://www.worthypause.com/blog/2017/2/chinese-five-spice-skillet-pork-chops-recipe). It is encoded as quality-92 WebP at `images/chinese-five-spice-pork-chops.webp`. The source JPEG stays outside the published repository. The photograph shows three chops while the recipe serves four, as the author notes. No AI editing was applied.
+

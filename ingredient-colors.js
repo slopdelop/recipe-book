@@ -1,6 +1,13 @@
 // Dark colors echo the food while remaining readable on the cream background.
 // Aliases are scoped to each recipe: "pepper" in muhammara is not black pepper.
 window.ingredientPalettes = {
+  'chinese-five-spice-pork-chops': [
+    ['#694731', ['pork chops', 'pork', 'Chinese five-spice powder', 'five-spice powder', 'ginger']],
+    ['#535621', ['olive oil', 'sesame oil']],
+    ['#785025', ['onion', 'garlic']],
+    ['#555148', ['salt', 'rice vinegar', 'water']],
+    ['#37533b', ['green onions', 'cilantro']]
+  ],
   'green-beans-elephant-garlic': [
     ['#37533b', ['fresh green beans', 'green beans', 'beans']],
     ['#785025', ['elephant garlic', 'garlic', 'butter']],
