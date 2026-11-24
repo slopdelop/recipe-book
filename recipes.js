@@ -2552,5 +2552,336 @@ window.recipes = [
       "Refrigerate after baking. Reheat at 350°F for 10–15 minutes or until warm throughout. Avoid microwaving.",
       "To freeze, cool completely, wrap tightly in foil and label. Freeze up to one month. Reheat at 350°F for 40 minutes covered and 20 minutes uncovered, then rest 5 minutes."
     ]
+  },
+  {
+    "id": "almost-cabbage-roll-casserole",
+    "name": "Almost Cabbage Roll Casserole",
+    "category": "Mains",
+    "tags": [
+      "Main dish",
+      "Casserole"
+    ],
+    "meals": [
+      "Lunch",
+      "Dinner"
+    ],
+    "toTry": true,
+    "time": "20 min standing · 2 hr baking",
+    "yield": "",
+    "displaySource": "Recipe card",
+    "source": "Recipe card supplied by you",
+    "photoCredit": "AI-generated illustration",
+    "ingredients": [
+      [
+        "1 lb.",
+        "ground beef"
+      ],
+      [
+        "¾ c.",
+        "uncooked rice"
+      ],
+      [
+        "1 large",
+        "onion, chopped"
+      ],
+      [
+        "2 cloves",
+        "garlic, minced"
+      ],
+      [
+        "½ tsp.",
+        "salt"
+      ],
+      [
+        "28 oz. can",
+        "tomato sauce"
+      ],
+      [
+        "¼ c.",
+        "cider vinegar"
+      ],
+      [
+        "2 TBSP",
+        "packed brown sugar"
+      ],
+      [
+        "1 tbsp",
+        "dry mustard"
+      ],
+      [
+        "8 c.",
+        "coarsely chopped cabbage"
+      ],
+      [
+        "¼ tsp.",
+        "pepper"
+      ]
+    ],
+    "steps": [
+      [
+        "Mix the beef and rice",
+        "In large bowl, mix together beef, rice, onion, garlic, salt and pepper.",
+        {
+          "id": "mix-beef"
+        }
+      ],
+      [
+        "Mix the sauce",
+        "In small bowl, stir together tomato sauce, vinegar, brown sugar and mustard.",
+        {
+          "id": "mix-sauce"
+        }
+      ],
+      [
+        "Layer the casserole",
+        "Layer 1/3 of cabbage in bottom of 3 quart (3L) deep casserole dish. Arrange ½ of beef mixture on top. Cover with another 1/3 of cabbage. Top with remaining beef mixture and remaining cabbage.",
+        {
+          "id": "layer"
+        }
+      ],
+      [
+        "Pour the sauce over",
+        "Pour tomato sauce mixture over top, but do not stir. Casserole will be quite full.",
+        {
+          "id": "add-sauce"
+        }
+      ],
+      [
+        "Cover and let sit",
+        "Cover and let sit at room temperature for 20 minutes.",
+        {
+          "id": "stand",
+          "timers": [
+            {
+              "id": "stand",
+              "label": "Let cabbage roll casserole stand",
+              "value": 20,
+              "unit": "minutes",
+              "phrase": "20 minutes",
+              "legacyId": "almost-cabbage-roll-casserole-stand"
+            }
+          ]
+        }
+      ],
+      [
+        "Bake without stirring",
+        "Bake in 325 F deg. oven for 2 hours without stirring.",
+        {
+          "id": "bake",
+          "timers": [
+            {
+              "id": "bake",
+              "label": "Bake cabbage roll casserole",
+              "value": 2,
+              "unit": "hours",
+              "phrase": "2 hours",
+              "legacyId": "almost-cabbage-roll-casserole-bake"
+            }
+          ]
+        }
+      ]
+    ]
+  },
+  {
+    "id": "shipwrecked",
+    "name": "Shipwrecked",
+    "category": "Mains",
+    "tags": [
+      "Main dish",
+      "Casserole"
+    ],
+    "meals": [
+      "Lunch",
+      "Dinner"
+    ],
+    "toTry": true,
+    "time": "2 hr baking",
+    "yield": "",
+    "displaySource": "Recipe card",
+    "source": "Recipe card supplied by you",
+    "photoCredit": "AI-generated illustration",
+    "ingredients": [
+      [
+        "3 large",
+        "potatoes, sliced"
+      ],
+      [
+        "2",
+        "onions, cut fine"
+      ],
+      [
+        "1½ lbs",
+        "hamburger"
+      ],
+      [
+        "2",
+        "celery stalks, chopped fine"
+      ],
+      [
+        "½ cup",
+        "uncooked rice"
+      ],
+      [
+        "2 cans",
+        "tomato soup"
+      ],
+      [
+        "2 cans",
+        "water (handwritten note beside the tomato soup)"
+      ],
+      [
+        "",
+        "salt & pepper"
+      ]
+    ],
+    "steps": [
+      [
+        "Butter and layer the dish",
+        "Butter baking dish. Layer of potatoes, next onions. Then meat, celery, rice. Season with salt and pepper.",
+        {
+          "id": "layer"
+        }
+      ],
+      [
+        "Add the soup and cover",
+        "Pour tomato soup over all and cover dish.",
+        {
+          "id": "add-soup"
+        }
+      ],
+      [
+        "Bake",
+        "Bake at 375 deg, for 2 hours.",
+        {
+          "id": "bake",
+          "timers": [
+            {
+              "id": "bake",
+              "label": "Bake Shipwrecked",
+              "value": 2,
+              "unit": "hours",
+              "phrase": "2 hours",
+              "legacyId": "shipwrecked-bake"
+            }
+          ]
+        }
+      ]
+    ],
+    "tipsTitle": "Handwritten note on the card",
+    "tips": [
+      "“need + 2 can water or too dry”"
+    ]
+  },
+  {
+    "id": "five-spice-sausage-noodles",
+    "name": "Stir-Fried Noodles with Chinese Five Spice Sausage",
+    "category": "Mains",
+    "tags": [
+      "Main dish",
+      "Noodles"
+    ],
+    "meals": [
+      "Lunch",
+      "Dinner"
+    ],
+    "toTry": true,
+    "time": "Noodle prep · about 5 min stir-frying",
+    "yield": "Serves 4",
+    "displaySource": "Oaktown Spice Shop",
+    "source": "Oaktown Spice Shop recipe card · Adapted from Noodle Fever",
+    "photoCredit": "AI-generated illustration",
+    "ingredients": [
+      [
+        "4 servings",
+        "of noodles (like udon)"
+      ],
+      [
+        "4",
+        "pork sausages, uncooked"
+      ],
+      [
+        "1 Tbsp",
+        "Chinese Five Spice"
+      ],
+      [
+        "2 tsp",
+        "olive oil"
+      ],
+      [
+        "3",
+        "baby bok choy, chopped"
+      ],
+      [
+        "1",
+        "yellow onion, chopped"
+      ],
+      [
+        "8",
+        "mushrooms (shiitake, crimini or a mix)"
+      ],
+      [
+        "1",
+        "jalapeno, seeded and chopped"
+      ],
+      [
+        "2 Tbsp.",
+        "chili-garlic sauce"
+      ],
+      [
+        "1 Tbsp.",
+        "fish sauce"
+      ],
+      [
+        "2 Tbsp.",
+        "broth or water"
+      ]
+    ],
+    "steps": [
+      [
+        "Cook the noodles and brown the sausage",
+        "Cook noodles according to package directions. Meanwhile, heat oil in a large skillet or wok and squeeze the pork sausage out of the casings into the pan. Start breaking up the sausage with a wooden spoon. Add the Chinese Five Spice. Cook until pieces are browned, about three minutes.",
+        {
+          "id": "brown-sausage",
+          "timers": [
+            {
+              "id": "brown",
+              "label": "Brown pork sausage",
+              "value": 3,
+              "unit": "minutes",
+              "phrase": "three minutes",
+              "legacyId": "five-spice-sausage-noodles-brown"
+            }
+          ]
+        }
+      ],
+      [
+        "Stir in vegetables and sauce",
+        "Add bok choy, onion, mushrooms, jalapenos and stir. Add chili sauce, fish sauce and broth or water. Mix well for about two minutes.",
+        {
+          "id": "cook-vegetables",
+          "timers": [
+            {
+              "id": "vegetables",
+              "label": "Stir-fry vegetables and sauce",
+              "value": 2,
+              "unit": "minutes",
+              "phrase": "two minutes",
+              "legacyId": "five-spice-sausage-noodles-vegetables"
+            }
+          ]
+        }
+      ],
+      [
+        "Add the noodles",
+        "Drain noodles and add them to the skillet. Stir until noodles are fully incorporated and covered in sauce.",
+        {
+          "id": "finish"
+        }
+      ]
+    ],
+    "tips": [
+      "This works great with just about anything. Try substituting chicken, tofu or beef as well as other veggies like broccoli rabe, kale or spinach.",
+      "Guv'nor Tip: Check that the pork sausage reaches 160°F with a food thermometer before serving. If using chicken, check for 165°F."
+    ]
   }
 ];

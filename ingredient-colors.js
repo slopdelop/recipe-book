@@ -1,6 +1,32 @@
 // Dark colors echo the food while remaining readable on the cream background.
 // Aliases are scoped to each recipe: "pepper" in muhammara is not black pepper.
 window.ingredientPalettes = {
+  'almost-cabbage-roll-casserole': [
+    ['#68472f', ['ground beef', 'beef', 'packed brown sugar', 'brown sugar']],
+    ['#555148', ['uncooked rice', 'rice', 'salt', 'pepper']],
+    ['#5c5540', ['onion', 'garlic']],
+    ['#803b2d', ['tomato sauce']],
+    ['#56363e', ['cider vinegar', 'vinegar']],
+    ['#64551e', ['dry mustard', 'mustard']],
+    ['#37533b', ['coarsely chopped cabbage', 'cabbage']]
+  ],
+  shipwrecked: [
+    ['#64551e', ['potatoes', 'butter']],
+    ['#5c5540', ['onions']],
+    ['#68472f', ['hamburger', 'meat']],
+    ['#37533b', ['celery stalks', 'celery']],
+    ['#803b2d', ['tomato soup']],
+    ['#555148', ['uncooked rice', 'rice', 'salt', 'pepper', 'water']]
+  ],
+  'five-spice-sausage-noodles': [
+    ['#624d2a', ['noodles', 'udon']],
+    ['#68472f', ['pork sausages', 'pork sausage', 'sausage', 'Chinese Five Spice']],
+    ['#535621', ['olive oil', 'oil']],
+    ['#37533b', ['baby bok choy', 'bok choy', 'jalapeno', 'jalapenos']],
+    ['#5c5540', ['yellow onion', 'onion', 'mushrooms', 'shiitake', 'crimini']],
+    ['#803b2d', ['chili-garlic sauce', 'chili sauce']],
+    ['#555148', ['fish sauce', 'broth', 'water']]
+  ],
   'creamed-corn-casserole': [
     ['#70501d', ['cream-style sweet corn', 'whole kernel sweet corn', 'whole kernel corn', 'creamed corn']],
     ['#64551e', ['unsalted butter', 'butter', 'eggs']],
