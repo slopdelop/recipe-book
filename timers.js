@@ -110,6 +110,7 @@
   function insertChip(paragraph,phrase,chip){
     const walker=document.createTreeWalker(paragraph,NodeFilter.SHOW_TEXT);let node;
     while(node=walker.nextNode()){
+      if(node.parentElement.closest('button'))continue;
       const index=node.textContent.indexOf(phrase);if(index<0)continue;
         const tail=node.splitText(index),rest=tail.splitText(phrase.length),wrap=document.createElement('span');
         wrap.className='timer-phrase';wrap.append(chip);

@@ -1,10 +1,19 @@
 // Three-way synchronization: the last downloaded document is the common base.
 ((root)=>{
-  const empty=()=>({version:1,journals:{},hidden:[]});
+  const empty=()=>({version:1,journals:{},hidden:[],promotions:{}});
   const date=v=>typeof v==='string'&&Number.isFinite(Date.parse(v));
   const recipeId=v=>typeof v==='string'&&/^[a-z0-9-]{1,100}$/.test(v);
+  function validatePromotions(value){
+    if(!value||typeof value!=='object'||Array.isArray(value)||Object.keys(value).length>500)throw Error('Invalid recipe promotions.');
+    for(const [id,record] of Object.entries(value)){
+      if(!recipeId(id)||!record||typeof record!=='object'||Array.isArray(record)||typeof record.promoted!=='boolean'||!date(record.updatedAt))throw Error('Invalid recipe promotion.');
+    }
+    return value;
+  }
   function validate(doc){
     if(!doc||doc.version!==1||!doc.journals||typeof doc.journals!=='object'||Array.isArray(doc.journals)||Object.keys(doc.journals).length>500||!Array.isArray(doc.hidden)||doc.hidden.length>500||doc.hidden.some(id=>!recipeId(id)))throw Error('Invalid recipe sync document.');
+    // The optional field keeps existing v1 documents and old clients readable.
+    if(doc.promotions!==undefined)validatePromotions(doc.promotions);
     let count=0;
     for(const [id,j] of Object.entries(doc.journals)){
       if(!recipeId(id)||!j||!Array.isArray(j.notes)||!Array.isArray(j.cooks))throw Error('Invalid recipe journal.');
@@ -22,6 +31,26 @@
   const canonical=value=>JSON.stringify(value,(_,v)=>v&&typeof v==='object'&&!Array.isArray(v)?Object.fromEntries(Object.keys(v).sort().map(k=>[k,v[k]])):v);
   const equal=(a,b)=>canonical(a)===canonical(b);
   const revision=e=>e?.updatedAt||e?.createdAt||'';
+  function mergePromotions(base={},local={},remote={}){
+    [base,local,remote].forEach(validatePromotions);const result={};
+    for(const id of [...new Set([...Object.keys(base),...Object.keys(local),...Object.keys(remote)])].sort()){
+      const b=base[id],l=local[id],r=remote[id];let record;
+      // Absence is not an undo. Reversals are explicit false tombstones, so an
+      // old/offline document cannot remove another computer's choice by omission.
+      if(!l||!r)record=l||r||b;
+      else if(equal(l,r))record=l;
+      else if(equal(l,b))record=r;
+      else if(equal(r,b))record=l;
+      else {
+        const delta=Date.parse(l.updatedAt)-Date.parse(r.updatedAt);
+        if(delta)record=delta>0?l:r;
+        else if(l.promoted!==r.promoted)record=l.promoted?r:l;
+        else record=canonical(l)>canonical(r)?l:r;
+      }
+      result[id]=structuredClone(record);
+    }
+    return result;
+  }
   function fingerprint(value){let a=2166136261,b=3339675911;for(const c of canonical(value)){a=Math.imul(a^c.charCodeAt(0),16777619);b=Math.imul(b^c.charCodeAt(0),2246822519);}return (a>>>0).toString(16)+(b>>>0).toString(16);}
   function merge(base,local,remote){
     [base,local,remote].forEach(validate);const result=empty();let conflicts=0;
@@ -64,7 +93,8 @@
       const b=base.hidden.includes(id),l=local.hidden.includes(id),r=remote.hidden.includes(id);
       if(l===b?r:l)result.hidden.push(id);
     }
+    result.promotions=mergePromotions(base.promotions,local.promotions,remote.promotions);
     return {value:validate(result),conflicts};
   }
-  const api={empty,validate,merge,equal,canonical};root.RecipeSyncState=api;if(typeof module!=='undefined')module.exports=api;
+  const api={empty,validate,validatePromotions,mergePromotions,merge,equal,canonical};root.RecipeSyncState=api;if(typeof module!=='undefined')module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);

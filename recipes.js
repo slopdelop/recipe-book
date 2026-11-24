@@ -2430,5 +2430,127 @@ window.recipes = [
       "Nigella’s make-ahead and storage guidance: Prepare up to 2 months ahead; the flavour improves as it matures. She specifies a cool, dark place for sealed jars for up to 1 year, then refrigeration after opening and use within 1 month.",
       "Added storage note: This method does not include a canning process. Refrigerate this hot-filled version. For pantry storage, use a research-tested canning recipe and its processing instructions, as recommended by the National Center for Home Food Preservation."
     ]
+  },
+  {
+    "id": "creamed-corn-casserole",
+    "name": "Creamed Corn Casserole",
+    "category": "Sides",
+    "tags": [
+      "Side dish"
+    ],
+    "meals": [
+      "Lunch",
+      "Dinner"
+    ],
+    "toTry": true,
+    "time": "5 min prep · 1 hr 15 min baking",
+    "yield": "Serves 8",
+    "displaySource": "Unsophisticook",
+    "source": "Tara Kuczykowski · Unsophisticook",
+    "sourceUrl": "https://unsophisticook.com/creamed-corn-casserole/#recipe",
+    "photoCredit": "Unsophisticook",
+    "photoSource": "https://unsophisticook.com/wp-content/uploads/2016/12/Corn-Casserole-Recipes.jpg",
+    "ingredients": [
+      [
+        "½ cup",
+        "unsalted butter"
+      ],
+      [
+        "¼ cup",
+        "all-purpose flour"
+      ],
+      [
+        "¼ cup",
+        "granulated sugar"
+      ],
+      [
+        "2 large",
+        "eggs, well beaten"
+      ],
+      [
+        "1 cup",
+        "whole milk"
+      ],
+      [
+        "1 (15.25-ounce) can",
+        "whole kernel sweet corn, drained"
+      ],
+      [
+        "1 (14.75-ounce) can",
+        "cream-style sweet corn"
+      ],
+      [
+        "½ teaspoon",
+        "salt"
+      ],
+      [
+        "½ teaspoon",
+        "ground black pepper"
+      ]
+    ],
+    "steps": [
+      [
+        "Preheat the oven",
+        "Set a rack in the middle of the oven and preheat to 350°F.",
+        {
+          "id": "preheat"
+        }
+      ],
+      [
+        "Melt the butter",
+        "Warm the butter slowly in a saucepan over medium-low. Swirl until just melted, then let it cool slightly while you measure everything else.",
+        {
+          "id": "melt-butter"
+        }
+      ],
+      [
+        "Mix the custard",
+        "Whisk the flour into the cooled melted butter until fully blended. Whisk in the sugar, eggs and milk.",
+        {
+          "id": "whisk-custard"
+        }
+      ],
+      [
+        "Add both kinds of corn",
+        "Stir in the creamed corn and drained whole kernel corn. Season with salt and pepper, then pour the mixture into an 8 × 8-inch casserole dish.",
+        {
+          "id": "fill-dish"
+        }
+      ],
+      [
+        "Bake and rest",
+        "Bake uncovered at 350°F for about 1 hour and 15 minutes. The center should set and the top should brown and caramelize. For more caramelization, move the dish to the top rack near the end. Let it stand for 5 minutes before serving warm.",
+        {
+          "id": "bake-and-rest",
+          "timers": [
+            {
+              "id": "bake",
+              "label": "Bake corn casserole",
+              "value": 75,
+              "unit": "minutes",
+              "phrase": "1 hour and 15 minutes",
+              "legacyId": "creamed-corn-casserole-bake"
+            },
+            {
+              "id": "rest",
+              "label": "Rest corn casserole",
+              "value": 5,
+              "unit": "minutes",
+              "phrase": "5 minutes",
+              "legacyId": "creamed-corn-casserole-rest"
+            }
+          ]
+        }
+      ]
+    ],
+    "tipsTitle": "Notes from Unsophisticook",
+    "tipsSource": "https://unsophisticook.com/creamed-corn-casserole/#baked-corn-casserole-faqs",
+    "tips": [
+      "Equipment: glass batter bowl, whisk, large silicone spoon spatula and shallow 8 × 8-inch dish.",
+      "Double or triple in a 9 × 13-inch dish. Use a roasting pan for larger batches. Allow extra baking time. Shallow dishes cook faster than deep ones. Disposable aluminum trays take longer and may brown less. A set casserole can brown under the broiler for a couple of minutes.",
+      "If the custard breaks, check for an overheated oven with an oven thermometer. Use whole milk and dairy butter. Readers report success with heavy cream or 2% milk.",
+      "Refrigerate after baking. Reheat at 350°F for 10–15 minutes or until warm throughout. Avoid microwaving.",
+      "To freeze, cool completely, wrap tightly in foil and label. Freeze up to one month. Reheat at 350°F for 40 minutes covered and 20 minutes uncovered, then rest 5 minutes."
+    ]
   }
 ];

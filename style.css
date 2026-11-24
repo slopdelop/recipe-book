@@ -109,6 +109,27 @@
   background: var(--green);
   color: white;
 }
+#recipe-list .recipe-thumb-frame { position: relative; }
+#recipe-list .recipe-card-to-try .recipe-thumb { filter: saturate(.45); }
+#recipe-list .recipe-to-try-label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  margin: 0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: #fffdf6;
+  color: #304736;
+  font: 600 12px/1.4 system-ui, sans-serif;
+}
+.recipe-preference #change-recipe-status { order: -2; }
+.recipe-preference #change-recipe-status ~ #change-recipe-visibility { margin-left: auto; }
+.recipe-preference #change-recipe-status.is-untried {
+  background: var(--green);
+  border-color: var(--green);
+  color: white;
+}
+.recipe-preference #change-recipe-status.is-untried:hover { background: #2d4433; }
 .recipe-tips {
   border-top: 1px solid var(--line);
   padding-top: 22px;

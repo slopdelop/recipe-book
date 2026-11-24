@@ -1,6 +1,13 @@
 // Dark colors echo the food while remaining readable on the cream background.
 // Aliases are scoped to each recipe: "pepper" in muhammara is not black pepper.
 window.ingredientPalettes = {
+  'creamed-corn-casserole': [
+    ['#70501d', ['cream-style sweet corn', 'whole kernel sweet corn', 'whole kernel corn', 'creamed corn']],
+    ['#64551e', ['unsalted butter', 'butter', 'eggs']],
+    ['#624d2a', ['all-purpose flour', 'flour', 'granulated sugar', 'sugar']],
+    ['#555148', ['whole milk', 'milk', 'salt']],
+    ['#38302c', ['ground black pepper', 'black pepper', 'pepper']]
+  ],
   'christmas-chutney': [
     ['#535621', ['Granny Smith', 'apples']],
     ['#5c5540', ['onion']],

@@ -1,5 +1,5 @@
 (() => {
-  const D=RecipeData,S=RecipeSyncState,prefix='recipe-book:journal:v1:',hiddenKey='recipe-book:hidden:v1',authKey='recipe-book:sync-auth:v1',metaKey='recipe-book:sync-meta:v1';
+  const D=RecipeData,S=RecipeSyncState,prefix='recipe-book:journal:v1:',hiddenKey='recipe-book:hidden:v1',promotionsKey='recipe-book:promotions:v1',authKey='recipe-book:sync-auth:v1',metaKey='recipe-book:sync-meta:v1';
   let host,status,summary,auth=null,running=false,again=false,timer,retry=5000,lastSync=null,requestController;
   const initialMeta=()=>({base:S.empty(),revision:0});
   const isJournal=key=>key.startsWith(prefix);
@@ -22,17 +22,18 @@
   function schedule(delay=1500){clearTimeout(timer);timer=setTimeout(()=>sync(),delay);}
   const snapshotKeys=remote=>[...new Set([...window.recipes.map(r=>r.id),...(window.retiredRecipeIds||[]),...Object.keys(remote.journals)])].map(id=>prefix+id);
   async function integrate(remote,revision,token){
-    S.validate(remote);const journalKeys=snapshotKeys(remote),keys=[...journalKeys,hiddenKey,metaKey,authKey];
-    const defaults=Object.fromEntries(journalKeys.map(key=>[key,{notes:[],cooks:[]}]));Object.assign(defaults,{[hiddenKey]:[],[metaKey]:initialMeta(),[authKey]:null});
+    S.validate(remote);const journalKeys=snapshotKeys(remote),keys=[...journalKeys,hiddenKey,promotionsKey,metaKey,authKey];
+    const defaults=Object.fromEntries(journalKeys.map(key=>[key,{notes:[],cooks:[]}]));Object.assign(defaults,{[hiddenKey]:[],[promotionsKey]:{},[metaKey]:initialMeta(),[authKey]:null});
     return D.transaction(keys,defaults,values=>{
       if(values[authKey]?.token!==token)throw Error('Cloud connection changed. Local data was kept.');
       const meta=values[metaKey];if(revision<meta.revision)return {result:{stale:true}};
-      const local=S.empty();for(const key of journalKeys)local.journals[key.slice(prefix.length)]=values[key];local.hidden=values[hiddenKey];
+      const local=S.empty();for(const key of journalKeys)local.journals[key.slice(prefix.length)]=values[key];local.hidden=values[hiddenKey];local.promotions=values[promotionsKey];
       // The merge happens inside the same transaction as local edits. Unsent changes
       // made while a request was in flight are included, never replaced by a snapshot.
       const merge=S.merge(meta.base,local,remote),changed=[];
       for(const [id,journal] of Object.entries(merge.value.journals)){const key=prefix+id;if(!S.equal(values[key],journal)){values[key]=journal;changed.push(key);}}
       if(!S.equal(values[hiddenKey],merge.value.hidden)){values[hiddenKey]=merge.value.hidden;changed.push(hiddenKey);}
+      if(!S.equal(values[promotionsKey],merge.value.promotions)){values[promotionsKey]=merge.value.promotions;changed.push(promotionsKey);}
       values[metaKey]={...meta,base:remote,revision};changed.push(metaKey);
       return {changed,result:{data:merge.value,conflicts:merge.conflicts,pending:!S.equal(merge.value,remote)}};
     });
@@ -64,7 +65,7 @@
     }finally{running=false;if(auth)schedule(again?500:retry===5000?20000:retry);}
   }
   window.mountRecipeSync=async()=>{
-    host=document.createElement('section');host.className='sync-tools';host.innerHTML='<details><summary>Cloud sync · not connected</summary><p>Connect each computer with the same private recipe code. Notes, cooking history, ratings and hidden recipes merge automatically. Your workout data is separate.</p><form><label>Recipe connection code<input name="code" type="password" autocomplete="off" spellcheck="false" pattern="[a-fA-F0-9]{64}" minlength="64" maxlength="64" required></label><p class="sync-hint">Connecting merges this browser’s existing recipe data into your cloud recipe book. Keep the code private: anyone with it can read and edit this book.</p><button type="submit" class="journal-primary">Connect cloud sync</button></form><div class="sync-connected" hidden><div class="journal-actions"><button type="button" class="journal-secondary" data-sync-now>Sync now</button><button type="button" class="journal-secondary" data-show-code>Show connection code</button><button type="button" class="journal-secondary" data-disconnect>Disconnect this browser</button></div><label class="sync-code" hidden>Use this code on your other computers<input readonly type="text" aria-label="Your private recipe connection code" spellcheck="false"></label><p>Timers and cooking progress stay on this computer.</p></div><p class="sync-status" role="status" aria-live="polite"></p></details>';
+    host=document.createElement('section');host.className='sync-tools';host.innerHTML='<details><summary>Cloud sync · not connected</summary><p>Connect each computer with the same private recipe code. Notes, cooking history, ratings, hidden recipes and collection choices merge automatically. Your workout data is separate.</p><form><label>Recipe connection code<input name="code" type="password" autocomplete="off" spellcheck="false" pattern="[a-fA-F0-9]{64}" minlength="64" maxlength="64" required></label><p class="sync-hint">Connecting merges this browser’s existing recipe data into your cloud recipe book. Keep the code private: anyone with it can read and edit this book.</p><button type="submit" class="journal-primary">Connect cloud sync</button></form><div class="sync-connected" hidden><div class="journal-actions"><button type="button" class="journal-secondary" data-sync-now>Sync now</button><button type="button" class="journal-secondary" data-show-code>Show connection code</button><button type="button" class="journal-secondary" data-disconnect>Disconnect this browser</button></div><label class="sync-code" hidden>Use this code on your other computers<input readonly type="text" aria-label="Your private recipe connection code" spellcheck="false"></label><p>Timers and cooking progress stay on this computer.</p></div><p class="sync-status" role="status" aria-live="polite"></p></details>';
     const journal=document.querySelector('.recipe-journal');if(journal)journal.after(host);else document.querySelector('#collection').append(host);
     status=host.querySelector('.sync-status');summary=host.querySelector('summary');
     host.querySelector('form').addEventListener('submit',async event=>{
@@ -82,7 +83,7 @@
       try{await D.update(authKey,null,()=>({value:null}));auth=null;requestController?.abort();clearTimeout(timer);host.querySelector('.sync-code').hidden=true;host.querySelector('.sync-code input').value='';paint('Disconnected. Local notes and cloud data were kept.');}catch(error){D.error(status,error);}
     });
     D.subscribe(authKey,async()=>{const next=await D.read(authKey,null);if(next?.token!==auth?.token){requestController?.abort();auth=next;paint(auth?'Connected. Checking changes…':'Not connected. Notes are saved only in this browser.');if(auth)schedule(100);}});
-    window.addEventListener('recipe-book-data',event=>{if(event.detail?.some(key=>isJournal(key)||key===hiddenKey)){if(auth)schedule();}});
+    window.addEventListener('recipe-book-data',event=>{if(event.detail?.some(key=>isJournal(key)||key===hiddenKey||key===promotionsKey)){if(auth)schedule();}});
     window.addEventListener('online',()=>schedule(100));window.addEventListener('focus',()=>{if(auth)schedule(100);});document.addEventListener('visibilitychange',()=>{if(!document.hidden&&auth)schedule(100);});
     try{auth=await D.read(authKey,null);paint(auth?'Checking cloud changes…':'Not connected. Notes are saved only in this browser.');if(auth)schedule(100);}catch(error){paint(error.message);}
   };

@@ -44,6 +44,8 @@ Journal data is stored in IndexedDB. Existing localStorage data is imported auto
 
 The homepage is a searchable recipe collection. Each recipe opens a dedicated page at `recipes/<id>/` with a full-width photo, the recipe name over a dark gradient, and ingredients and steps beneath. Cooking pages have only an All recipes link and Print recipe button. Old `#<id>` links redirect to the matching page.
 
+All recipes is the default view. Recipes to try appear last with labeled photos. The Tried & good and Recipes to Try views show each group on its own. Use Move to Tried & good at the bottom of an untried recipe, or Move back to Recipes to Try to undo it. The choice follows the recipe across linked Cloud sync devices and is included in backups.
+
 The static page shells share `app.js`, `recipes.js`, and `style.css` through a relative base URL. When adding a new recipe, copy an existing shell and change its `data-recipe` ID and document title. Keep shared asset version query strings consistent across the homepage and shells when changing scripts or styles.
 
 ## Photos and ingredient colors

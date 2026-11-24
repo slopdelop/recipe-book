@@ -90,3 +90,7 @@ Lis Parsons' original photograph from [Nigella Lawson's Christmas Chutney](https
 
 Added to Tried & good at the user's request. Ingredients include the source's U.S. quantities and corresponding metric weights/volume, including its U.S. Granny Smith note. All six method stages, equipment, jar temperature and handling, uncovered cooking endpoint, and make-ahead/storage information are retained in fresh wording rather than a verbatim reproduction of the linked page. The original source remains linked in the footer. A separate added storage note distinguishes the source's hot-fill method from a tested canning process; background guidance: [National Center for Home Food Preservation — Preservation Principles in Chutney](https://nchfp.uga.edu/resources/entry/preservation-principles-in-chutney). No canning process or processing time has been invented for this recipe.
 
+## Creamed Corn Casserole
+
+The [Unsophisticook recipe](https://unsophisticook.com/creamed-corn-casserole/#recipe) includes this [1200 × 800 landscape photograph](https://unsophisticook.com/wp-content/uploads/2016/12/Corn-Casserole-Recipes.jpg) of the casserole in its white baking dish. Credit: Unsophisticook / Tara Kuczykowski. Converted to quality-78 WebP at the original dimensions in `images/creamed-corn-casserole.webp`, with no AI edits. The shared image positions frame the baking dish in the hero and card.
+

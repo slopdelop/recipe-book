@@ -19,8 +19,13 @@ export default {async fetch(request,env){
     if(Number(request.headers.get('Content-Length')||0)>2200000)return reply({error:'Recipe data is too large.'},413);
     const text=await request.text();if(new TextEncoder().encode(text).length>2200000)return reply({error:'Recipe data is too large.'},413);
     let body;try{body=JSON.parse(text);if(!Number.isSafeInteger(body.revision)||body.revision<0)throw Error();S.validate(body.data);}catch{return reply({error:'Invalid recipe sync data.'},400);}
+    // Older v1 clients can read additive fields but omit them when uploading.
+    // Preserve collection choices for those clients, under the same revision CAS.
+    const payload={...body.data},stored=JSON.parse(row.payload);
+    if(payload.promotions===undefined&&stored.promotions!==undefined)payload.promotions=stored.promotions;
+    try{S.validate(payload);}catch{return reply({error:'Invalid recipe sync data.'},400);}
     const updatedAt=new Date().toISOString();
-    const result=await env.DB.prepare('UPDATE recipe_libraries SET payload = ?, revision = revision + 1, updated_at = ? WHERE id = ? AND revision = ?').bind(JSON.stringify(body.data),updatedAt,row.id,body.revision).run();
+    const result=await env.DB.prepare('UPDATE recipe_libraries SET payload = ?, revision = revision + 1, updated_at = ? WHERE id = ? AND revision = ?').bind(JSON.stringify(payload),updatedAt,row.id,body.revision).run();
     if(result.meta.changes!==1)return reply({error:'Newer changes are available. Download and merge before retrying.'},409);
     return reply({revision:body.revision+1,updatedAt});
   }catch{return reply({error:'Recipe sync is temporarily unavailable.'},503);}
