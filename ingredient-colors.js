@@ -96,6 +96,16 @@ window.ingredientPalettes = {
     ['#7a481d', ['roasted orange','orange']], ['#64551e', ['lemon juice','lemon']],
     ['#3c5c36', ['ripe avocados','avocados']], ['#624d2a', ['ciabatta','good bread']], ['#68472f', ['mixed seeds','toasted seeds']]
   ],
+  'roast-carrot-avocado-salad-jamie-oliver': [
+    ['#81431f', ['carrots']], ['#6c4a2e', ['whole cumin seeds', 'cumin seeds']],
+    ['#803b2d', ['small dried chillies', 'chillies']], ['#5c5540', ['garlic', 'fat-free natural yoghurt', 'yoghurt']],
+    ['#345d3e', ['fresh thyme', 'thyme', 'winter salad leaves', 'cress']],
+    ['#535621', ['extra virgin olive oil', 'olive oil']],
+    ['#713343', ['red or white wine vinegar', 'red wine vinegar', 'wine vinegar']],
+    ['#7a481d', ['orange']], ['#64551e', ['lemon']], ['#3c5c36', ['ripe avocados', 'avocados']],
+    ['#624d2a', ['ciabatta', 'bread']], ['#68472f', ['mixed seeds', 'toasted seeds']],
+    ['#555148', ['salt', 'salted']], ['#38302c', ['pepper']]
+  ],
   'pork-chops-red-onion-confit': [
     ['#66425a', ['red onion confit','red onion','onion confit']],
     ['#64551e', ['extra butter','butter']], ['#555148', ['salt','sugar']],

@@ -845,6 +845,177 @@ window.recipes = [
     ]
   },
   {
+    "id": "roast-carrot-avocado-salad-jamie-oliver",
+    "name": "Roast Carrot & Avocado Salad",
+    "subtitle": "Orange & lemon dressing · Yoghurt & cress",
+    "category": "Salads",
+    "tags": [
+      "Salad",
+      "Side dish"
+    ],
+    "meals": [
+      "Lunch",
+      "Dinner"
+    ],
+    "toTry": false,
+    "time": "50 min",
+    "yield": "Serves 4",
+    "displaySource": "Jamie Oliver · Yoghurt & cress",
+    "source": "Jamie Oliver · Jamie at Home · JamieOliver.com",
+    "sourceUrl": "https://www.jamieoliver.com/recipes/vegetables/roast-carrot-and-avocado-salad-with-orange-and-lemon-dressing/",
+    "photoCredit": "JamieOliver.com",
+    "photoSource": "https://www.jamieoliver.com/recipes/vegetables/roast-carrot-and-avocado-salad-with-orange-and-lemon-dressing/",
+    "ingredients": [
+      [
+        "500 g",
+        "medium differently coloured carrots, with their leafy tops"
+      ],
+      [
+        "2 level teaspoons",
+        "whole cumin seeds"
+      ],
+      [
+        "1 or 2",
+        "small dried chillies"
+      ],
+      [
+        "2 cloves",
+        "garlic, peeled"
+      ],
+      [
+        "4 sprigs",
+        "fresh thyme, leaves picked"
+      ],
+      [
+        "",
+        "extra virgin olive oil"
+      ],
+      [
+        "",
+        "red or white wine vinegar"
+      ],
+      [
+        "1",
+        "orange, halved"
+      ],
+      [
+        "1",
+        "lemon, halved"
+      ],
+      [
+        "3",
+        "ripe avocados"
+      ],
+      [
+        "",
+        "red wine vinegar"
+      ],
+      [
+        "4 × 1 cm thick slices",
+        "ciabatta or other good-quality bread"
+      ],
+      [
+        "2 handfuls",
+        "mixed winter salad leaves (Treviso, rocket, radicchio or cavolo nero tops), washed and spun dry"
+      ],
+      [
+        "2 punnets",
+        "cress"
+      ],
+      [
+        "150 ml",
+        "fat-free natural yoghurt"
+      ],
+      [
+        "4 tablespoons",
+        "mixed seeds, toasted"
+      ],
+      {
+        "group": "Also used in the method"
+      },
+      [
+        "",
+        "salt"
+      ],
+      [
+        "",
+        "pepper"
+      ]
+    ],
+    "steps": [
+      [
+        "Preheat the oven",
+        "Set the oven to 180°C / 350°F / gas mark 4.",
+        {
+          "id": "preheat"
+        }
+      ],
+      [
+        "Parboil the carrots",
+        "Cook the carrots in salted boiling water for 10 minutes, stopping when they’re just shy of tender. Drain and transfer to a roasting tray. Make the paste while they cook so you can season the carrots while they’re still steaming.",
+        {
+          "id": "parboil-carrots",
+          "timers": [
+            {
+              "id": "parboil",
+              "label": "Parboil carrots",
+              "value": 10,
+              "unit": "minutes",
+              "phrase": "10 minutes",
+              "legacyId": "roast-carrot-avocado-salad-jamie-oliver-parboil"
+            }
+          ]
+        }
+      ],
+      [
+        "Make the spice paste",
+        "Use a mortar and pestle to crush the cumin seeds with the chillies, salt and pepper. Work in the garlic and thyme leaves until the mixture forms a paste. Stir in enough extra virgin olive oil to cover it generously, along with a good splash of red or white wine vinegar.",
+        {
+          "id": "spice-paste"
+        }
+      ],
+      [
+        "Roast the carrots and citrus",
+        "Pour the paste over the hot carrots and toss to coat them thoroughly. Put the orange and lemon halves cut-side down in the same tray. Roast for 25–30 minutes, until golden. Save the roasted citrus for the dressing.",
+        {
+          "id": "roast-carrots",
+          "timers": [
+            {
+              "id": "roast",
+              "label": "Roast carrots and citrus",
+              "value": 25,
+              "unit": "minutes",
+              "phrase": "25–30 minutes",
+              "range": true,
+              "legacyId": "roast-carrot-avocado-salad-jamie-oliver-roast"
+            }
+          ]
+        }
+      ],
+      [
+        "Prepare the avocados",
+        "While the tray is in the oven, halve and peel the avocados and remove the stones. Slice lengthways into wedges and put them in a large bowl. Add the carrots when they come out of the oven.",
+        {
+          "id": "prepare-avocados"
+        }
+      ],
+      [
+        "Dress the carrots and avocados",
+        "Hold the hot citrus with tongs and carefully squeeze its juice into a bowl. Stir in an equal volume of extra virgin olive oil and a small splash of red wine vinegar. Season and pour it over the carrots and avocados. Toss, taste and adjust the seasoning.",
+        {
+          "id": "citrus-dressing"
+        }
+      ],
+      [
+        "Toast the bread and assemble",
+        "Toast the ciabatta or cook it on a griddle. Tear it into small pieces, mix it into the dressed carrots and avocados, and toss in the winter salad leaves and cress. Serve on a large platter or individual plates. Finish with a dollop of yoghurt, the toasted seeds and a drizzle of extra virgin olive oil.",
+        {
+          "id": "assemble"
+        }
+      ]
+    ]
+  },
+  {
     "id": "corn-chipotle-lime",
     "name": "Corn with Chipotle–Lime Butter",
     "category": "Sides",

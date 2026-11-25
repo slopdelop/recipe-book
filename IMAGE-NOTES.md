@@ -12,6 +12,8 @@ Original Food Network / Jamie at Home TV still from the [Jamie Oliver recipe](ht
 
 Built-in ImageGen conservatively restored the original still to 1448 × 1086, preserving its arrangement, warm background, mixed leaves, roasted carrots, avocado wedges, bread, sour cream and toasted seeds. Prompt prohibited restyling, additional garnish, plastic textures, HDR, artificial lighting and excessive sharpening. Encoded as quality-94 WebP in `images/roast-carrot-avocado-salad.webp`. Footer identifies the source and AI-assisted upscale.
 
+The separate yoghurt and cress version uses the photograph from [Jamie Oliver's own recipe](https://www.jamieoliver.com/recipes/vegetables/roast-carrot-and-avocado-salad-with-orange-and-lemon-dressing/). The [973 × 1300 original JPEG](https://cdn.sanity.io/images/cq7w2e71/production/c655b7836214799ded94535a28f0477d20526c51-973x1300.jpg) is credited to JamieOliver.com. It is encoded at the original dimensions as quality-80 WebP in `images/roast-carrot-avocado-salad-jamie-oliver.webp`. No retouching or AI was used. The shared crop keeps the avocado, yoghurt and seeds in view.
+
 The Food52 page submitted by Sandy Hill was checked against Food Network on October 27, 2026. Ingredients, quantities and cooking directions match; Food Network remains the canonical recipe source.
 
 ## Pork chops with red onion confit
