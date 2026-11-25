@@ -110,7 +110,6 @@
   color: white;
 }
 #recipe-list .recipe-thumb-frame { position: relative; }
-#recipe-list .recipe-card-to-try .recipe-thumb { filter: saturate(.45); }
 #recipe-list .recipe-to-try-label {
   position: absolute;
   top: 12px;
